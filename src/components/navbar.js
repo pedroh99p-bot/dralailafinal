@@ -20,7 +20,7 @@ export function Navbar() {
   return `
     <div id="preloader" aria-hidden="true">
       <div class="preloader-content">
-        <img src="${assets.logos.simple}" width="72" height="72" alt="" class="preloader-logo" />
+        <img src="${assets.logos.full}" width="280" height="108" alt="" class="preloader-logo" />
         <p class="preloader-copy">Cuidado especializado em DTM, bruxismo e dor orofacial.</p>
         <div class="loader-bar"></div>
       </div>
@@ -40,7 +40,7 @@ export function Navbar() {
             data-track="whatsapp_click"
             data-track-source="navbar"
           >
-            WhatsApp
+            Consulta
           </a>
           <button class="btn-menu" id="menu-open" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-menu">
             ${menuIcon}

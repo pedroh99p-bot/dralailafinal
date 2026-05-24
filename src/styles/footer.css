@@ -10,10 +10,12 @@
   gap: var(--space-10);
 }
 
-.footer__brand img {
-  width: min(22vw, 82px);
+.footer__brand .footer__logo {
+  width: min(220px, 62vw);
+  max-width: 100%;
   height: auto;
   margin-bottom: var(--space-4);
+  display: block;
 }
 
 .footer__brand p {

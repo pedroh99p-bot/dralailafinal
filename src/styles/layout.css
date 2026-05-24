@@ -50,11 +50,125 @@
     radial-gradient(ellipse at 55% 90%, rgba(49, 196, 141, 0.08), transparent 34rem);
 }
 
+.quiz::before {
+  background:
+    radial-gradient(circle at 18% 16%, rgba(248, 176, 8, 0.08), transparent 14rem),
+    radial-gradient(circle at 84% 82%, rgba(139, 216, 255, 0.09), transparent 18rem);
+}
+
+.quiz::after {
+  opacity: 0.18;
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(circle at 50% 50%, #000 35%, transparent 88%);
+}
+
+.steps::before {
+  background:
+    radial-gradient(circle at 12% 28%, rgba(248, 176, 8, 0.08), transparent 16rem),
+    linear-gradient(125deg, rgba(255, 255, 255, 0.02), transparent 45%);
+}
+
+.steps::after {
+  opacity: 0.3;
+  background:
+    radial-gradient(circle at 18% 44%, rgba(255, 255, 255, 0.07) 0 1px, transparent 1px 22px),
+    radial-gradient(circle at 82% 28%, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 28px);
+}
+
+.testimonials::before {
+  background:
+    radial-gradient(circle at 18% 24%, rgba(139, 216, 255, 0.08), transparent 16rem),
+    radial-gradient(circle at 78% 78%, rgba(248, 176, 8, 0.08), transparent 18rem);
+}
+
+.testimonials::after {
+  opacity: 0.22;
+  background:
+    radial-gradient(ellipse at 25% 22%, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 18px),
+    linear-gradient(120deg, transparent 40%, rgba(255, 255, 255, 0.03) 50%, transparent 60%);
+  transform: rotate(-5deg) scale(1.08);
+}
+
 .decorator-line {
   width: 1px;
   height: 68px;
   margin-inline: auto;
   background: linear-gradient(180deg, transparent, rgba(248, 176, 8, 0.72), transparent);
+}
+
+.section-bridge {
+  position: relative;
+  width: min(100% - 2rem, 980px);
+  margin: 0 auto;
+  padding: 0 0 var(--space-8);
+}
+
+.section-bridge__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 76px;
+  gap: var(--space-4);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-panel);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+    linear-gradient(90deg, rgba(0, 11, 31, 0.88), rgba(8, 27, 58, 0.92));
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.2);
+  isolation: isolate;
+}
+
+.section-bridge__inner::before,
+.section-bridge__inner::after {
+  content: '';
+  position: absolute;
+  inset: auto;
+  pointer-events: none;
+}
+
+.section-bridge__inner::before {
+  left: -4%;
+  right: -4%;
+  top: 50%;
+  height: 64px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  opacity: 0.38;
+  transform: translateY(-8px);
+}
+
+.section-bridge__inner::after {
+  width: 140px;
+  height: 140px;
+  right: -24px;
+  top: -48px;
+  background: radial-gradient(circle, rgba(248, 176, 8, 0.16), transparent 68%);
+  filter: blur(4px);
+}
+
+.section-bridge__spark {
+  color: var(--color-yellow-soft);
+  font-size: 1rem;
+  text-shadow: 0 0 18px rgba(248, 176, 8, 0.6);
+}
+
+.section-bridge p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--color-muted-strong);
+  font-family: var(--font-title);
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+.btn-inline-icon {
+  flex: 0 0 auto;
 }
 
 .btn {

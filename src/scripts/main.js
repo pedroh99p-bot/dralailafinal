@@ -41,6 +41,12 @@ function App() {
       ${Testimonials()}
       <div class="decorator-line reveal" aria-hidden="true"></div>
       ${MapSection()}
+      <div class="section-bridge reveal">
+        <div class="section-bridge__inner">
+          <span class="section-bridge__spark" aria-hidden="true">✦</span>
+          <p>Atendimento com orientação, precisão e cuidado humano.</p>
+        </div>
+      </div>
       ${FinalOffer()}
       ${Roller(rollers[3], 'roller--quiet')}
     </main>

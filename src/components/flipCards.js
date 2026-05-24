@@ -12,7 +12,7 @@ export function FlipCards() {
               <span class="flip-card__hint">Ver cuidado indicado</span>
             </div>
             <div class="flip-card__face flip-card__back">
-              <span class="flip-card__icon flip-card__icon--back" aria-hidden="true">✓</span>
+              <span class="flip-card__icon flip-card__icon--back" aria-hidden="true">${card.backIcon}</span>
               <p>${card.back}</p>
               <a
                 href="${card.href}"

@@ -17,7 +17,8 @@ export function Hero() {
           </p>
           <div class="hero__ctas">
             <a href="#quiz" class="btn btn-secondary" data-track="quiz_cta_click" data-track-source="hero">
-              Fazer quiz rápido
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="btn-inline-icon"><path d="M9 3h6l4 4v8a6 6 0 0 1-6 6h-2a6 6 0 0 1-6-6V7l4-4z"/><path d="M10 9h4"/><path d="M10 13h4"/><path d="M12 17h.01"/></svg>
+              Quiz rápido
             </a>
             <a
               href="${whatsappHref('hero_attendance')}"
