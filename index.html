@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Fallback Anti-Bug: Garante que os elementos só ocultem para animação se o JS estiver ativo -->
+    <script>document.documentElement.className = 'js';</script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dra. Lailla Rettore | Especialista em DTM e Bruxismo</title>
@@ -57,6 +60,11 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
+        html, body {
+            overflow-x: hidden; /* Correção do bug de overflow no desktop */
+            width: 100%;
+        }
+
         html { scroll-behavior: smooth; }
 
         body {
@@ -64,7 +72,6 @@
             background-color: var(--navy-deep);
             color: var(--white);
             line-height: 1.6;
-            overflow-x: hidden;
             position: relative;
         }
 
@@ -103,7 +110,22 @@
         .section-header h2 { font-size: 2.2rem; margin-bottom: 16px; }
         .section-header p { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
 
-        /* Efeitos Visuais & Glass */
+        /* Texturas Mobile-First & Utilities */
+        .bg-texture-dots { position: relative; }
+        .bg-texture-dots::before {
+            content: ''; position: absolute; inset: 0; z-index: -1;
+            background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 24px 24px; pointer-events: none;
+        }
+        
+        .bg-texture-glow { position: relative; }
+        .bg-texture-glow::after {
+            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 100%; height: 100%; z-index: -1;
+            background: radial-gradient(ellipse at top, rgba(244, 197, 66, 0.03) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
         .glass-panel {
             background: var(--glass-bg);
             backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
@@ -138,18 +160,28 @@
             background: var(--glass-hover); border-color: var(--yellow-soft);
         }
 
-        /* Microanimações (Intersection Observer) */
-        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
+        /* Animação Urgência/Glow */
+        .btn-pulse {
+            animation: pulseGlow 2.5s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(248, 176, 8, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(248, 176, 8, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(248, 176, 8, 0); }
+        }
+
+        /* Microanimações JS / Fallback */
+        .js .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .js .reveal.visible { opacity: 1; transform: translateY(0); }
+        .js .reveal-delay-1 { transition-delay: 0.1s; }
         
         @media (prefers-reduced-motion: reduce) {
             *, ::before, ::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
-            .reveal { opacity: 1; transform: none; }
+            .js .reveal { opacity: 1; transform: none; }
+            .btn-pulse { animation: none; box-shadow: var(--glow-yellow); }
         }
 
-        /* Decoradores de Seção */
         .decorator-line {
             width: 1px; height: 60px; background: linear-gradient(to bottom, transparent, var(--yellow-soft), transparent);
             margin: 0 auto; opacity: 0.5;
@@ -196,21 +228,20 @@
         .navbar-wrapper {
             position: fixed; top: 16px; left: 0; width: 100%;
             z-index: 1000; display: flex; justify-content: center; pointer-events: none;
-            padding: 0 var(--px); transition: top 0.3s ease;
+            padding: 0 var(--px); transition: top 0.4s ease;
         }
 
         .navbar {
             pointer-events: auto; width: 100%; max-width: 1080px;
-            background: rgba(0, 11, 31, 0.65);
+            background: rgba(0, 11, 31, 0.75);
             backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
-            border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 40px rgba(0,0,0,0.3);
             border-radius: var(--radius-pill); padding: 8px 12px 8px 24px;
             display: flex; justify-content: space-between; align-items: center;
-            transition: var(--transition);
         }
 
         .nav-logo { display: flex; align-items: center; }
-        .nav-logo img { height: 28px; width: auto; }
+        .nav-logo img { height: 26px; width: auto; }
 
         .nav-actions { display: flex; align-items: center; gap: 12px; }
         .nav-cta { display: none; padding: 10px 24px; font-size: 0.9rem; }
@@ -266,7 +297,7 @@
         .float-btn {
             width: 56px; height: 56px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            background: rgba(0, 11, 31, 0.6); backdrop-filter: blur(12px); border: 1px solid var(--glass-border);
+            background: rgba(0, 11, 31, 0.7); backdrop-filter: blur(12px); border: 1px solid var(--glass-border);
             color: var(--white); transition: var(--transition);
         }
 
@@ -274,19 +305,20 @@
         .float-btn:hover { border-color: var(--yellow-soft); color: var(--yellow); box-shadow: var(--glow-yellow); transform: scale(1.05); }
 
         /* ==========================================================================
-           5. HERO SECTION (Fundo com Imagem)
+           5. HERO SECTION (Fundo com Imagem + Overlay em Degradê)
            ========================================================================== */
         .hero {
-            min-height: 100svh; display: flex; align-items: center;
-            padding-top: 100px; padding-bottom: 40px;
-            background: url('https://res.cloudinary.com/dm9mnc97u/image/upload/v1779411862/f1fd62ff-76e8-4512-9471-67cd13701bfe_xx5ffo.png') center/cover no-repeat;
+            min-height: 620px; display: flex; align-items: center;
+            padding-top: 120px; padding-bottom: 60px;
+            /* Posição recuada levemente para a esquerda: 42% center */
+            background: url('https://res.cloudinary.com/dm9mnc97u/image/upload/v1779411862/f1fd62ff-76e8-4512-9471-67cd13701bfe_xx5ffo.png') 42% center / cover no-repeat;
             position: relative;
         }
 
-        /* Overlay Gradiente Escuro (Forte na esquerda para leitura) */
+        /* Overlay Gradiente Escuro (Garante leitura no lado esquerdo) */
         .hero::before {
             content: ''; position: absolute; inset: 0;
-            background: linear-gradient(135deg, var(--navy-deep) 0%, rgba(0,11,31,0.85) 40%, rgba(0,11,31,0.3) 100%);
+            background: linear-gradient(180deg, rgba(0,11,31,0.95) 0%, rgba(0,11,31,0.7) 60%, rgba(0,11,31,0.4) 100%);
             z-index: 1;
         }
 
@@ -301,11 +333,11 @@
         .badge {
             padding: 6px 16px; border-radius: var(--radius-pill); font-size: 0.75rem; font-weight: 600;
             text-transform: uppercase; letter-spacing: 0.05em; color: var(--yellow-soft);
-            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(8px);
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(8px);
         }
 
         .hero-title { font-size: 2.5rem; margin-bottom: 16px; color: var(--white); text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-        .hero-subtitle { font-size: 1.1rem; color: #E2E8F0; margin-bottom: 32px; max-width: 500px; }
+        .hero-subtitle { font-size: 1.1rem; color: #E2E8F0; margin-bottom: 32px; max-width: 500px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
 
         .hero-ctas { display: flex; flex-direction: column; width: 100%; gap: 16px; }
         .hero-ctas .btn { width: 100%; }
@@ -316,11 +348,11 @@
         .roller-wrapper {
             padding: 20px 0; background: rgba(0, 0, 0, 0.2); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);
             overflow: hidden; display: flex; white-space: nowrap; position: relative;
+            width: 100%; max-width: 100vw;
         }
         
-        /* Sombras nas laterais para fade out */
         .roller-wrapper::before, .roller-wrapper::after {
-            content: ''; position: absolute; top: 0; width: 100px; height: 100%; z-index: 2; pointer-events: none;
+            content: ''; position: absolute; top: 0; width: 80px; height: 100%; z-index: 2; pointer-events: none;
         }
         .roller-wrapper::before { left: 0; background: linear-gradient(to right, var(--navy-deep), transparent); }
         .roller-wrapper::after { right: 0; background: linear-gradient(to left, var(--navy-deep), transparent); }
@@ -334,28 +366,29 @@
             font-family: var(--font-title); font-size: 0.95rem; font-weight: 500; color: var(--muted);
         }
 
-        .anim-left { animation: marqueeLeft 30s linear infinite; }
-        .anim-right { animation: marqueeRight 30s linear infinite; }
+        .anim-left { animation: marqueeLeft 35s linear infinite; }
+        .anim-right { animation: marqueeRight 35s linear infinite; }
 
         @keyframes marqueeLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        /* Para mover para a direita de forma fluida, o track inicia já puxado à esquerda (-50%) e vai pra 0 */
         @keyframes marqueeRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
 
         /* ==========================================================================
-           7. FLIP CARDS (CLIQUE/TOQUE)
+           7. FLIP CARDS (CLIQUE/TOQUE) + TEXTURAS
            ========================================================================== */
         .section-sintomas { background: radial-gradient(circle at 100% 100%, rgba(6, 39, 90, 0.3) 0%, transparent 60%); }
 
         .flip-grid { display: grid; grid-template-columns: 1fr; gap: 24px; position: relative; z-index: 2; }
 
         .flip-card {
-            perspective: 1200px; height: 220px; cursor: pointer; border-radius: var(--radius-lg); outline: none;
+            perspective: 1200px; height: 230px; cursor: pointer; border-radius: var(--radius-lg); outline: none;
             -webkit-tap-highlight-color: transparent;
         }
 
         .flip-card:focus-visible .flip-inner { box-shadow: 0 0 0 2px var(--yellow); }
 
         .flip-inner {
-            width: 100%; height: 100%; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            width: 100%; height: 100%; transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
             transform-style: preserve-3d; border-radius: inherit;
         }
 
@@ -369,25 +402,26 @@
 
         .flip-front { background: var(--glass-bg); border: 1px solid var(--glass-border); border-bottom: 3px solid var(--pain-red); }
         .flip-back {
-            background: rgba(49, 196, 141, 0.05); border: 1px solid var(--glass-border); border-bottom: 3px solid var(--solution-green);
+            background: rgba(49, 196, 141, 0.08); border: 1px solid var(--glass-border); border-bottom: 3px solid var(--solution-green);
             transform: rotateY(180deg);
         }
 
         .flip-emoji { font-size: 2.2rem; margin-bottom: 12px; }
         .flip-title { font-size: 1.25rem; color: var(--white); }
         .flip-text { font-size: 0.95rem; color: var(--muted); margin-bottom: 16px; }
-        .flip-cta { font-family: var(--font-title); font-size: 0.85rem; font-weight: 600; color: var(--yellow-soft); text-decoration: underline; }
+        
+        .flip-cta {
+            font-family: var(--font-title); font-size: 0.85rem; font-weight: 600; color: var(--yellow-soft);
+            text-decoration: underline; text-underline-offset: 4px; padding: 8px; z-index: 5; position: relative;
+        }
+
         .flip-hint { position: absolute; bottom: 16px; font-size: 0.75rem; color: rgba(255,255,255,0.4); }
 
         /* ==========================================================================
-           8. ESPECIALISTA
+           8. ESPECIALISTA E CONTADORES
            ========================================================================== */
         .section-especialista { position: relative; }
-        .section-especialista::before {
-            content: ''; position: absolute; left: -10%; top: 20%; width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(244, 197, 66, 0.05) 0%, transparent 70%); pointer-events: none;
-        }
-
+        
         .specialist-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
 
         .spec-image { position: relative; border-radius: var(--radius-lg); overflow: hidden; padding-bottom: 120%; /* Aspect ratio hack para mobile */ }
@@ -402,10 +436,14 @@
         .spec-content h3 { color: var(--yellow-soft); margin-bottom: 24px; font-family: var(--font-body); font-weight: 500; font-size: 1.1rem; }
         .spec-content p { color: var(--muted); margin-bottom: 32px; font-size: 1.05rem; }
 
-        .spec-numbers { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; border-top: 1px solid var(--glass-border); padding-top: 32px; }
+        .spec-numbers { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; border-top: 1px solid var(--glass-border); padding-top: 32px; }
         .num-item h4 { font-size: 2.2rem; color: var(--white); display: flex; align-items: baseline; gap: 2px; }
         .num-item h4 span.glow { color: var(--yellow); }
         .num-item p { font-size: 0.85rem; color: var(--muted); line-height: 1.3; margin-top: 4px; }
+
+        /* Oculta botão CTA no JS para animá-lo depois dos números */
+        .js .spec-cta-hidden { opacity: 0; transform: translateY(10px); transition: all 0.5s ease; }
+        .js .spec-cta-hidden.visible { opacity: 1; transform: translateY(0); }
 
         /* ==========================================================================
            9. QUIZ
@@ -419,12 +457,12 @@
         .quiz-step.active { display: block; }
         
         .quiz-meta { font-family: var(--font-title); color: var(--yellow-soft); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; display: block; }
-        .quiz-question { font-size: 1.5rem; margin-bottom: 32px; }
+        .quiz-question { font-size: 1.4rem; margin-bottom: 32px; }
 
         .quiz-options { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
         .quiz-opt-btn {
             background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 18px 24px;
-            border-radius: var(--radius-sm); color: var(--white); font-family: var(--font-body); font-size: 1.05rem;
+            border-radius: var(--radius-sm); color: var(--white); font-family: var(--font-body); font-size: 1rem;
             text-align: left; cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 12px;
         }
         .quiz-opt-btn:hover { background: var(--glass-hover); border-color: var(--yellow-soft); transform: translateX(4px); }
@@ -434,7 +472,7 @@
         .btn-back:hover { color: var(--white); }
 
         .quiz-result { display: none; animation: fadeUp 0.5s ease forwards; }
-        .quiz-result h3 { font-size: 2rem; margin-bottom: 16px; }
+        .quiz-result h3 { font-size: 1.8rem; margin-bottom: 16px; }
         .quiz-result p { color: var(--muted); margin-bottom: 40px; font-size: 1.1rem; }
         .quiz-result .btn { width: 100%; margin-bottom: 16px; }
 
@@ -462,12 +500,12 @@
         .time-desc { color: var(--muted); font-size: 1rem; }
 
         /* ==========================================================================
-           11. PACIENTES (ROLLER INFINITO)
+           11. PACIENTES (ROLLER INFINITO ESQUERDA-DIREITA)
            ========================================================================== */
         .section-pacientes { padding-bottom: 40px; }
         .patients-track {
             display: flex; gap: 24px; padding: 24px 0; width: max-content;
-            animation: marqueeLeft 45s linear infinite;
+            /* .anim-right aplica marqueeRight, indo de -50% para 0 */
         }
         .roller-wrapper:hover .patients-track { animation-play-state: paused; }
 
@@ -495,7 +533,7 @@
         /* ==========================================================================
            13. OFERTA FINAL & FOOTER
            ========================================================================== */
-        .final-offer { text-align: center; padding: 64px 24px; background: radial-gradient(circle at top, rgba(6, 39, 90, 0.5) 0%, transparent 80%); }
+        .final-offer { text-align: center; padding: 64px 24px; }
         .final-offer h2 { font-size: 2.2rem; margin-bottom: 16px; }
         .final-offer p { color: var(--muted); margin-bottom: 32px; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
         .final-ctas { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
@@ -503,7 +541,7 @@
 
         footer { background: var(--navy-deep); padding: 80px 0 40px; border-top: 1px solid var(--glass-border); }
         .footer-grid { display: grid; grid-template-columns: 1fr; gap: 48px; margin-bottom: 48px; }
-        .footer-brand img { width: 180px; margin-bottom: 16px; }
+        .footer-brand img { width: 160px; margin-bottom: 16px; }
         .footer-brand p { color: var(--muted); font-size: 0.95rem; max-width: 300px; }
         .footer-contact h4 { font-family: var(--font-title); margin-bottom: 16px; font-size: 1.2rem; }
         .footer-contact p { color: var(--muted); margin-bottom: 12px; font-size: 0.95rem; display: flex; flex-direction: column; }
@@ -518,7 +556,12 @@
             :root { --py-section: 100px; }
             .section-header h2 { font-size: 2.8rem; }
             
-            .hero { min-height: 600px; }
+            /* Ajuste do Hero Desktop */
+            .hero { min-height: 680px; }
+            .hero::before {
+                background: linear-gradient(90deg, rgba(0,11,31,0.95) 0%, rgba(0,11,31,0.6) 50%, rgba(0,11,31,0.1) 100%);
+            }
+            .hero-content { max-width: 48%; }
             .hero-title { font-size: 3.5rem; }
             .hero-ctas { flex-direction: row; }
             .hero-ctas .btn { width: auto; }
@@ -544,9 +587,8 @@
         }
 
         @media (min-width: 1024px) {
-            .hero { min-height: 680px; }
-            .hero-content { max-width: 48%; }
             .nav-cta { display: flex; }
+            .nav-logo img { height: 32px; } /* Logo um pouco maior no desktop */
             
             .flip-grid { grid-template-columns: repeat(4, 1fr); }
             
@@ -566,14 +608,15 @@
         </div>
     </div>
 
-    <!-- NAVBAR FLUTUANTE -->
+    <!-- NAVBAR FLUTUANTE (Dynamic Island) -->
     <div class="navbar-wrapper">
         <header class="navbar" id="navbar">
             <a href="#" class="nav-logo" aria-label="Voltar ao início">
-                <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1779643800/a2dd5d2c-4f7d-4657-94fb-efc0c69af070_lmyudu.svg" alt="Dra. Lailla Rettore">
+                <!-- Usando a logo simples conforme solicitação -->
+                <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1779643740/b5027d83-bcd8-4877-bae3-d67ba7953521_uzszdg.svg" alt="Dra. Lailla Rettore" style="width: auto; padding-left: 8px;">
             </a>
             <div class="nav-actions">
-                <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-primary nav-cta">WhatsApp</a>
+                <a href="https://wa.me/5521990368794" target="_blank" class="btn btn-primary nav-cta">WhatsApp</a>
                 <button class="btn-menu" id="menu-open" aria-label="Abrir Menu">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
                 </button>
@@ -585,6 +628,7 @@
     <div class="sidebar-overlay" id="sidebar-overlay"></div>
     <nav class="sidebar" id="sidebar">
         <div class="sidebar-header">
+            <!-- Mantendo a full logo apenas dentro do menu lateral se preferir, ou usar a simples. Usando a full por estética -->
             <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1779643800/a2dd5d2c-4f7d-4657-94fb-efc0c69af070_lmyudu.svg" alt="Logo">
             <button class="btn-close" id="menu-close" aria-label="Fechar Menu">&times;</button>
         </div>
@@ -598,16 +642,16 @@
             <a href="#localizacao" class="menu-link">Localização</a>
         </div>
         <div style="margin-top: auto;">
-            <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-primary" style="width: 100%;">Agendar avaliação</a>
+            <a href="https://wa.me/5521990368794" target="_blank" class="btn btn-primary" style="width: 100%;">Agendar avaliação</a>
         </div>
     </nav>
 
     <!-- BOTÕES FLUTUANTES -->
     <div class="floating-actions">
-        <a href="https://wa.me/5500000000000" class="float-btn" aria-label="Falar no WhatsApp" target="_blank">
+        <a href="https://wa.me/5521990368794" class="float-btn" aria-label="Falar no WhatsApp" target="_blank">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         </a>
-        <a href="https://instagram.com/INSERIR_PERFIL" class="float-btn" aria-label="Acessar Instagram" target="_blank">
+        <a href="https://www.instagram.com/dralailarettore/" class="float-btn" aria-label="Acessar Instagram" target="_blank">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
         </a>
     </div>
@@ -625,7 +669,7 @@
                 <p class="hero-subtitle">Entenda seus sintomas com uma avaliação individualizada e um cuidado pensado para o seu caso.</p>
                 <div class="hero-ctas">
                     <a href="#quiz" class="btn btn-primary">Fazer quiz rápido</a>
-                    <a href="https://wa.me/5500000000000" class="btn btn-secondary" target="_blank">Falar no WhatsApp</a>
+                    <a href="https://wa.me/5521990368794" class="btn btn-secondary" target="_blank">Falar no WhatsApp</a>
                 </div>
             </div>
         </div>
@@ -655,7 +699,7 @@
     </div>
 
     <!-- FLIP CARDS -->
-    <section id="tratamentos" class="section-sintomas">
+    <section id="tratamentos" class="section-sintomas bg-texture-dots">
         <div class="container">
             <div class="section-header reveal">
                 <h2>Entenda os sinais <br><span class="accent">e os caminhos de cuidado</span></h2>
@@ -672,53 +716,54 @@
                         </div>
                         <div class="flip-face flip-back">
                             <div class="flip-emoji" style="font-size:1.8rem;">✅</div>
-                            <div class="flip-text">Avaliação da função mandibular e dos músculos da face.</div>
-                            <a href="https://wa.me/5500000000000?text=Olá,%20quero%20entender%20melhor%20minha%20dor%20ao%20mastigar" class="flip-cta" target="_blank">Conversar sobre esse sintoma</a>
+                            <div class="flip-text">Avaliação da função mandibular, músculos da face e sinais associados.</div>
+                            <!-- O span ajuda a capturar o clique adequadamente pelo JS -->
+                            <a href="https://wa.me/5521990368794?text=Ol%C3%A1%2C%20quero%20entender%20melhor%20minha%20dor%20ao%20mastigar" class="flip-cta js-flip-cta" target="_blank"><span>Conversar sobre esse sintoma</span></a>
                         </div>
                     </div>
                 </div>
 
-                <div class="flip-card" tabindex="0" aria-label="Mandíbula estalando. Toque para virar.">
+                <div class="flip-card" tabindex="0" aria-label="Estalos na ATM. Toque para virar.">
                     <div class="flip-inner glass-panel">
                         <div class="flip-face flip-front">
                             <div class="flip-emoji">⚠️</div>
-                            <div class="flip-title">Mandíbula estalando</div>
+                            <div class="flip-title">Estalos na ATM</div>
                             <div class="flip-hint">Toque para ver</div>
                         </div>
                         <div class="flip-face flip-back">
                             <div class="flip-emoji" style="font-size:1.8rem;">🌿</div>
-                            <div class="flip-text">Investigação da ATM e dos padrões de movimento.</div>
-                            <a href="https://wa.me/5500000000000?text=Olá,%20quero%20entender%20melhor%20os%20estalos%20na%20minha%20mandíbula" class="flip-cta" target="_blank">Conversar sobre esse sintoma</a>
+                            <div class="flip-text">Investigação dos movimentos mandibulares e possíveis sobrecargas articulares.</div>
+                            <a href="https://wa.me/5521990368794?text=Ol%C3%A1%2C%20quero%20entender%20melhor%20os%20estalos%20na%20minha%20mand%C3%ADbula" class="flip-cta js-flip-cta" target="_blank"><span>Conversar sobre esse sintoma</span></a>
                         </div>
                     </div>
                 </div>
 
-                <div class="flip-card" tabindex="0" aria-label="Apertamento dental. Toque para virar.">
+                <div class="flip-card" tabindex="0" aria-label="Bruxismo ou apertamento. Toque para virar.">
                     <div class="flip-inner glass-panel">
                         <div class="flip-face flip-front">
                             <div class="flip-emoji">🔴</div>
-                            <div class="flip-title">Apertamento dental</div>
+                            <div class="flip-title">Bruxismo ou apertamento</div>
                             <div class="flip-hint">Toque para ver</div>
                         </div>
                         <div class="flip-face flip-back">
                             <div class="flip-emoji" style="font-size:1.8rem;">✅</div>
-                            <div class="flip-text">Plano para reduzir sobrecarga e proteger estruturas dentais.</div>
-                            <a href="https://wa.me/5500000000000?text=Olá,%20quero%20entender%20melhor%20meu%20apertamento%20dental" class="flip-cta" target="_blank">Conversar sobre esse sintoma</a>
+                            <div class="flip-text">Plano individualizado para reduzir sobrecargas e proteger dentes e musculatura.</div>
+                            <a href="https://wa.me/5521990368794?text=Ol%C3%A1%2C%20quero%20entender%20melhor%20meu%20apertamento%20dental" class="flip-cta js-flip-cta" target="_blank"><span>Conversar sobre esse sintoma</span></a>
                         </div>
                     </div>
                 </div>
 
-                <div class="flip-card" tabindex="0" aria-label="Dor de cabeça frequente. Toque para virar.">
+                <div class="flip-card" tabindex="0" aria-label="Dor facial ou dor de cabeça. Toque para virar.">
                     <div class="flip-inner glass-panel">
                         <div class="flip-face flip-front">
                             <div class="flip-emoji">😣</div>
-                            <div class="flip-title">Dor de cabeça frequente</div>
+                            <div class="flip-title">Dor facial ou de cabeça</div>
                             <div class="flip-hint">Toque para ver</div>
                         </div>
                         <div class="flip-face flip-back">
                             <div class="flip-emoji" style="font-size:1.8rem;">🌿</div>
-                            <div class="flip-text">Análise da relação com tensão muscular e hábitos funcionais.</div>
-                            <a href="https://wa.me/5500000000000?text=Olá,%20quero%20entender%20melhor%20minhas%20dores%20de%20cabeça" class="flip-cta" target="_blank">Conversar sobre esse sintoma</a>
+                            <div class="flip-text">Análise da relação entre tensão muscular, hábitos e função mandibular.</div>
+                            <a href="https://wa.me/5521990368794?text=Ol%C3%A1%2C%20quero%20entender%20melhor%20minhas%20dores%20de%20cabe%C3%A7a" class="flip-cta js-flip-cta" target="_blank"><span>Conversar sobre esse sintoma</span></a>
                         </div>
                     </div>
                 </div>
@@ -729,7 +774,7 @@
     <div class="decorator-line reveal"></div>
 
     <!-- ESPECIALISTA -->
-    <section id="especialista" class="section-especialista">
+    <section id="especialista" class="section-especialista bg-texture-glow">
         <div class="container specialist-grid">
             <div class="spec-image reveal">
                 <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1779583902/221d85fa-ac4d-440d-b1c4-fce0b1ad9d60_knygbq.png" alt="Dra. Lailla Rettore" loading="lazy">
@@ -740,25 +785,26 @@
                 <p>Cirurgiã-dentista com atuação em DTM, bruxismo, ATM e dor orofacial, unindo escuta cuidadosa, avaliação técnica e planejamento individualizado.</p>
                 
                 <div class="spec-numbers" id="counter-section">
+                    <!-- Textos preenchidos para Fallback (Se o JS falhar, o número correto aparece) -->
                     <div class="num-item">
-                        <h4><span class="glow">+</span><span class="count" data-target="10">0</span></h4>
+                        <h4><span class="glow">+</span><span class="count" data-target="10">10</span></h4>
                         <p>anos de experiência</p>
                     </div>
                     <div class="num-item">
-                        <h4><span class="glow">+</span><span class="count" data-target="1500">0</span></h4>
+                        <h4><span class="glow">+</span><span class="count" data-target="1500">1500</span></h4>
                         <p>pacientes atendidos</p>
                     </div>
                     <div class="num-item">
-                        <h4><span class="glow">+</span><span class="count" data-target="4">0</span></h4>
+                        <h4><span class="glow">+</span><span class="count" data-target="4">4</span></h4>
                         <p>áreas de foco clínico</p>
                     </div>
                     <div class="num-item">
-                        <h4><span class="count" data-target="100">0</span><span class="glow">%</span></h4>
+                        <h4><span class="count" data-target="100">100</span><span class="glow">%</span></h4>
                         <p>planejamento individualizado</p>
                     </div>
                 </div>
 
-                <a href="https://wa.me/5500000000000" class="btn btn-primary" target="_blank" style="align-self: flex-start;">Falar com a Dra. Lailla</a>
+                <a href="https://wa.me/5521990368794" class="btn btn-primary spec-cta-hidden" id="spec-cta" target="_blank" style="align-self: flex-start;">Falar com a Dra. Lailla</a>
             </div>
         </div>
     </section>
@@ -785,7 +831,7 @@
     </div>
 
     <!-- QUIZ -->
-    <section id="quiz">
+    <section id="quiz" class="bg-texture-dots">
         <div class="container">
             <div class="section-header reveal">
                 <h2>Quiz rápido: <span class="accent">seus sintomas</span> podem estar ligados à DTM?</h2>
@@ -808,7 +854,7 @@
                 <div class="quiz-result" id="quiz-result">
                     <h3 id="result-title" class="font-title">Resultado</h3>
                     <p id="result-desc"></p>
-                    <a href="https://wa.me/5500000000000" class="btn btn-primary" target="_blank">Agendar avaliação</a>
+                    <a href="https://wa.me/5521990368794?text=Ol%C3%A1%2C%20fiz%20o%20quiz%20e%20quero%20entender%20meu%20resultado" class="btn btn-primary" target="_blank">Falar com especialista no WhatsApp</a>
                     <button class="btn btn-secondary" onclick="initQuiz()">Refazer Quiz</button>
                 </div>
             </div>
@@ -857,6 +903,10 @@
                     <p class="time-desc">Ajustes, orientações contínuas e evolução do tratamento quando indicado.</p>
                 </div>
             </div>
+
+            <div style="text-align: center; margin-top: 48px;" class="reveal">
+                <a href="https://wa.me/5521990368794" class="btn btn-primary" target="_blank">Agendar avaliação pelo WhatsApp</a>
+            </div>
         </div>
     </section>
 
@@ -879,8 +929,8 @@
         </div>
     </div>
 
-    <!-- PACIENTES (ROLLER INFINITO) -->
-    <section id="pacientes" class="section-pacientes">
+    <!-- PACIENTES (ROLLER INFINITO ESQUERDA-DIREITA) -->
+    <section id="pacientes" class="section-pacientes bg-texture-glow">
         <div class="container">
             <div class="section-header reveal">
                 <h2>O que os pacientes <span class="accent">relatam</span></h2>
@@ -889,7 +939,8 @@
         </div>
 
         <div class="roller-wrapper reveal reveal-delay-1" style="background: transparent; border: none; padding: 0;">
-            <div class="patients-track">
+            <!-- Direção esquerda pra direita configurada no CSS usando marqueeRight anim-right -->
+            <div class="patients-track anim-right">
                 <!-- Cards -->
                 <div class="patient-card glass-panel">
                     <div class="patient-header">
@@ -936,7 +987,7 @@
                     <p class="patient-text">"Senti que o plano foi pensado de forma individualizada."</p>
                 </div>
 
-                <!-- Loop (Duplicados) -->
+                <!-- Loop (Duplicados com aria-hidden) -->
                 <div class="patient-card glass-panel" aria-hidden="true">
                     <div class="patient-header">
                         <div class="patient-name">Mariana S.</div>
@@ -968,7 +1019,7 @@
 
         <div class="patients-cta reveal">
             <p style="font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-bottom: 16px;">Depoimentos ilustrativos para demonstração.</p>
-            <a href="https://wa.me/5500000000000" class="btn btn-primary" target="_blank">Falar com especialista</a>
+            <a href="https://wa.me/5521990368794" class="btn btn-primary" target="_blank">Falar com especialista</a>
         </div>
     </section>
 
@@ -995,13 +1046,13 @@
     </section>
 
     <!-- OFERTA FINAL -->
-    <section class="reveal">
+    <section class="reveal bg-texture-glow">
         <div class="container">
             <div class="final-offer glass-panel">
                 <h2>Dê o primeiro passo para <span class="accent">entender a origem</span> da sua dor</h2>
                 <p>Agende uma avaliação individualizada e receba orientação sobre os caminhos de cuidado para o seu caso.</p>
                 <div class="final-ctas">
-                    <a href="https://wa.me/5500000000000" class="btn btn-primary" target="_blank">Falar no WhatsApp</a>
+                    <a href="https://wa.me/5521990368794" class="btn btn-primary btn-pulse" target="_blank">Falar no WhatsApp</a>
                     <a href="#quiz" class="btn btn-secondary">Fazer quiz rápido</a>
                 </div>
                 <p class="final-note">O tratamento indicado depende de avaliação profissional individualizada.</p>
@@ -1042,19 +1093,22 @@
                 </div>
                 <div class="footer-contact">
                     <h4>Contato e Informações</h4>
-                    <p><span>CRO:</span> [Inserir Número]</p>
-                    <p><span>WhatsApp:</span> <a href="https://wa.me/5500000000000" target="_blank">[Inserir Número]</a></p>
-                    <p><span>Instagram:</span> <a href="https://instagram.com/INSERIR_PERFIL" target="_blank">@INSERIR_PERFIL</a></p>
+                    <p><span>CRO:</span> CRO 32142</p>
+                    <p><span>WhatsApp:</span> <a href="https://wa.me/5521990368794" target="_blank">(21) 99036-8794</a></p>
+                    <p><span>Instagram:</span> <a href="https://www.instagram.com/dralailarettore/" target="_blank">@dralailarettore</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>As informações desta página não substituem uma avaliação odontológica individualizada. Todos os direitos reservados © 2024 Dra. Lailla Rettore.</p>
+                <p>As informações desta página não substituem uma avaliação odontológica individualizada. Todos os direitos reservados © <span id="current-year">2026</span> Dra. Lailla Rettore.</p>
             </div>
         </div>
     </footer>
 
     <!-- JAVASCRIPT NATIVO -->
     <script>
+        // Setar Ano no Footer
+        document.getElementById('current-year').innerText = new Date().getFullYear() || 2026;
+
         // 1. PRELOADER
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
@@ -1062,7 +1116,7 @@
                 preloader.classList.add('hide');
                 document.body.classList.remove('no-scroll');
                 setTimeout(() => preloader.style.display = 'none', 800);
-            }, 600); // tempo mínimo de visualização
+            }, 600);
         });
 
         // 2. NAVBAR SCROLL EFFECT
@@ -1071,11 +1125,10 @@
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > 80) {
-                // Esconde a navbar ao rolar para baixo, mostra ao rolar para cima
                 if (window.scrollY > lastScrollY) {
-                    navbarWrapper.style.top = '-100px';
+                    navbarWrapper.style.top = '-100px'; // Oculta ao rolar pra baixo
                 } else {
-                    navbarWrapper.style.top = '16px';
+                    navbarWrapper.style.top = '16px'; // Mostra ao rolar pra cima
                 }
             } else {
                 navbarWrapper.style.top = '16px';
@@ -1121,13 +1174,17 @@
         // 5. ANIMATED COUNTERS
         const counterSection = document.getElementById('counter-section');
         const counters = document.querySelectorAll('.count');
+        const specCta = document.getElementById('spec-cta');
         let hasCounted = false;
 
         const countObserver = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting && !hasCounted && !prefersReducedMotion) {
                 hasCounted = true;
+                
+                // Zera os contadores apenas antes da animação iniciar (mantém os do HTML para fallback)
                 counters.forEach(counter => {
                     const target = +counter.getAttribute('data-target');
+                    counter.innerText = '0';
                     const duration = 2000;
                     const increment = target / (duration / 16);
                     
@@ -1143,8 +1200,14 @@
                     };
                     updateCounter();
                 });
+                
+                // Exibe o botão da especialista após a animação dos números
+                setTimeout(() => {
+                    if (specCta) specCta.classList.add('visible');
+                }, 2200);
+
             } else if (entries[0].isIntersecting && prefersReducedMotion) {
-                counters.forEach(counter => counter.innerText = counter.getAttribute('data-target'));
+                if (specCta) specCta.classList.add('visible');
             }
         }, { threshold: 0.5 });
         
@@ -1154,10 +1217,11 @@
         const flipCards = document.querySelectorAll('.flip-card');
         flipCards.forEach(card => {
             const toggleFlip = (e) => {
+                // Impede que o card vire se o clique/tecla for dentro de um link (<a>)
+                if (e.target.closest('a')) return;
+                
                 if (e.type === 'click' || (e.type === 'keydown' && (e.key === 'Enter' || e.key === ' '))) {
                     e.preventDefault();
-                    // Fecha os outros se quiser (opcional)
-                    // flipCards.forEach(c => { if(c !== card) c.classList.remove('is-flipped'); });
                     card.classList.toggle('is-flipped');
                 }
             };
@@ -1197,11 +1261,11 @@
 
         // 8. QUIZ LOGIC
         const questions = [
-            "Você sente dor ou cansaço na mandíbula?",
-            "Sua mandíbula estala ou trava?",
-            "Você acorda com tensão no rosto ou nos dentes?",
-            "Você sente dor de cabeça com frequência?",
-            "Já percebeu desgaste ou sensibilidade nos dentes?"
+            "Você sente dor ou cansaço na mandíbula ao longo do dia?",
+            "Sua mandíbula estala, trava ou desvia ao abrir a boca?",
+            "Você acorda com dentes doloridos, rosto tenso ou sensação de apertamento?",
+            "Você sente dor de cabeça, dor facial ou tensão no pescoço com frequência?",
+            "Já percebeu desgaste nos dentes, sensibilidade ou dificuldade para mastigar?"
         ];
         
         const options = [
@@ -1279,15 +1343,15 @@
             if (totalScore <= 3) {
                 resultTitle.innerText = "Sinais Leves";
                 resultTitle.style.color = "var(--solution-green)";
-                resultDesc.innerText = "Baixa frequência de sinais. Observe a evolução dos sintomas. Manter hábitos saudáveis é fundamental.";
+                resultDesc.innerText = "Seus sinais aparecem com baixa frequência. Observe a evolução e procure avaliação se houver piora.";
             } else if (totalScore <= 7) {
                 resultTitle.innerText = "Sinais Moderados";
                 resultTitle.style.color = "var(--yellow-soft)";
-                resultDesc.innerText = "Sinais moderados. Uma avaliação profissional pode ajudar a entender a origem e prevenir sobrecargas futuras.";
+                resultDesc.innerText = "Seus sinais merecem atenção. Uma avaliação pode ajudar a entender a origem dos sintomas.";
             } else {
                 resultTitle.innerText = "Sinais Frequentes";
                 resultTitle.style.color = "var(--pain-red)";
-                resultDesc.innerText = "Sinais frequentes. Recomendamos buscar uma avaliação especializada para um diagnóstico funcional e controle da dor.";
+                resultDesc.innerText = "Seus sinais aparecem com frequência. Vale conversar com uma especialista para avaliar seu caso.";
             }
         }
 
