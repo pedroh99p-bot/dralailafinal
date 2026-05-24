@@ -22,8 +22,8 @@
   .nav-actions {
     position: absolute;
     top: 50%;
-    right: auto;
-    left: 4.35rem;
+    right: 0.5rem;
+    left: auto;
     margin-left: auto;
     flex: 0 0 auto;
     gap: 0.4rem;
@@ -96,6 +96,34 @@
 
   .flip-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+  }
+
+  .flip-card {
+    min-height: 270px;
+  }
+
+  .flip-card__face {
+    padding: var(--space-8) var(--space-5);
+  }
+
+  .flip-card__icon {
+    margin-bottom: var(--space-4);
+    font-size: 2.15rem;
+  }
+
+  .flip-card h3 {
+    font-size: clamp(1.25rem, 5vw, 1.6rem);
+  }
+
+  .flip-card p {
+    font-size: 0.96rem;
+    line-height: 1.6;
+  }
+
+  .flip-card__cta {
+    padding: 0.65rem 1rem;
+    font-size: 0.86rem;
   }
 
   .quiz-options {

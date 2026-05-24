@@ -5,7 +5,7 @@ export function Footer() {
     <footer class="footer">
       <div class="container footer__grid">
         <div class="footer__brand">
-          <img src="${assets.logos.full}" width="220" height="76" alt="${contact.name}" loading="lazy" />
+          <img src="${assets.logos.simple}" width="82" height="82" alt="${contact.name}" loading="lazy" />
           <p>Odontologia com diagnóstico, precisão e cuidado humano.</p>
         </div>
         <address class="footer__contact">
@@ -36,6 +36,15 @@ export function Footer() {
           As informações desta página não substituem uma avaliação odontológica individualizada.
           Todos os direitos reservados © <span id="current-year">2026</span> ${contact.name}.
         </p>
+        <a
+          href="https://www.instagram.com/montanatechlab/"
+          target="_blank"
+          rel="noopener"
+          class="footer__signature"
+          aria-label="Produzido por MONTANA no Instagram"
+        >
+          produzido por <strong>MONTANA</strong>
+        </a>
       </div>
     </footer>
   `;

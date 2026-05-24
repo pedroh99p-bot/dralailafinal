@@ -1,5 +1,5 @@
 export const contact = {
-  name: 'Dra. Lailla Rettore',
+  name: 'Dra. Laila Rettore',
   cro: 'CRO 32142',
   whatsappNumber: '5521990368794',
   whatsappVisible: '(21) 99036-8794',
@@ -15,7 +15,7 @@ export const assets = {
   },
   images: {
     hero: '/assets/images/hero.png',
-    specialist: '/assets/images/dra-lailla.png',
+    specialist: '/assets/images/dra-laila.png',
   },
   icons: {
     whatsapp: '/assets/icons/whatsapp.svg',

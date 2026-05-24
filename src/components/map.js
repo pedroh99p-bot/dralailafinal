@@ -26,7 +26,7 @@ export function MapSection() {
           <div class="map-card__embed">
             <iframe
               src="${location.iframeUrl}"
-              title="Mapa de localização da Dra. Lailla Rettore"
+              title="Mapa de localização da Dra. Laila Rettore"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               allowfullscreen

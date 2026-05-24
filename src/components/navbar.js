@@ -52,7 +52,7 @@ export function Navbar() {
     <div class="menu-overlay" id="menu-overlay" hidden></div>
     <nav class="site-menu" id="site-menu" aria-label="Menu principal" aria-hidden="true" hidden>
       <div class="site-menu__header">
-        <img src="${assets.logos.full}" width="210" height="72" alt="${contact.name}" />
+        <img src="${assets.logos.simple}" width="82" height="82" alt="${contact.name}" />
         <button class="btn-icon" id="menu-close" type="button" aria-label="Fechar menu">
           ${closeIcon}
         </button>

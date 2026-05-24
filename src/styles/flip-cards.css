@@ -1,11 +1,11 @@
 .flip-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
 }
 
 .flip-card {
-  min-height: 270px;
+  min-height: 238px;
   perspective: 1100px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -32,7 +32,7 @@
   justify-content: center;
   border: 1px solid var(--glass-border);
   border-radius: inherit;
-  padding: var(--space-8) var(--space-5);
+  padding: var(--space-5) var(--space-3);
   background: var(--glass-bg);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
   text-align: center;
@@ -54,8 +54,8 @@
 }
 
 .flip-card__icon {
-  margin-bottom: var(--space-4);
-  font-size: 2.15rem;
+  margin-bottom: var(--space-3);
+  font-size: 1.65rem;
   line-height: 1;
 }
 
@@ -73,11 +73,13 @@
 
 .flip-card h3 {
   max-width: 12ch;
+  font-size: clamp(0.95rem, 4.4vw, 1.12rem);
 }
 
 .flip-card p {
   color: var(--color-muted-strong);
-  font-size: 0.96rem;
+  font-size: 0.82rem;
+  line-height: 1.35;
 }
 
 .flip-card__hint {
@@ -93,11 +95,11 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-pill);
-  padding: 0.65rem 1rem;
+  padding: 0.58rem 0.72rem;
   background: var(--color-yellow);
   color: var(--color-navy-950);
   font-family: var(--font-title);
-  font-size: 0.86rem;
+  font-size: 0.72rem;
   font-weight: 700;
   transition:
     transform var(--duration-base) var(--ease-out),

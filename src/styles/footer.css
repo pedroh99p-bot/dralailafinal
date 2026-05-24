@@ -11,7 +11,7 @@
 }
 
 .footer__brand img {
-  width: min(58vw, 220px);
+  width: min(22vw, 82px);
   height: auto;
   margin-bottom: var(--space-4);
 }
@@ -43,6 +43,10 @@
 }
 
 .footer__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
   margin-top: var(--space-10);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: var(--space-6);
@@ -52,4 +56,21 @@
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.84rem;
   text-align: center;
+}
+
+.footer__signature {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color var(--duration-base) var(--ease-out);
+}
+
+.footer__signature strong {
+  color: var(--color-yellow-soft);
+  font-family: var(--font-title);
+}
+
+.footer__signature:hover {
+  color: var(--color-cream);
 }

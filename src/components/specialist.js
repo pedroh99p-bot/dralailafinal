@@ -37,7 +37,7 @@ export function Specialist() {
             data-track="whatsapp_click"
             data-track-source="specialist"
           >
-            Falar com a Dra. Lailla
+            Falar com a Dra. Laila
           </a>
         </div>
       </div>

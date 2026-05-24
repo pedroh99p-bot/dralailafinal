@@ -1,4 +1,4 @@
-# Dra. Lailla Rettore Landing Page
+# Dra. Laila Rettore Landing Page
 
 Landing page estática em Vite, HTML/CSS/JS puro, para atendimento com foco em DTM, bruxismo, ATM e dor orofacial.
 
@@ -73,7 +73,7 @@ Os assets fornecidos foram copiados para `public/assets`:
 - `public/assets/logos/logo-simple.svg`
 - `public/assets/logos/logo-full.svg`
 - `public/assets/images/hero.png`
-- `public/assets/images/dra-lailla.png`
+- `public/assets/images/dra-laila.png`
 
 Para trocar imagens ou logos, mantenha os mesmos caminhos ou atualize `src/data/site-data.js`.
 
