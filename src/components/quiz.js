@@ -1,3 +1,5 @@
+import { whatsappHref } from '../data/site-data.js';
+
 export function Quiz() {
   return `
     <section id="quiz" class="section quiz section-texture section-texture--lines">
@@ -32,6 +34,20 @@ export function Quiz() {
               <button class="btn btn-secondary" id="btn-quiz-reset" type="button">Refazer quiz</button>
             </div>
           </div>
+        </div>
+
+        <div class="quiz-direct-cta reveal">
+          <p class="quiz-direct-cta__text">Prefere atendimento direto? Fale com a especialista</p>
+          <a
+            href="${whatsappHref('generic')}"
+            class="btn btn-secondary quiz-direct-cta__button"
+            target="_blank"
+            rel="noopener"
+            data-track="whatsapp_click"
+            data-track-source="quiz-direct"
+          >
+            Chamar no WhatsApp
+          </a>
         </div>
       </div>
     </section>

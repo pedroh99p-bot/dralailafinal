@@ -19,7 +19,7 @@ export function initReveal() {
         currentObserver.unobserve(entry.target);
       });
     },
-    { threshold: 0.12, rootMargin: '0px 0px -42px 0px' },
+    { threshold: 0.02, rootMargin: '0px 0px -20px 0px' },
   );
 
   elements.forEach((element) => observer.observe(element));

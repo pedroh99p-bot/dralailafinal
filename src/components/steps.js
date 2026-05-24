@@ -28,7 +28,7 @@ export function Steps() {
         </div>
         <div class="steps__cta reveal">
           <a
-            href="${whatsappHref()}"
+            href="${whatsappHref('generic')}"
             class="btn btn-primary"
             target="_blank"
             rel="noopener"

@@ -41,4 +41,4 @@ export const quizResults = [
   },
 ];
 
-export const quizCtaHref = whatsappHref(whatsappMessages.quiz);
+export const quizCtaHref = whatsappHref('quiz_result');

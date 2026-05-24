@@ -140,7 +140,7 @@
 }
 
 .site-menu__header img {
-  width: min(62vw, 220px);
+  width: 100px;
   height: auto;
 }
 

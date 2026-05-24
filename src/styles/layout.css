@@ -103,6 +103,23 @@
   background: var(--glass-bg-strong);
 }
 
+.btn-success {
+  background: #25D366;
+  color: #000b1f;
+  box-shadow: 0 10px 32px rgba(37, 211, 102, 0.28);
+}
+
+.btn-success:hover {
+  background: #20ba5a;
+  box-shadow: 0 16px 44px rgba(37, 211, 102, 0.4);
+}
+
+.btn-icon-img {
+  margin-right: var(--space-2);
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .btn-icon {
   display: inline-grid;
   width: 44px;

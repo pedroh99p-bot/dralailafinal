@@ -16,7 +16,7 @@ export function FinalOffer() {
           </p>
           <div class="final-offer__ctas">
             <a
-              href="${whatsappHref()}"
+              href="${whatsappHref('final_offer')}"
               class="btn btn-primary btn-pulse"
               target="_blank"
               rel="noopener"

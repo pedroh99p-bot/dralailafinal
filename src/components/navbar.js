@@ -33,7 +33,7 @@ export function Navbar() {
         </a>
         <div class="nav-actions">
           <a
-            href="${whatsappHref()}"
+            href="${whatsappHref('generic')}"
             class="btn btn-primary nav-cta"
             target="_blank"
             rel="noopener"
@@ -52,7 +52,7 @@ export function Navbar() {
     <div class="menu-overlay" id="menu-overlay" hidden></div>
     <nav class="site-menu" id="site-menu" aria-label="Menu principal" aria-hidden="true" hidden>
       <div class="site-menu__header">
-        <img src="${assets.logos.simple}" width="82" height="82" alt="${contact.name}" />
+        <img src="${assets.logos.simple}" width="54" height="54" alt="${contact.name}" class="site-menu__logo" />
         <button class="btn-icon" id="menu-close" type="button" aria-label="Fechar menu">
           ${closeIcon}
         </button>
@@ -61,7 +61,7 @@ export function Navbar() {
         ${links}
       </div>
       <a
-        href="${whatsappHref()}"
+        href="${whatsappHref('generic')}"
         class="btn btn-primary site-menu__cta"
         target="_blank"
         rel="noopener"
@@ -74,7 +74,7 @@ export function Navbar() {
 
     <div class="floating-actions" aria-label="Ações rápidas">
       <a
-        href="${whatsappHref()}"
+        href="${whatsappHref('generic')}"
         class="float-btn"
         aria-label="Falar no WhatsApp"
         target="_blank"

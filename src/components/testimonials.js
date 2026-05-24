@@ -37,7 +37,7 @@ export function Testimonials() {
       <div class="container testimonials__cta reveal">
         <p>Depoimentos ilustrativos para demonstração.</p>
         <a
-          href="${whatsappHref()}"
+          href="${whatsappHref('generic')}"
           class="btn btn-primary"
           target="_blank"
           rel="noopener"

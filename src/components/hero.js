@@ -1,4 +1,4 @@
-import { contact, whatsappHref } from '../data/site-data.js';
+import { assets, contact, whatsappHref } from '../data/site-data.js';
 
 export function Hero() {
   return `
@@ -16,18 +16,19 @@ export function Hero() {
             para o seu caso com a ${contact.name}.
           </p>
           <div class="hero__ctas">
-            <a href="#quiz" class="btn btn-primary" data-track="quiz_cta_click" data-track-source="hero">
+            <a href="#quiz" class="btn btn-secondary" data-track="quiz_cta_click" data-track-source="hero">
               Fazer quiz rápido
             </a>
             <a
-              href="${whatsappHref()}"
-              class="btn btn-secondary"
+              href="${whatsappHref('hero_attendance')}"
+              class="btn btn-success"
               target="_blank"
               rel="noopener"
               data-track="whatsapp_click"
               data-track-source="hero"
             >
-              Falar no WhatsApp
+              <img src="${assets.icons.whatsapp}" width="20" height="20" alt="" class="btn-icon-img" />
+              Atendimento no WhatsApp
             </a>
           </div>
         </div>

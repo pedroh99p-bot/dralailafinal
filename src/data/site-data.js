@@ -46,9 +46,12 @@ export const location = {
 };
 
 export const whatsappMessages = {
-  default: '',
-  symptoms: 'Olá, quero entender melhor meus sintomas',
-  quiz: 'Olá, fiz o quiz e quero entender meu resultado',
+  hero_attendance: 'Olá, vim pelo site e gostaria de agendar uma avaliação com a Dra. Lailla',
+  quiz_result: 'Olá, fiz o quiz no site e quero entender melhor meu resultado',
+  flip_cards: 'Olá, quero entender melhor meus sintomas de DTM ou bruxismo',
+  specialist: 'Olá, gostaria de falar com a Dra. Laila sobre meus sintomas',
+  final_offer: 'Olá, quero dar o primeiro passo para entender a origem da minha dor',
+  generic: 'Olá, vim pelo site da Dra. Laila e gostaria de atendimento',
 };
 
 export const rollers = [
@@ -133,7 +136,7 @@ export const careSteps = [
   },
 ];
 
-export function whatsappHref(message = '') {
-  if (!message) return contact.whatsappUrl;
+export function whatsappHref(keyOrText = '') {
+  const message = whatsappMessages[keyOrText] || keyOrText || whatsappMessages.generic;
   return `${contact.whatsappUrl}?text=${encodeURIComponent(message)}`;
 }
