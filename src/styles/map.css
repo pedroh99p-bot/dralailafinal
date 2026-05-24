@@ -1,0 +1,48 @@
+.map-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-panel);
+  background: var(--glass-bg);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(18px);
+}
+
+.map-card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(1.5rem, 6vw, 3.25rem);
+}
+
+.map-card h2 {
+  margin-bottom: var(--space-3);
+  font-size: clamp(1.7rem, 8vw, 2.55rem);
+}
+
+.map-card p {
+  margin-bottom: var(--space-3);
+  color: var(--color-muted-strong);
+}
+
+.map-card__rating span {
+  color: var(--color-yellow);
+}
+
+.map-card strong {
+  margin: var(--space-3) 0 var(--space-6);
+  color: var(--color-cream);
+}
+
+.map-card__embed {
+  min-height: 320px;
+  background: var(--color-navy-800);
+}
+
+.map-card__embed iframe {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  filter: grayscale(80%) invert(88%) contrast(1.08);
+}

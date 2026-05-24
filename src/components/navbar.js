@@ -1,0 +1,100 @@
+import { assets, contact, navLinks, whatsappHref } from '../data/site-data.js';
+
+const menuIcon = `
+  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+    <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+  </svg>
+`;
+
+const closeIcon = `
+  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+    <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+  </svg>
+`;
+
+export function Navbar() {
+  const links = navLinks
+    .map((item) => `<a href="${item.href}" class="menu-link">${item.label}</a>`)
+    .join('');
+
+  return `
+    <div id="preloader" aria-hidden="true">
+      <div class="preloader-content">
+        <img src="${assets.logos.simple}" width="72" height="72" alt="" class="preloader-logo" />
+        <p class="preloader-copy">Cuidado especializado em DTM, bruxismo e dor orofacial.</p>
+        <div class="loader-bar"></div>
+      </div>
+    </div>
+
+    <div class="navbar-shell">
+      <header class="navbar" id="navbar">
+        <a href="#inicio" class="nav-logo" aria-label="Voltar ao início">
+          <img src="${assets.logos.simple}" width="150" height="48" alt="${contact.name}" />
+        </a>
+        <div class="nav-actions">
+          <a
+            href="${whatsappHref()}"
+            class="btn btn-primary nav-cta"
+            target="_blank"
+            rel="noopener"
+            data-track="whatsapp_click"
+            data-track-source="navbar"
+          >
+            WhatsApp
+          </a>
+          <button class="btn-menu" id="menu-open" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-menu">
+            ${menuIcon}
+          </button>
+        </div>
+      </header>
+    </div>
+
+    <div class="menu-overlay" id="menu-overlay" hidden></div>
+    <nav class="site-menu" id="site-menu" aria-label="Menu principal" aria-hidden="true" hidden>
+      <div class="site-menu__header">
+        <img src="${assets.logos.full}" width="210" height="72" alt="${contact.name}" />
+        <button class="btn-icon" id="menu-close" type="button" aria-label="Fechar menu">
+          ${closeIcon}
+        </button>
+      </div>
+      <div class="site-menu__links">
+        ${links}
+      </div>
+      <a
+        href="${whatsappHref()}"
+        class="btn btn-primary site-menu__cta"
+        target="_blank"
+        rel="noopener"
+        data-track="whatsapp_click"
+        data-track-source="menu"
+      >
+        Agendar avaliação
+      </a>
+    </nav>
+
+    <div class="floating-actions" aria-label="Ações rápidas">
+      <a
+        href="${whatsappHref()}"
+        class="float-btn"
+        aria-label="Falar no WhatsApp"
+        target="_blank"
+        rel="noopener"
+        data-track="whatsapp_click"
+        data-track-source="floating"
+      >
+        <img src="${assets.icons.whatsapp}" width="26" height="26" alt="" />
+      </a>
+      <a
+        href="${contact.instagramUrl}"
+        class="float-btn"
+        aria-label="Acessar Instagram"
+        target="_blank"
+        rel="noopener"
+        data-track="instagram_click"
+        data-track-source="floating"
+      >
+        <img src="${assets.icons.instagram}" width="26" height="26" alt="" />
+      </a>
+    </div>
+  `;
+}
