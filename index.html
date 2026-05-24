@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Lailla Rettore | Especialista em DTM e Bruxismo</title>
+    <meta name="description" content="Tratamento especializado para dor na mandíbula, bruxismo e DTM no Rio de Janeiro. Agende sua avaliação individualizada.">
+
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           1. VARIÁVEIS & SETUP (MOBILE-FIRST)
+           ========================================================================== */
+        :root {
+            /* Cores */
+            --navy-main: #001840;
+            --navy-deep: #000B1F;
+            --navy-soft: #06275A;
+            --yellow: #F8B008;
+            --yellow-soft: #F4C542;
+            --pain-red: #E84B4B;
+            --solution-green: #31C48D;
+            --white: #F7F4EA;
+            --muted: #B9C3CF;
+            
+            /* Glassmorphism */
+            --glass-bg: rgba(255, 255, 255, 0.04);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-hover: rgba(255, 255, 255, 0.08);
+
+            /* Tipografia */
+            --font-title: 'Bricolage Grotesque', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+            --font-accent: 'Instrument Serif', serif;
+
+            /* Utilities */
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 32px;
+            --radius-pill: 100px;
+            --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --glow-yellow: 0 4px 24px rgba(248, 176, 8, 0.25);
+            --glow-yellow-hover: 0 8px 32px rgba(248, 176, 8, 0.4);
+            
+            /* Espaçamentos */
+            --px: 24px;
+            --py-section: 80px;
+        }
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--navy-deep);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Textura Global Base */
+        body::before {
+            content: ''; position: fixed; inset: 0;
+            background-image: radial-gradient(circle at 50% 0%, rgba(6, 39, 90, 0.4) 0%, transparent 70%);
+            z-index: -2; pointer-events: none;
+        }
+
+        body.no-scroll { overflow: hidden; }
+
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+        ul, ol { list-style: none; }
+        button { font-family: inherit; }
+
+        .container {
+            width: 100%; max-width: 1200px;
+            margin: 0 auto; padding: 0 var(--px);
+        }
+
+        section { padding: var(--py-section) 0; position: relative; }
+
+        /* Títulos */
+        h1, h2, h3, h4, .font-title {
+            font-family: var(--font-title);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        .accent { font-family: var(--font-accent); font-weight: 400; font-style: italic; letter-spacing: normal; color: var(--yellow-soft); }
+
+        .section-header { text-align: center; margin-bottom: 48px; position: relative; z-index: 2; }
+        .section-header h2 { font-size: 2.2rem; margin-bottom: 16px; }
+        .section-header p { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        /* Efeitos Visuais & Glass */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 16px 32px; border-radius: var(--radius-pill);
+            font-family: var(--font-title); font-weight: 700; font-size: 1rem;
+            transition: var(--transition); cursor: pointer; border: 1px solid transparent;
+            text-align: center; letter-spacing: 0.01em;
+        }
+
+        .btn-primary {
+            background-color: var(--yellow); color: var(--navy-deep);
+            box-shadow: var(--glow-yellow);
+        }
+
+        .btn-primary:hover, .btn-primary:focus {
+            transform: translateY(-3px); box-shadow: var(--glow-yellow-hover);
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg); color: var(--white);
+            border-color: var(--glass-border); backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover, .btn-secondary:focus {
+            background: var(--glass-hover); border-color: var(--yellow-soft);
+        }
+
+        /* Microanimações (Intersection Observer) */
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        
+        @media (prefers-reduced-motion: reduce) {
+            *, ::before, ::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+            .reveal { opacity: 1; transform: none; }
+        }
+
+        /* Decoradores de Seção */
+        .decorator-line {
+            width: 1px; height: 60px; background: linear-gradient(to bottom, transparent, var(--yellow-soft), transparent);
+            margin: 0 auto; opacity: 0.5;
+        }
+
+        /* ==========================================================================
+           2. PRELOADER
+           ========================================================================== */
+        #preloader {
+            position: fixed; inset: 0; background: var(--navy-deep);
+            z-index: 9999; display: flex; align-items: center; justify-content: center;
+            transition: opacity 0.8s ease, filter 0.8s ease, transform 0.8s ease;
+        }
+
+        .preloader-content {
+            display: flex; flex-direction: column; align-items: center; gap: 32px;
+            text-align: center; max-width: 300px;
+        }
+
+        .preloader-logo { width: 60px; }
+        .preloader-copy { font-family: var(--font-body); font-size: 0.95rem; color: var(--muted); }
+
+        .loader-bar {
+            width: 100%; height: 2px; background: rgba(255,255,255,0.05);
+            border-radius: 2px; overflow: hidden; position: relative;
+        }
+
+        .loader-bar::after {
+            content: ''; position: absolute; top: 0; left: 0; height: 100%; width: 30%;
+            background: var(--yellow); box-shadow: 0 0 10px var(--yellow);
+            animation: loaderMove 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes loaderMove {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(350%); }
+        }
+
+        #preloader.hide { opacity: 0; filter: blur(10px); transform: scale(1.02); pointer-events: none; }
+
+        /* ==========================================================================
+           3. NAVBAR FLUTUANTE (DYNAMIC ISLAND)
+           ========================================================================== */
+        .navbar-wrapper {
+            position: fixed; top: 16px; left: 0; width: 100%;
+            z-index: 1000; display: flex; justify-content: center; pointer-events: none;
+            padding: 0 var(--px); transition: top 0.3s ease;
+        }
+
+        .navbar {
+            pointer-events: auto; width: 100%; max-width: 1080px;
+            background: rgba(0, 11, 31, 0.65);
+            backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            border-radius: var(--radius-pill); padding: 8px 12px 8px 24px;
+            display: flex; justify-content: space-between; align-items: center;
+            transition: var(--transition);
+        }
+
+        .nav-logo { display: flex; align-items: center; }
+        .nav-logo img { height: 28px; width: auto; }
+
+        .nav-actions { display: flex; align-items: center; gap: 12px; }
+        .nav-cta { display: none; padding: 10px 24px; font-size: 0.9rem; }
+
+        .btn-menu {
+            width: 44px; height: 44px; border-radius: 50%;
+            background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border);
+            color: var(--white); display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: var(--transition);
+        }
+        .btn-menu:hover { background: rgba(255,255,255,0.1); color: var(--yellow); }
+
+        /* Sidebar Overlay & Menu */
+        .sidebar-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px); z-index: 1001;
+            opacity: 0; visibility: hidden; transition: 0.4s ease;
+        }
+
+        .sidebar-overlay.active { opacity: 1; visibility: visible; }
+
+        .sidebar {
+            position: fixed; top: 0; right: -100%; width: 100%; max-width: 400px; height: 100vh;
+            background: var(--navy-deep); border-left: 1px solid var(--glass-border);
+            z-index: 1002; padding: 32px 24px; display: flex; flex-direction: column;
+            transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .sidebar.active { right: 0; }
+
+        .sidebar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 48px; }
+        .sidebar-header img { height: 24px; }
+        .btn-close {
+            background: none; border: none; color: var(--muted); font-size: 2rem;
+            cursor: pointer; line-height: 1; transition: color 0.3s;
+        }
+        .btn-close:hover { color: var(--white); }
+
+        .sidebar-links { display: flex; flex-direction: column; gap: 24px; flex-grow: 1; }
+        .sidebar-links a {
+            font-family: var(--font-title); font-size: 1.5rem; font-weight: 600;
+            color: var(--white); transition: color 0.3s, transform 0.3s; display: inline-block;
+        }
+        .sidebar-links a:hover { color: var(--yellow); transform: translateX(8px); }
+
+        /* ==========================================================================
+           4. FLOATING BUTTONS
+           ========================================================================== */
+        .floating-actions {
+            position: fixed; bottom: 24px; right: 24px; display: flex; flex-direction: column; gap: 16px; z-index: 990;
+        }
+
+        .float-btn {
+            width: 56px; height: 56px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(0, 11, 31, 0.6); backdrop-filter: blur(12px); border: 1px solid var(--glass-border);
+            color: var(--white); transition: var(--transition);
+        }
+
+        .float-btn svg { width: 26px; height: 26px; }
+        .float-btn:hover { border-color: var(--yellow-soft); color: var(--yellow); box-shadow: var(--glow-yellow); transform: scale(1.05); }
+
+        /* ==========================================================================
+           5. HERO SECTION (Fundo com Imagem)
+           ========================================================================== */
+        .hero {
+            min-height: 100svh; display: flex; align-items: center;
+            padding-top: 100px; padding-bottom: 40px;
+            background: url('https://res.cloudinary.com/dm9mnc97u/image/upload/v1779411862/f1fd62ff-76e8-4512-9471-67cd13701bfe_xx5ffo.png') center/cover no-repeat;
+            position: relative;
+        }
+
+        /* Overlay Gradiente Escuro (Forte na esquerda para leitura) */
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, var(--navy-deep) 0%, rgba(0,11,31,0.85) 40%, rgba(0,11,31,0.3) 100%);
+            z-index: 1;
+        }
+
+        .hero-container { position: relative; z-index: 2; width: 100%; display: flex; }
+
+        .hero-content {
+            display: flex; flex-direction: column; align-items: flex-start;
+            max-width: 100%;
+        }
+
+        .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+        .badge {
+            padding: 6px 16px; border-radius: var(--radius-pill); font-size: 0.75rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.05em; color: var(--yellow-soft);
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(8px);
+        }
+
+        .hero-title { font-size: 2.5rem; margin-bottom: 16px; color: var(--white); text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        .hero-subtitle { font-size: 1.1rem; color: #E2E8F0; margin-bottom: 32px; max-width: 500px; }
+
+        .hero-ctas { display: flex; flex-direction: column; width: 100%; gap: 16px; }
+        .hero-ctas .btn { width: 100%; }
+
+        /* ==========================================================================
+           6. ROLLERS ANIMADOS (MARQUEE)
+           ========================================================================== */
+        .roller-wrapper {
+            padding: 20px 0; background: rgba(0, 0, 0, 0.2); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);
+            overflow: hidden; display: flex; white-space: nowrap; position: relative;
+        }
+        
+        /* Sombras nas laterais para fade out */
+        .roller-wrapper::before, .roller-wrapper::after {
+            content: ''; position: absolute; top: 0; width: 100px; height: 100%; z-index: 2; pointer-events: none;
+        }
+        .roller-wrapper::before { left: 0; background: linear-gradient(to right, var(--navy-deep), transparent); }
+        .roller-wrapper::after { right: 0; background: linear-gradient(to left, var(--navy-deep), transparent); }
+
+        .roller-track { display: flex; align-items: center; gap: 24px; padding-right: 24px; width: max-content; }
+        .roller-wrapper:hover .roller-track { animation-play-state: paused; }
+
+        .roller-item {
+            display: flex; align-items: center; gap: 8px; padding: 10px 20px;
+            background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-pill);
+            font-family: var(--font-title); font-size: 0.95rem; font-weight: 500; color: var(--muted);
+        }
+
+        .anim-left { animation: marqueeLeft 30s linear infinite; }
+        .anim-right { animation: marqueeRight 30s linear infinite; }
+
+        @keyframes marqueeLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        @keyframes marqueeRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+
+        /* ==========================================================================
+           7. FLIP CARDS (CLIQUE/TOQUE)
+           ========================================================================== */
+        .section-sintomas { background: radial-gradient(circle at 100% 100%, rgba(6, 39, 90, 0.3) 0%, transparent 60%); }
+
+        .flip-grid { display: grid; grid-template-columns: 1fr; gap: 24px; position: relative; z-index: 2; }
+
+        .flip-card {
+            perspective: 1200px; height: 220px; cursor: pointer; border-radius: var(--radius-lg); outline: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .flip-card:focus-visible .flip-inner { box-shadow: 0 0 0 2px var(--yellow); }
+
+        .flip-inner {
+            width: 100%; height: 100%; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transform-style: preserve-3d; border-radius: inherit;
+        }
+
+        .flip-card.is-flipped .flip-inner { transform: rotateY(180deg); }
+
+        .flip-face {
+            position: absolute; inset: 0; backface-visibility: hidden;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+            padding: 32px 24px; border-radius: inherit;
+        }
+
+        .flip-front { background: var(--glass-bg); border: 1px solid var(--glass-border); border-bottom: 3px solid var(--pain-red); }
+        .flip-back {
+            background: rgba(49, 196, 141, 0.05); border: 1px solid var(--glass-border); border-bottom: 3px solid var(--solution-green);
+            transform: rotateY(180deg);
+        }
+
+        .flip-emoji { font-size: 2.2rem; margin-bottom: 12px; }
+        .flip-title { font-size: 1.25rem; color: var(--white); }
+        .flip-text { font-size: 0.95rem; color: var(--muted); margin-bottom: 16px; }
+        .flip-cta { font-family: var(--font-title); font-size: 0.85rem; font-weight: 600; color: var(--yellow-soft); text-decoration: underline; }
+        .flip-hint { position: absolute; bottom: 16px; font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+
+        /* ==========================================================================
+           8. ESPECIALISTA
+           ========================================================================== */
+        .section-especialista { position: relative; }
+        .section-especialista::before {
+            content: ''; position: absolute; left: -10%; top: 20%; width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(244, 197, 66, 0.05) 0%, transparent 70%); pointer-events: none;
+        }
+
+        .specialist-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
+
+        .spec-image { position: relative; border-radius: var(--radius-lg); overflow: hidden; padding-bottom: 120%; /* Aspect ratio hack para mobile */ }
+        .spec-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
+        .spec-image::after {
+            content: ''; position: absolute; inset: 0; border-radius: inherit;
+            border: 1px solid rgba(255,255,255,0.1); box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .spec-content { display: flex; flex-direction: column; justify-content: center; }
+        .spec-content h2 { margin-bottom: 8px; }
+        .spec-content h3 { color: var(--yellow-soft); margin-bottom: 24px; font-family: var(--font-body); font-weight: 500; font-size: 1.1rem; }
+        .spec-content p { color: var(--muted); margin-bottom: 32px; font-size: 1.05rem; }
+
+        .spec-numbers { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; border-top: 1px solid var(--glass-border); padding-top: 32px; }
+        .num-item h4 { font-size: 2.2rem; color: var(--white); display: flex; align-items: baseline; gap: 2px; }
+        .num-item h4 span.glow { color: var(--yellow); }
+        .num-item p { font-size: 0.85rem; color: var(--muted); line-height: 1.3; margin-top: 4px; }
+
+        /* ==========================================================================
+           9. QUIZ
+           ========================================================================== */
+        .quiz-card { padding: 40px 24px; max-width: 700px; margin: 0 auto; text-align: center; }
+        
+        .quiz-progress-bar { height: 4px; background: var(--glass-border); border-radius: 2px; margin-bottom: 40px; overflow: hidden; }
+        .quiz-fill { height: 100%; background: var(--yellow); width: 0%; transition: width 0.4s ease; }
+
+        .quiz-step { display: none; animation: fadeUp 0.5s ease forwards; }
+        .quiz-step.active { display: block; }
+        
+        .quiz-meta { font-family: var(--font-title); color: var(--yellow-soft); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; display: block; }
+        .quiz-question { font-size: 1.5rem; margin-bottom: 32px; }
+
+        .quiz-options { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+        .quiz-opt-btn {
+            background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 18px 24px;
+            border-radius: var(--radius-sm); color: var(--white); font-family: var(--font-body); font-size: 1.05rem;
+            text-align: left; cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 12px;
+        }
+        .quiz-opt-btn:hover { background: var(--glass-hover); border-color: var(--yellow-soft); transform: translateX(4px); }
+
+        .quiz-controls { display: flex; justify-content: center; min-height: 40px; }
+        .btn-back { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 0.95rem; text-decoration: underline; transition: color 0.3s; }
+        .btn-back:hover { color: var(--white); }
+
+        .quiz-result { display: none; animation: fadeUp 0.5s ease forwards; }
+        .quiz-result h3 { font-size: 2rem; margin-bottom: 16px; }
+        .quiz-result p { color: var(--muted); margin-bottom: 40px; font-size: 1.1rem; }
+        .quiz-result .btn { width: 100%; margin-bottom: 16px; }
+
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ==========================================================================
+           10. ETAPAS (TIMELINE VERTICAL)
+           ========================================================================== */
+        .timeline-wrapper { position: relative; max-width: 600px; margin: 0 auto; padding-left: 24px; }
+        .timeline-line { position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--glass-border); }
+        .timeline-progress { position: absolute; left: 0; top: 0; width: 2px; background: var(--yellow); height: 0%; transition: height 0.3s ease-out; box-shadow: 0 0 10px var(--yellow); }
+
+        .time-step { position: relative; padding-left: 32px; padding-bottom: 48px; opacity: 0.4; transition: opacity 0.5s ease; }
+        .time-step:last-child { padding-bottom: 0; }
+        .time-step.active { opacity: 1; }
+
+        .time-dot {
+            position: absolute; left: -7px; top: 0; width: 16px; height: 16px; border-radius: 50%;
+            background: var(--navy-soft); border: 2px solid var(--navy-deep); transition: all 0.5s ease; z-index: 2;
+        }
+        .time-step.active .time-dot { background: var(--yellow); border-color: var(--yellow); box-shadow: 0 0 15px rgba(248, 176, 8, 0.5); }
+
+        .time-num { font-family: var(--font-accent); font-style: italic; font-size: 1.2rem; color: var(--yellow-soft); margin-bottom: 4px; display: block; }
+        .time-title { font-size: 1.4rem; margin-bottom: 8px; }
+        .time-desc { color: var(--muted); font-size: 1rem; }
+
+        /* ==========================================================================
+           11. PACIENTES (ROLLER INFINITO)
+           ========================================================================== */
+        .section-pacientes { padding-bottom: 40px; }
+        .patients-track {
+            display: flex; gap: 24px; padding: 24px 0; width: max-content;
+            animation: marqueeLeft 45s linear infinite;
+        }
+        .roller-wrapper:hover .patients-track { animation-play-state: paused; }
+
+        .patient-card { width: 300px; padding: 32px 24px; white-space: normal; display: flex; flex-direction: column; gap: 16px; }
+        .patient-header { display: flex; justify-content: space-between; align-items: flex-start; }
+        .patient-name { font-family: var(--font-title); font-weight: 700; font-size: 1.1rem; }
+        .google-icon svg { width: 24px; height: 24px; }
+        .stars { color: var(--yellow); font-size: 1rem; letter-spacing: 2px; }
+        .patient-text { color: var(--muted); font-size: 0.95rem; font-style: italic; }
+
+        .patients-cta { text-align: center; margin-top: 48px; }
+
+        /* ==========================================================================
+           12. MAPA E LOCALIZAÇÃO
+           ========================================================================== */
+        .map-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+        .map-info { padding: 40px 24px; }
+        .map-info h2 { font-size: 1.8rem; margin-bottom: 8px; }
+        .map-info p { color: var(--muted); margin-bottom: 16px; font-size: 0.95rem; }
+        .map-info strong { color: var(--white); display: block; margin-top: 24px; font-size: 1.1rem; }
+        
+        .map-embed { width: 100%; height: 300px; background: var(--navy-soft); }
+        .map-embed iframe { width: 100%; height: 100%; border: 0; filter: grayscale(80%) invert(90%) contrast(1.1); }
+
+        /* ==========================================================================
+           13. OFERTA FINAL & FOOTER
+           ========================================================================== */
+        .final-offer { text-align: center; padding: 64px 24px; background: radial-gradient(circle at top, rgba(6, 39, 90, 0.5) 0%, transparent 80%); }
+        .final-offer h2 { font-size: 2.2rem; margin-bottom: 16px; }
+        .final-offer p { color: var(--muted); margin-bottom: 32px; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .final-ctas { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+        .final-note { font-size: 0.85rem; color: rgba(255,255,255,0.4); }
+
+        footer { background: var(--navy-deep); padding: 80px 0 40px; border-top: 1px solid var(--glass-border); }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 48px; margin-bottom: 48px; }
+        .footer-brand img { width: 180px; margin-bottom: 16px; }
+        .footer-brand p { color: var(--muted); font-size: 0.95rem; max-width: 300px; }
+        .footer-contact h4 { font-family: var(--font-title); margin-bottom: 16px; font-size: 1.2rem; }
+        .footer-contact p { color: var(--muted); margin-bottom: 12px; font-size: 0.95rem; display: flex; flex-direction: column; }
+        .footer-contact a { transition: color 0.3s; }
+        .footer-contact a:hover { color: var(--yellow-soft); }
+        .footer-bottom { text-align: center; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; color: rgba(255,255,255,0.4); }
+
+        /* ==========================================================================
+           14. RESPONSIVIDADE (TABLET & DESKTOP)
+           ========================================================================== */
+        @media (min-width: 768px) {
+            :root { --py-section: 100px; }
+            .section-header h2 { font-size: 2.8rem; }
+            
+            .hero { min-height: 600px; }
+            .hero-title { font-size: 3.5rem; }
+            .hero-ctas { flex-direction: row; }
+            .hero-ctas .btn { width: auto; }
+            
+            .flip-grid { grid-template-columns: repeat(2, 1fr); }
+            
+            .spec-image { padding-bottom: 100%; }
+            .spec-numbers { grid-template-columns: repeat(4, 1fr); }
+            
+            .quiz-card { padding: 64px; }
+            .quiz-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+            .quiz-opt-btn { text-align: center; flex-direction: column; justify-content: center; padding: 24px; }
+            .quiz-result .btn { width: auto; display: inline-flex; }
+
+            .map-card { flex-direction: row; align-items: stretch; }
+            .map-info { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+            .map-embed { flex: 1; height: auto; min-height: 400px; border-left: 1px solid var(--glass-border); }
+
+            .final-offer h2 { font-size: 3rem; }
+            .final-ctas { flex-direction: row; justify-content: center; }
+
+            .footer-grid { grid-template-columns: 2fr 1fr; }
+        }
+
+        @media (min-width: 1024px) {
+            .hero { min-height: 680px; }
+            .hero-content { max-width: 48%; }
+            .nav-cta { display: flex; }
+            
+            .flip-grid { grid-template-columns: repeat(4, 1fr); }
+            
+            .specialist-grid { grid-template-columns: 5fr 7fr; align-items: center; gap: 80px; }
+            .spec-image { padding-bottom: 110%; }
+        }
+    </style>
+</head>
+<body class="no-scroll">
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1779643740/b5027d83-bcd8-4877-bae3-d67ba7953521_uzszdg.svg" alt="Logo Dra Lailla Rettore" class="preloader-logo">
+            <p class="preloader-copy">Cuidado especializado em DTM, bruxismo e dor orofacial.</p>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- NAVBAR FLUTUANTE -->
+    <div class="navbar-wrapper">
+        <header class="navbar" id="navbar">
+            <a href="#" class="nav-logo" aria-label="Voltar ao início">
+                <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1779643800/a2dd5d2c-4f7d-4657-94fb-efc0c69af070_lmyudu.svg" alt="Dra. Lailla Rettore">
+            </a>
+            <div class="nav-actions">
+                <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-primary nav-cta">WhatsApp</a>
+                <button class="btn-menu" id="menu-open" aria-label="Abrir Menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
+                </button>
+            </div>
+        </header>
+    </div>
+
+    <!-- MENU LATERAL -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1779643800/a2dd5d2c-4f7d-4657-94fb-efc0c69af070_lmyudu.svg" alt="Logo">
+            <button class="btn-close" id="menu-close" aria-label="Fechar Menu">&times;</button>
+        </div>
+        <div class="sidebar-links">
+            <a href="#inicio" class="menu-link">Início</a>
+            <a href="#tratamentos" class="menu-link">Tratamentos</a>
+            <a href="#especialista" class="menu-link">Especialista</a>
+            <a href="#quiz" class="menu-link">Quiz</a>
+            <a href="#atendimento" class="menu-link">Atendimento</a>
+            <a href="#pacientes" class="menu-link">Pacientes</a>
+            <a href="#localizacao" class="menu-link">Localização</a>
+        </div>
+        <div style="margin-top: auto;">
+            <a href="https://wa.me/5500000000000" target="_blank" class="btn btn-primary" style="width: 100%;">Agendar avaliação</a>
+        </div>
+    </nav>
+
+    <!-- BOTÕES FLUTUANTES -->
+    <div class="floating-actions">
+        <a href="https://wa.me/5500000000000" class="float-btn" aria-label="Falar no WhatsApp" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="https://instagram.com/INSERIR_PERFIL" class="float-btn" aria-label="Acessar Instagram" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content reveal">
+                <div class="hero-badges">
+                    <span class="badge">DTM</span>
+                    <span class="badge">Bruxismo</span>
+                    <span class="badge">Dor Orofacial</span>
+                </div>
+                <h1 class="hero-title">Dor na mandíbula, bruxismo ou estalos na ATM?</h1>
+                <p class="hero-subtitle">Entenda seus sintomas com uma avaliação individualizada e um cuidado pensado para o seu caso.</p>
+                <div class="hero-ctas">
+                    <a href="#quiz" class="btn btn-primary">Fazer quiz rápido</a>
+                    <a href="https://wa.me/5500000000000" class="btn btn-secondary" target="_blank">Falar no WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROLLER 1 -->
+    <div class="roller-wrapper">
+        <div class="roller-track anim-left">
+            <div class="roller-item">DTM<span class="dot">•</span></div>
+            <div class="roller-item">Bruxismo<span class="dot">•</span></div>
+            <div class="roller-item">Dor orofacial<span class="dot">•</span></div>
+            <div class="roller-item">ATM<span class="dot">•</span></div>
+            <div class="roller-item">Tensão mandibular<span class="dot">•</span></div>
+            <div class="roller-item">Placas interoclusais<span class="dot">•</span></div>
+            <div class="roller-item">Toxina terapêutica<span class="dot">•</span></div>
+            <div class="roller-item">Avaliação funcional<span class="dot">•</span></div>
+            <!-- Loop -->
+            <div class="roller-item">DTM<span class="dot">•</span></div>
+            <div class="roller-item">Bruxismo<span class="dot">•</span></div>
+            <div class="roller-item">Dor orofacial<span class="dot">•</span></div>
+            <div class="roller-item">ATM<span class="dot">•</span></div>
+            <div class="roller-item">Tensão mandibular<span class="dot">•</span></div>
+            <div class="roller-item">Placas interoclusais<span class="dot">•</span></div>
+            <div class="roller-item">Toxina terapêutica<span class="dot">•</span></div>
+            <div class="roller-item">Avaliação funcional</div>
+        </div>
+    </div>
+
+    <!-- FLIP CARDS -->
+    <section id="tratamentos" class="section-sintomas">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Entenda os sinais <br><span class="accent">e os caminhos de cuidado</span></h2>
+                <p>Toque nos cards para ver a relação entre sintoma e abordagem clínica.</p>
+            </div>
+
+            <div class="flip-grid reveal reveal-delay-1">
+                <div class="flip-card" tabindex="0" aria-label="Dor ao mastigar. Toque para virar.">
+                    <div class="flip-inner glass-panel">
+                        <div class="flip-face flip-front">
+                            <div class="flip-emoji">😣</div>
+                            <div class="flip-title">Dor ao mastigar</div>
+                            <div class="flip-hint">Toque para ver</div>
+                        </div>
+                        <div class="flip-face flip-back">
+                            <div class="flip-emoji" style="font-size:1.8rem;">✅</div>
+                            <div class="flip-text">Avaliação da função mandibular e dos músculos da face.</div>
+                            <a href="https://wa.me/5500000000000?text=Olá,%20quero%20entender%20melhor%20minha%20dor%20ao%20mastigar" class="flip-cta" target="_blank">Conversar sobre esse sintoma</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" tabindex="0" aria-label="Mandíbula estalando. Toque para virar.">
+                    <div class="flip-inner glass-panel">
+                        <div class="flip-face flip-front">
+                            <div class="flip-emoji">⚠️</div>
+                            <div class="flip-title">Mandíbula estalando</div>
+                            <div class="flip-hint">Toque para ver</div>
+                        </div>
+                        <div class="flip-face flip-back">
+                            <div class="flip-emoji" style="font-size:1.8rem;">🌿</div>
+                            <div class="flip-text">Investigação da ATM e dos padrões de movimento.</div>
+                            <a href="https://wa.me/5500000000000?text=Olá,%20quero%20entender%20melhor%20os%20estalos%20na%20minha%20mandíbula" class="flip-cta" target="_blank">Conversar sobre esse sintoma</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" tabindex="0" aria-label="Apertamento dental. Toque para virar.">
+                    <div class="flip-inner glass-panel">
+                        <div class="flip-face flip-front">
+                            <div class="flip-emoji">🔴</div>
+                            <div class="flip-title">Apertamento dental</div>
+                            <div class="flip-hint">Toque para ver</div>
+                        </div>
+                        <div class="flip-face flip-back">
+                            <div class="flip-emoji" style="font-size:1.8rem;">✅</div>
+                            <div class="flip-text">Plano para reduzir sobrecarga e proteger estruturas dentais.</div>
+                            <a href="https://wa.me/5500000000000?text=Olá,%20quero%20entender%20melhor%20meu%20apertamento%20dental" class="flip-cta" target="_blank">Conversar sobre esse sintoma</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" tabindex="0" aria-label="Dor de cabeça frequente. Toque para virar.">
+                    <div class="flip-inner glass-panel">
+                        <div class="flip-face flip-front">
+                            <div class="flip-emoji">😣</div>
+                            <div class="flip-title">Dor de cabeça frequente</div>
+                            <div class="flip-hint">Toque para ver</div>
+                        </div>
+                        <div class="flip-face flip-back">
+                            <div class="flip-emoji" style="font-size:1.8rem;">🌿</div>
+                            <div class="flip-text">Análise da relação com tensão muscular e hábitos funcionais.</div>
+                            <a href="https://wa.me/5500000000000?text=Olá,%20quero%20entender%20melhor%20minhas%20dores%20de%20cabeça" class="flip-cta" target="_blank">Conversar sobre esse sintoma</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="decorator-line reveal"></div>
+
+    <!-- ESPECIALISTA -->
+    <section id="especialista" class="section-especialista">
+        <div class="container specialist-grid">
+            <div class="spec-image reveal">
+                <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1779583902/221d85fa-ac4d-440d-b1c4-fce0b1ad9d60_knygbq.png" alt="Dra. Lailla Rettore" loading="lazy">
+            </div>
+            <div class="spec-content reveal reveal-delay-1">
+                <h2><span class="accent">A especialista</span></h2>
+                <h3>Dra. Lailla Rettore</h3>
+                <p>Cirurgiã-dentista com atuação em DTM, bruxismo, ATM e dor orofacial, unindo escuta cuidadosa, avaliação técnica e planejamento individualizado.</p>
+                
+                <div class="spec-numbers" id="counter-section">
+                    <div class="num-item">
+                        <h4><span class="glow">+</span><span class="count" data-target="10">0</span></h4>
+                        <p>anos de experiência</p>
+                    </div>
+                    <div class="num-item">
+                        <h4><span class="glow">+</span><span class="count" data-target="1500">0</span></h4>
+                        <p>pacientes atendidos</p>
+                    </div>
+                    <div class="num-item">
+                        <h4><span class="glow">+</span><span class="count" data-target="4">0</span></h4>
+                        <p>áreas de foco clínico</p>
+                    </div>
+                    <div class="num-item">
+                        <h4><span class="count" data-target="100">0</span><span class="glow">%</span></h4>
+                        <p>planejamento individualizado</p>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/5500000000000" class="btn btn-primary" target="_blank" style="align-self: flex-start;">Falar com a Dra. Lailla</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROLLER 2 -->
+    <div class="roller-wrapper">
+        <div class="roller-track anim-right">
+            <div class="roller-item">Mandíbula travando<span class="dot">•</span></div>
+            <div class="roller-item">Dor ao mastigar<span class="dot">•</span></div>
+            <div class="roller-item">Estalos na ATM<span class="dot">•</span></div>
+            <div class="roller-item">Apertamento dental<span class="dot">•</span></div>
+            <div class="roller-item">Dor facial<span class="dot">•</span></div>
+            <div class="roller-item">Tensão no pescoço<span class="dot">•</span></div>
+            <div class="roller-item">Desgaste dental<span class="dot">•</span></div>
+            <!-- Loop -->
+            <div class="roller-item">Mandíbula travando<span class="dot">•</span></div>
+            <div class="roller-item">Dor ao mastigar<span class="dot">•</span></div>
+            <div class="roller-item">Estalos na ATM<span class="dot">•</span></div>
+            <div class="roller-item">Apertamento dental<span class="dot">•</span></div>
+            <div class="roller-item">Dor facial<span class="dot">•</span></div>
+            <div class="roller-item">Tensão no pescoço<span class="dot">•</span></div>
+            <div class="roller-item">Desgaste dental</div>
+        </div>
+    </div>
+
+    <!-- QUIZ -->
+    <section id="quiz">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Quiz rápido: <span class="accent">seus sintomas</span> podem estar ligados à DTM?</h2>
+                <p>Responda em menos de um minuto e veja se vale buscar uma avaliação especializada.</p>
+            </div>
+
+            <div class="glass-panel quiz-card reveal reveal-delay-1" id="quiz-container">
+                <div class="quiz-progress-bar">
+                    <div class="quiz-fill" id="quiz-fill"></div>
+                </div>
+                
+                <div id="quiz-steps-wrapper">
+                    <!-- Injetado por JS -->
+                </div>
+
+                <div class="quiz-controls">
+                    <button class="btn-back" id="btn-quiz-back" style="display:none;">← Voltar à pergunta anterior</button>
+                </div>
+
+                <div class="quiz-result" id="quiz-result">
+                    <h3 id="result-title" class="font-title">Resultado</h3>
+                    <p id="result-desc"></p>
+                    <a href="https://wa.me/5500000000000" class="btn btn-primary" target="_blank">Agendar avaliação</a>
+                    <button class="btn btn-secondary" onclick="initQuiz()">Refazer Quiz</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="decorator-line reveal"></div>
+
+    <!-- ETAPAS DO ATENDIMENTO -->
+    <section id="atendimento">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2><span class="accent">Etapas</span> do atendimento</h2>
+                <p>Um processo claro, cuidadoso e individualizado do início ao fim.</p>
+            </div>
+
+            <div class="timeline-wrapper reveal reveal-delay-1" id="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-progress" id="timeline-progress"></div>
+
+                <div class="time-step">
+                    <div class="time-dot"></div>
+                    <span class="time-num">01</span>
+                    <h3 class="time-title">Escuta clínica</h3>
+                    <p class="time-desc">Entendimento detalhado dos sintomas, rotina, hábitos e histórico de saúde.</p>
+                </div>
+
+                <div class="time-step">
+                    <div class="time-dot"></div>
+                    <span class="time-num">02</span>
+                    <h3 class="time-title">Avaliação funcional</h3>
+                    <p class="time-desc">Análise física da mandíbula, músculos da face, ATM e sinais associados.</p>
+                </div>
+
+                <div class="time-step">
+                    <div class="time-dot"></div>
+                    <span class="time-num">03</span>
+                    <h3 class="time-title">Plano individualizado</h3>
+                    <p class="time-desc">Definição dos melhores caminhos de cuidado e intervenções conforme a necessidade.</p>
+                </div>
+
+                <div class="time-step">
+                    <div class="time-dot"></div>
+                    <span class="time-num">04</span>
+                    <h3 class="time-title">Acompanhamento</h3>
+                    <p class="time-desc">Ajustes, orientações contínuas e evolução do tratamento quando indicado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROLLER 3 -->
+    <div class="roller-wrapper">
+        <div class="roller-track anim-left">
+            <div class="roller-item">Mais clareza<span class="dot">•</span></div>
+            <div class="roller-item">Menos sobrecarga<span class="dot">•</span></div>
+            <div class="roller-item">Cuidado personalizado<span class="dot">•</span></div>
+            <div class="roller-item">Plano seguro<span class="dot">•</span></div>
+            <div class="roller-item">Acompanhamento próximo<span class="dot">•</span></div>
+            <div class="roller-item">Mais conforto<span class="dot">•</span></div>
+            <!-- Loop -->
+            <div class="roller-item">Mais clareza<span class="dot">•</span></div>
+            <div class="roller-item">Menos sobrecarga<span class="dot">•</span></div>
+            <div class="roller-item">Cuidado personalizado<span class="dot">•</span></div>
+            <div class="roller-item">Plano seguro<span class="dot">•</span></div>
+            <div class="roller-item">Acompanhamento próximo<span class="dot">•</span></div>
+            <div class="roller-item">Mais conforto</div>
+        </div>
+    </div>
+
+    <!-- PACIENTES (ROLLER INFINITO) -->
+    <section id="pacientes" class="section-pacientes">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>O que os pacientes <span class="accent">relatam</span></h2>
+                <p>Experiências sobre acolhimento, clareza e cuidado individualizado.</p>
+            </div>
+        </div>
+
+        <div class="roller-wrapper reveal reveal-delay-1" style="background: transparent; border: none; padding: 0;">
+            <div class="patients-track">
+                <!-- Cards -->
+                <div class="patient-card glass-panel">
+                    <div class="patient-header">
+                        <div class="patient-name">Mariana S.</div>
+                        <div class="google-icon"><svg viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="patient-text">"Atendimento muito cuidadoso. Consegui entender melhor meus sintomas."</p>
+                </div>
+                
+                <div class="patient-card glass-panel">
+                    <div class="patient-header">
+                        <div class="patient-name">Renata M.</div>
+                        <div class="google-icon"><svg viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="patient-text">"A explicação foi clara e me senti segura durante a avaliação."</p>
+                </div>
+
+                <div class="patient-card glass-panel">
+                    <div class="patient-header">
+                        <div class="patient-name">Camila R.</div>
+                        <div class="google-icon"><svg viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="patient-text">"Gostei da atenção aos detalhes e do cuidado com o meu caso."</p>
+                </div>
+
+                <div class="patient-card glass-panel">
+                    <div class="patient-header">
+                        <div class="patient-name">Juliana P.</div>
+                        <div class="google-icon"><svg viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="patient-text">"A consulta foi acolhedora e bem orientada."</p>
+                </div>
+                
+                <div class="patient-card glass-panel">
+                    <div class="patient-header">
+                        <div class="patient-name">Fernanda L.</div>
+                        <div class="google-icon"><svg viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="patient-text">"Senti que o plano foi pensado de forma individualizada."</p>
+                </div>
+
+                <!-- Loop (Duplicados) -->
+                <div class="patient-card glass-panel" aria-hidden="true">
+                    <div class="patient-header">
+                        <div class="patient-name">Mariana S.</div>
+                        <div class="google-icon"><svg viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="patient-text">"Atendimento muito cuidadoso. Consegui entender melhor meus sintomas."</p>
+                </div>
+                
+                <div class="patient-card glass-panel" aria-hidden="true">
+                    <div class="patient-header">
+                        <div class="patient-name">Renata M.</div>
+                        <div class="google-icon"><svg viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="patient-text">"A explicação foi clara e me senti segura durante a avaliação."</p>
+                </div>
+                
+                 <div class="patient-card glass-panel" aria-hidden="true">
+                    <div class="patient-header">
+                        <div class="patient-name">Camila R.</div>
+                        <div class="google-icon"><svg viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="patient-text">"Gostei da atenção aos detalhes e do cuidado com o meu caso."</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="patients-cta reveal">
+            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-bottom: 16px;">Depoimentos ilustrativos para demonstração.</p>
+            <a href="https://wa.me/5500000000000" class="btn btn-primary" target="_blank">Falar com especialista</a>
+        </div>
+    </section>
+
+    <div class="decorator-line reveal"></div>
+
+    <!-- LOCALIZAÇÃO -->
+    <section id="localizacao">
+        <div class="container reveal">
+            <div class="map-card glass-panel">
+                <div class="map-info">
+                    <h2><span class="accent">Localização</span></h2>
+                    <p style="font-size: 1.1rem; color: var(--white); font-weight: 600;">Quality Cursos De Odontologia</p>
+                    <p style="margin-bottom: 8px;"><span style="color:var(--yellow);">★★★★★</span> 4,7 no Google</p>
+                    <p>Av. Ayrton Senna, 2500 - Bloco 3 Sala 428<br>Rio de Janeiro - RJ</p>
+                    <p>Telefone: (21) 99036-8794</p>
+                    <strong>Atendimento com horário marcado.</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Quality%20Cursos%20De%20Odontologia%20Av.%20Ayrton%20Senna%202500%20Bloco%203%20Sala%20428%20Rio%20de%20Janeiro" class="btn btn-secondary" target="_blank" style="margin-top:24px; align-self: flex-start;">Abrir no Google Maps</a>
+                </div>
+                <div class="map-embed">
+                    <iframe src="https://www.google.com/maps?q=Quality%20Cursos%20De%20Odontologia%20Av.%20Ayrton%20Senna%202500%20Bloco%203%20Sala%20428%20Rio%20de%20Janeiro&output=embed" title="Mapa de Localização" allowfullscreen="" loading="lazy" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFERTA FINAL -->
+    <section class="reveal">
+        <div class="container">
+            <div class="final-offer glass-panel">
+                <h2>Dê o primeiro passo para <span class="accent">entender a origem</span> da sua dor</h2>
+                <p>Agende uma avaliação individualizada e receba orientação sobre os caminhos de cuidado para o seu caso.</p>
+                <div class="final-ctas">
+                    <a href="https://wa.me/5500000000000" class="btn btn-primary" target="_blank">Falar no WhatsApp</a>
+                    <a href="#quiz" class="btn btn-secondary">Fazer quiz rápido</a>
+                </div>
+                <p class="final-note">O tratamento indicado depende de avaliação profissional individualizada.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROLLER 4 -->
+    <div class="roller-wrapper" style="border-bottom: none; background: transparent;">
+        <div class="roller-track anim-right">
+            <div class="roller-item">Diagnóstico<span class="dot">•</span></div>
+            <div class="roller-item">Precisão<span class="dot">•</span></div>
+            <div class="roller-item">Acolhimento<span class="dot">•</span></div>
+            <div class="roller-item">Cuidado humano<span class="dot">•</span></div>
+            <div class="roller-item">DTM<span class="dot">•</span></div>
+            <div class="roller-item">Bruxismo<span class="dot">•</span></div>
+            <div class="roller-item">Dor orofacial<span class="dot">•</span></div>
+            <div class="roller-item">ATM<span class="dot">•</span></div>
+            <!-- Loop -->
+            <div class="roller-item">Diagnóstico<span class="dot">•</span></div>
+            <div class="roller-item">Precisão<span class="dot">•</span></div>
+            <div class="roller-item">Acolhimento<span class="dot">•</span></div>
+            <div class="roller-item">Cuidado humano<span class="dot">•</span></div>
+            <div class="roller-item">DTM<span class="dot">•</span></div>
+            <div class="roller-item">Bruxismo<span class="dot">•</span></div>
+            <div class="roller-item">Dor orofacial<span class="dot">•</span></div>
+            <div class="roller-item">ATM</div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1779643800/a2dd5d2c-4f7d-4657-94fb-efc0c69af070_lmyudu.svg" alt="Logo Dra Lailla Rettore" loading="lazy">
+                    <p>Odontologia com diagnóstico, precisão e cuidado humano.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato e Informações</h4>
+                    <p><span>CRO:</span> [Inserir Número]</p>
+                    <p><span>WhatsApp:</span> <a href="https://wa.me/5500000000000" target="_blank">[Inserir Número]</a></p>
+                    <p><span>Instagram:</span> <a href="https://instagram.com/INSERIR_PERFIL" target="_blank">@INSERIR_PERFIL</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>As informações desta página não substituem uma avaliação odontológica individualizada. Todos os direitos reservados © 2024 Dra. Lailla Rettore.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT NATIVO -->
+    <script>
+        // 1. PRELOADER
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.classList.add('hide');
+                document.body.classList.remove('no-scroll');
+                setTimeout(() => preloader.style.display = 'none', 800);
+            }, 600); // tempo mínimo de visualização
+        });
+
+        // 2. NAVBAR SCROLL EFFECT
+        const navbarWrapper = document.querySelector('.navbar-wrapper');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                // Esconde a navbar ao rolar para baixo, mostra ao rolar para cima
+                if (window.scrollY > lastScrollY) {
+                    navbarWrapper.style.top = '-100px';
+                } else {
+                    navbarWrapper.style.top = '16px';
+                }
+            } else {
+                navbarWrapper.style.top = '16px';
+            }
+            lastScrollY = window.scrollY;
+        }, { passive: true });
+
+        // 3. MENU LATERAL
+        const menuOpen = document.getElementById('menu-open');
+        const menuClose = document.getElementById('menu-close');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        const menuLinks = document.querySelectorAll('.menu-link');
+
+        function toggleMenu() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+        }
+
+        menuOpen.addEventListener('click', toggleMenu);
+        menuClose.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        menuLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+        // 4. SCROLL REVEAL (INTERSECTION OBSERVER)
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
+        if (!prefersReducedMotion) {
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
+            
+            revealElements.forEach(el => revealObserver.observe(el));
+        }
+
+        // 5. ANIMATED COUNTERS
+        const counterSection = document.getElementById('counter-section');
+        const counters = document.querySelectorAll('.count');
+        let hasCounted = false;
+
+        const countObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !hasCounted && !prefersReducedMotion) {
+                hasCounted = true;
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 2000;
+                    const increment = target / (duration / 16);
+                    
+                    let current = 0;
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.innerText = Math.ceil(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCounter();
+                });
+            } else if (entries[0].isIntersecting && prefersReducedMotion) {
+                counters.forEach(counter => counter.innerText = counter.getAttribute('data-target'));
+            }
+        }, { threshold: 0.5 });
+        
+        if (counterSection) countObserver.observe(counterSection);
+
+        // 6. FLIP CARDS (CLIQUE/TOQUE/TECLADO)
+        const flipCards = document.querySelectorAll('.flip-card');
+        flipCards.forEach(card => {
+            const toggleFlip = (e) => {
+                if (e.type === 'click' || (e.type === 'keydown' && (e.key === 'Enter' || e.key === ' '))) {
+                    e.preventDefault();
+                    // Fecha os outros se quiser (opcional)
+                    // flipCards.forEach(c => { if(c !== card) c.classList.remove('is-flipped'); });
+                    card.classList.toggle('is-flipped');
+                }
+            };
+            card.addEventListener('click', toggleFlip);
+            card.addEventListener('keydown', toggleFlip);
+        });
+
+        // 7. TIMELINE SCROLL LOGIC
+        const timeline = document.getElementById('timeline');
+        const timelineProgress = document.getElementById('timeline-progress');
+        const timeSteps = document.querySelectorAll('.time-step');
+
+        if (timeline) {
+            window.addEventListener('scroll', () => {
+                if(prefersReducedMotion) {
+                    timeSteps.forEach(step => step.classList.add('active'));
+                    return;
+                }
+                
+                const timelineRect = timeline.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                if (timelineRect.top < windowHeight && timelineRect.bottom > 0) {
+                    let progress = ((windowHeight * 0.6 - timelineRect.top) / timelineRect.height) * 100;
+                    progress = Math.max(0, Math.min(100, progress));
+                    timelineProgress.style.height = `${progress}%`;
+
+                    timeSteps.forEach((step) => {
+                        const stepRect = step.getBoundingClientRect();
+                        if (stepRect.top < windowHeight * 0.7) {
+                            step.classList.add('active');
+                        }
+                    });
+                }
+            }, { passive: true });
+        }
+
+        // 8. QUIZ LOGIC
+        const questions = [
+            "Você sente dor ou cansaço na mandíbula?",
+            "Sua mandíbula estala ou trava?",
+            "Você acorda com tensão no rosto ou nos dentes?",
+            "Você sente dor de cabeça com frequência?",
+            "Já percebeu desgaste ou sensibilidade nos dentes?"
+        ];
+        
+        const options = [
+            { text: "🙂 Nunca", score: 0 },
+            { text: "🤔 Às vezes", score: 1 },
+            { text: "⚠️ Frequentemente", score: 2 }
+        ];
+
+        let currentQ = 0;
+        let answers = [];
+        
+        const stepsWrapper = document.getElementById('quiz-steps-wrapper');
+        const quizFill = document.getElementById('quiz-fill');
+        const btnBack = document.getElementById('btn-quiz-back');
+        const resultContainer = document.getElementById('quiz-result');
+        const resultTitle = document.getElementById('result-title');
+        const resultDesc = document.getElementById('result-desc');
+
+        function initQuiz() {
+            currentQ = 0;
+            answers = [];
+            resultContainer.style.display = 'none';
+            stepsWrapper.style.display = 'block';
+            btnBack.style.display = 'none';
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const progress = (currentQ / questions.length) * 100;
+            quizFill.style.width = `${progress}%`;
+
+            btnBack.style.display = currentQ > 0 ? 'inline-block' : 'none';
+
+            let optsHtml = options.map((opt, idx) => `
+                <button class="quiz-opt-btn" onclick="selectAnswer(${idx})">
+                    ${opt.text}
+                </button>
+            `).join('');
+
+            stepsWrapper.innerHTML = `
+                <div class="quiz-step active">
+                    <span class="quiz-meta">Pergunta ${currentQ + 1} de ${questions.length}</span>
+                    <h3 class="quiz-question">${questions[currentQ]}</h3>
+                    <div class="quiz-options">${optsHtml}</div>
+                </div>
+            `;
+        }
+
+        window.selectAnswer = function(optionIndex) {
+            answers[currentQ] = options[optionIndex].score;
+            currentQ++;
+            
+            if (currentQ >= questions.length) {
+                showQuizResult();
+            } else {
+                renderQuestion();
+            }
+        }
+
+        btnBack.addEventListener('click', () => {
+            if (currentQ > 0) {
+                currentQ--;
+                renderQuestion();
+            }
+        });
+
+        function showQuizResult() {
+            quizFill.style.width = '100%';
+            stepsWrapper.style.display = 'none';
+            btnBack.style.display = 'none';
+            resultContainer.style.display = 'block';
+
+            const totalScore = answers.reduce((a, b) => a + b, 0);
+
+            if (totalScore <= 3) {
+                resultTitle.innerText = "Sinais Leves";
+                resultTitle.style.color = "var(--solution-green)";
+                resultDesc.innerText = "Baixa frequência de sinais. Observe a evolução dos sintomas. Manter hábitos saudáveis é fundamental.";
+            } else if (totalScore <= 7) {
+                resultTitle.innerText = "Sinais Moderados";
+                resultTitle.style.color = "var(--yellow-soft)";
+                resultDesc.innerText = "Sinais moderados. Uma avaliação profissional pode ajudar a entender a origem e prevenir sobrecargas futuras.";
+            } else {
+                resultTitle.innerText = "Sinais Frequentes";
+                resultTitle.style.color = "var(--pain-red)";
+                resultDesc.innerText = "Sinais frequentes. Recomendamos buscar uma avaliação especializada para um diagnóstico funcional e controle da dor.";
+            }
+        }
+
+        // Start Quiz
+        initQuiz();
+    </script>
+</body>
+</html>
