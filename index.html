@@ -61,7 +61,7 @@
         }
 
         html, body {
-            overflow-x: hidden; /* Correção do bug de overflow no desktop */
+            overflow-x: hidden;
             width: 100%;
         }
 
@@ -94,7 +94,7 @@
             margin: 0 auto; padding: 0 var(--px);
         }
 
-        section { padding: var(--py-section) 0; position: relative; }
+        section { padding: var(--py-section) 0; position: relative; z-index: 1; }
 
         /* Títulos */
         h1, h2, h3, h4, .font-title {
@@ -110,20 +110,23 @@
         .section-header h2 { font-size: 2.2rem; margin-bottom: 16px; }
         .section-header p { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
 
-        /* Texturas Mobile-First & Utilities */
-        .bg-texture-dots { position: relative; }
-        .bg-texture-dots::before {
+        /* Texturas Intercaladas das Seções */
+        .bg-texture-1 { background: radial-gradient(circle at 0% 0%, rgba(6, 39, 90, 0.4) 0%, transparent 60%); }
+        
+        .bg-texture-2 { position: relative; }
+        .bg-texture-2::before {
             content: ''; position: absolute; inset: 0; z-index: -1;
-            background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px);
             background-size: 24px 24px; pointer-events: none;
         }
         
-        .bg-texture-glow { position: relative; }
-        .bg-texture-glow::after {
-            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-            width: 100%; height: 100%; z-index: -1;
-            background: radial-gradient(ellipse at top, rgba(244, 197, 66, 0.03) 0%, transparent 60%);
-            pointer-events: none;
+        .bg-texture-3 { background: radial-gradient(circle at 100% 100%, rgba(244, 197, 66, 0.04) 0%, transparent 60%); }
+        
+        .bg-texture-4 { position: relative; }
+        .bg-texture-4::before {
+            content: ''; position: absolute; inset: 0; z-index: -1;
+            background: linear-gradient(45deg, rgba(255,255,255,0.015) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.015) 50%, rgba(255,255,255,0.015) 75%, transparent 75%, transparent);
+            background-size: 20px 20px; pointer-events: none;
         }
 
         .glass-panel {
@@ -305,17 +308,15 @@
         .float-btn:hover { border-color: var(--yellow-soft); color: var(--yellow); box-shadow: var(--glow-yellow); transform: scale(1.05); }
 
         /* ==========================================================================
-           5. HERO SECTION (Fundo com Imagem + Overlay em Degradê)
+           5. HERO SECTION (Totalmente Alinhado à Esquerda no Mobile)
            ========================================================================== */
         .hero {
             min-height: 620px; display: flex; align-items: center;
             padding-top: 120px; padding-bottom: 60px;
-            /* Posição recuada levemente para a esquerda: 42% center */
             background: url('https://res.cloudinary.com/dm9mnc97u/image/upload/v1779411862/f1fd62ff-76e8-4512-9471-67cd13701bfe_xx5ffo.png') 42% center / cover no-repeat;
             position: relative;
         }
 
-        /* Overlay Gradiente Escuro (Garante leitura no lado esquerdo) */
         .hero::before {
             content: ''; position: absolute; inset: 0;
             background: linear-gradient(180deg, rgba(0,11,31,0.95) 0%, rgba(0,11,31,0.7) 60%, rgba(0,11,31,0.4) 100%);
@@ -326,7 +327,7 @@
 
         .hero-content {
             display: flex; flex-direction: column; align-items: flex-start;
-            max-width: 100%;
+            max-width: 100%; text-align: left;
         }
 
         .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
@@ -336,8 +337,8 @@
             background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(8px);
         }
 
-        .hero-title { font-size: 2.5rem; margin-bottom: 16px; color: var(--white); text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-        .hero-subtitle { font-size: 1.1rem; color: #E2E8F0; margin-bottom: 32px; max-width: 500px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .hero-title { font-size: 2.5rem; margin-bottom: 16px; color: var(--white); text-shadow: 0 4px 20px rgba(0,0,0,0.5); text-align: left; }
+        .hero-subtitle { font-size: 1.1rem; color: #E2E8F0; margin-bottom: 32px; max-width: 500px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); text-align: left; }
 
         .hero-ctas { display: flex; flex-direction: column; width: 100%; gap: 16px; }
         .hero-ctas .btn { width: 100%; }
@@ -348,7 +349,7 @@
         .roller-wrapper {
             padding: 20px 0; background: rgba(0, 0, 0, 0.2); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);
             overflow: hidden; display: flex; white-space: nowrap; position: relative;
-            width: 100%; max-width: 100vw;
+            width: 100%; max-width: 100vw; z-index: 1;
         }
         
         .roller-wrapper::before, .roller-wrapper::after {
@@ -370,26 +371,23 @@
         .anim-right { animation: marqueeRight 35s linear infinite; }
 
         @keyframes marqueeLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        /* Para mover para a direita de forma fluida, o track inicia já puxado à esquerda (-50%) e vai pra 0 */
         @keyframes marqueeRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
 
         /* ==========================================================================
-           7. FLIP CARDS (CLIQUE/TOQUE) + TEXTURAS
+           7. FLIP CARDS REFEITOS (Dor frente -> Solução verso + Botão)
            ========================================================================== */
-        .section-sintomas { background: radial-gradient(circle at 100% 100%, rgba(6, 39, 90, 0.3) 0%, transparent 60%); }
-
         .flip-grid { display: grid; grid-template-columns: 1fr; gap: 24px; position: relative; z-index: 2; }
 
         .flip-card {
-            perspective: 1200px; height: 230px; cursor: pointer; border-radius: var(--radius-lg); outline: none;
+            perspective: 1200px; min-height: 280px; cursor: pointer; outline: none;
             -webkit-tap-highlight-color: transparent;
         }
 
-        .flip-card:focus-visible .flip-inner { box-shadow: 0 0 0 2px var(--yellow); }
+        .flip-card:focus-visible .flip-inner { box-shadow: 0 0 0 2px var(--yellow); border-radius: var(--radius-lg); }
 
         .flip-inner {
             width: 100%; height: 100%; transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-            transform-style: preserve-3d; border-radius: inherit;
+            transform-style: preserve-3d; border-radius: var(--radius-lg);
         }
 
         .flip-card.is-flipped .flip-inner { transform: rotateY(180deg); }
@@ -404,27 +402,32 @@
         .flip-back {
             background: rgba(49, 196, 141, 0.08); border: 1px solid var(--glass-border); border-bottom: 3px solid var(--solution-green);
             transform: rotateY(180deg);
+            justify-content: space-between; /* Distribui para caber o botão embaixo */
         }
 
         .flip-emoji { font-size: 2.2rem; margin-bottom: 12px; }
         .flip-title { font-size: 1.25rem; color: var(--white); }
-        .flip-text { font-size: 0.95rem; color: var(--muted); margin-bottom: 16px; }
+        .flip-text { font-size: 0.95rem; color: var(--muted); margin-bottom: 12px; }
         
-        .flip-cta {
-            font-family: var(--font-title); font-size: 0.85rem; font-weight: 600; color: var(--yellow-soft);
-            text-decoration: underline; text-underline-offset: 4px; padding: 8px; z-index: 5; position: relative;
-        }
-
         .flip-hint { position: absolute; bottom: 16px; font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+
+        .flip-cta-btn {
+            background: var(--yellow); color: var(--navy-deep);
+            padding: 10px 20px; border-radius: 50px; font-family: var(--font-title);
+            font-weight: 700; font-size: 0.85rem; text-decoration: none;
+            display: inline-flex; align-items: center; gap: 8px; margin-top: auto;
+            transition: transform 0.3s, box-shadow 0.3s; border: none; z-index: 5; position: relative;
+        }
+        .flip-cta-btn:hover {
+            transform: translateY(-2px); box-shadow: 0 4px 15px rgba(248, 176, 8, 0.4);
+        }
 
         /* ==========================================================================
            8. ESPECIALISTA E CONTADORES
            ========================================================================== */
-        .section-especialista { position: relative; }
-        
         .specialist-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
 
-        .spec-image { position: relative; border-radius: var(--radius-lg); overflow: hidden; padding-bottom: 120%; /* Aspect ratio hack para mobile */ }
+        .spec-image { position: relative; border-radius: var(--radius-lg); overflow: hidden; padding-bottom: 120%; }
         .spec-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
         .spec-image::after {
             content: ''; position: absolute; inset: 0; border-radius: inherit;
@@ -441,7 +444,6 @@
         .num-item h4 span.glow { color: var(--yellow); }
         .num-item p { font-size: 0.85rem; color: var(--muted); line-height: 1.3; margin-top: 4px; }
 
-        /* Oculta botão CTA no JS para animá-lo depois dos números */
         .js .spec-cta-hidden { opacity: 0; transform: translateY(10px); transition: all 0.5s ease; }
         .js .spec-cta-hidden.visible { opacity: 1; transform: translateY(0); }
 
@@ -505,7 +507,6 @@
         .section-pacientes { padding-bottom: 40px; }
         .patients-track {
             display: flex; gap: 24px; padding: 24px 0; width: max-content;
-            /* .anim-right aplica marqueeRight, indo de -50% para 0 */
         }
         .roller-wrapper:hover .patients-track { animation-play-state: paused; }
 
@@ -534,6 +535,15 @@
            13. OFERTA FINAL & FOOTER
            ========================================================================== */
         .final-offer { text-align: center; padding: 64px 24px; }
+        
+        /* Elemento de Urgência */
+        .urgency-badge {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            background: rgba(248, 176, 8, 0.1); color: var(--yellow-soft);
+            padding: 10px 20px; border-radius: 50px; font-weight: 600; font-size: 0.85rem;
+            margin-bottom: 24px; border: 1px solid rgba(248, 176, 8, 0.3);
+        }
+
         .final-offer h2 { font-size: 2.2rem; margin-bottom: 16px; }
         .final-offer p { color: var(--muted); margin-bottom: 32px; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
         .final-ctas { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
@@ -588,7 +598,7 @@
 
         @media (min-width: 1024px) {
             .nav-cta { display: flex; }
-            .nav-logo img { height: 32px; } /* Logo um pouco maior no desktop */
+            .nav-logo img { height: 32px; } 
             
             .flip-grid { grid-template-columns: repeat(4, 1fr); }
             
@@ -612,7 +622,6 @@
     <div class="navbar-wrapper">
         <header class="navbar" id="navbar">
             <a href="#" class="nav-logo" aria-label="Voltar ao início">
-                <!-- Usando a logo simples conforme solicitação -->
                 <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1779643740/b5027d83-bcd8-4877-bae3-d67ba7953521_uzszdg.svg" alt="Dra. Lailla Rettore" style="width: auto; padding-left: 8px;">
             </a>
             <div class="nav-actions">
@@ -628,7 +637,6 @@
     <div class="sidebar-overlay" id="sidebar-overlay"></div>
     <nav class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <!-- Mantendo a full logo apenas dentro do menu lateral se preferir, ou usar a simples. Usando a full por estética -->
             <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1779643800/a2dd5d2c-4f7d-4657-94fb-efc0c69af070_lmyudu.svg" alt="Logo">
             <button class="btn-close" id="menu-close" aria-label="Fechar Menu">&times;</button>
         </div>
@@ -698,8 +706,8 @@
         </div>
     </div>
 
-    <!-- FLIP CARDS -->
-    <section id="tratamentos" class="section-sintomas bg-texture-dots">
+    <!-- FLIP CARDS REFEITOS -->
+    <section id="tratamentos" class="section-sintomas bg-texture-2">
         <div class="container">
             <div class="section-header reveal">
                 <h2>Entenda os sinais <br><span class="accent">e os caminhos de cuidado</span></h2>
@@ -712,13 +720,16 @@
                         <div class="flip-face flip-front">
                             <div class="flip-emoji">😣</div>
                             <div class="flip-title">Dor ao mastigar</div>
-                            <div class="flip-hint">Toque para ver</div>
+                            <div class="flip-hint">Toque para ver a solução</div>
                         </div>
                         <div class="flip-face flip-back">
-                            <div class="flip-emoji" style="font-size:1.8rem;">✅</div>
-                            <div class="flip-text">Avaliação da função mandibular, músculos da face e sinais associados.</div>
-                            <!-- O span ajuda a capturar o clique adequadamente pelo JS -->
-                            <a href="https://wa.me/5521990368794?text=Ol%C3%A1%2C%20quero%20entender%20melhor%20minha%20dor%20ao%20mastigar" class="flip-cta js-flip-cta" target="_blank"><span>Conversar sobre esse sintoma</span></a>
+                            <div>
+                                <div class="flip-emoji" style="font-size:1.8rem;">✅</div>
+                                <div class="flip-text">Avaliação da função mandibular, músculos da face e sinais associados.</div>
+                            </div>
+                            <a href="https://wa.me/5521990368794?text=Ol%C3%A1%2C%20quero%20entender%20melhor%20minha%20dor%20ao%20mastigar" class="flip-cta-btn js-flip-cta" target="_blank">
+                                Falar no WhatsApp
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -728,12 +739,16 @@
                         <div class="flip-face flip-front">
                             <div class="flip-emoji">⚠️</div>
                             <div class="flip-title">Estalos na ATM</div>
-                            <div class="flip-hint">Toque para ver</div>
+                            <div class="flip-hint">Toque para ver a solução</div>
                         </div>
                         <div class="flip-face flip-back">
-                            <div class="flip-emoji" style="font-size:1.8rem;">🌿</div>
-                            <div class="flip-text">Investigação dos movimentos mandibulares e possíveis sobrecargas articulares.</div>
-                            <a href="https://wa.me/5521990368794?text=Ol%C3%A1%2C%20quero%20entender%20melhor%20os%20estalos%20na%20minha%20mand%C3%ADbula" class="flip-cta js-flip-cta" target="_blank"><span>Conversar sobre esse sintoma</span></a>
+                            <div>
+                                <div class="flip-emoji" style="font-size:1.8rem;">🌿</div>
+                                <div class="flip-text">Investigação dos movimentos mandibulares e possíveis sobrecargas articulares.</div>
+                            </div>
+                            <a href="https://wa.me/5521990368794?text=Ol%C3%A1%2C%20quero%20entender%20melhor%20os%20estalos%20na%20minha%20mand%C3%ADbula" class="flip-cta-btn js-flip-cta" target="_blank">
+                                Falar no WhatsApp
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -743,12 +758,16 @@
                         <div class="flip-face flip-front">
                             <div class="flip-emoji">🔴</div>
                             <div class="flip-title">Bruxismo ou apertamento</div>
-                            <div class="flip-hint">Toque para ver</div>
+                            <div class="flip-hint">Toque para ver a solução</div>
                         </div>
                         <div class="flip-face flip-back">
-                            <div class="flip-emoji" style="font-size:1.8rem;">✅</div>
-                            <div class="flip-text">Plano individualizado para reduzir sobrecargas e proteger dentes e musculatura.</div>
-                            <a href="https://wa.me/5521990368794?text=Ol%C3%A1%2C%20quero%20entender%20melhor%20meu%20apertamento%20dental" class="flip-cta js-flip-cta" target="_blank"><span>Conversar sobre esse sintoma</span></a>
+                            <div>
+                                <div class="flip-emoji" style="font-size:1.8rem;">✅</div>
+                                <div class="flip-text">Plano individualizado para reduzir sobrecargas e proteger dentes e musculatura.</div>
+                            </div>
+                            <a href="https://wa.me/5521990368794?text=Ol%C3%A1%2C%20quero%20entender%20melhor%20meu%20apertamento%20dental" class="flip-cta-btn js-flip-cta" target="_blank">
+                                Falar no WhatsApp
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -758,12 +777,16 @@
                         <div class="flip-face flip-front">
                             <div class="flip-emoji">😣</div>
                             <div class="flip-title">Dor facial ou de cabeça</div>
-                            <div class="flip-hint">Toque para ver</div>
+                            <div class="flip-hint">Toque para ver a solução</div>
                         </div>
                         <div class="flip-face flip-back">
-                            <div class="flip-emoji" style="font-size:1.8rem;">🌿</div>
-                            <div class="flip-text">Análise da relação entre tensão muscular, hábitos e função mandibular.</div>
-                            <a href="https://wa.me/5521990368794?text=Ol%C3%A1%2C%20quero%20entender%20melhor%20minhas%20dores%20de%20cabe%C3%A7a" class="flip-cta js-flip-cta" target="_blank"><span>Conversar sobre esse sintoma</span></a>
+                            <div>
+                                <div class="flip-emoji" style="font-size:1.8rem;">🌿</div>
+                                <div class="flip-text">Análise da relação entre tensão muscular, hábitos e função mandibular.</div>
+                            </div>
+                            <a href="https://wa.me/5521990368794?text=Ol%C3%A1%2C%20quero%20entender%20melhor%20minhas%20dores%20de%20cabe%C3%A7a" class="flip-cta-btn js-flip-cta" target="_blank">
+                                Falar no WhatsApp
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -774,7 +797,7 @@
     <div class="decorator-line reveal"></div>
 
     <!-- ESPECIALISTA -->
-    <section id="especialista" class="section-especialista bg-texture-glow">
+    <section id="especialista" class="section-especialista bg-texture-1">
         <div class="container specialist-grid">
             <div class="spec-image reveal">
                 <img src="https://res.cloudinary.com/dm9mnc97u/image/upload/v1779583902/221d85fa-ac4d-440d-b1c4-fce0b1ad9d60_knygbq.png" alt="Dra. Lailla Rettore" loading="lazy">
@@ -785,7 +808,6 @@
                 <p>Cirurgiã-dentista com atuação em DTM, bruxismo, ATM e dor orofacial, unindo escuta cuidadosa, avaliação técnica e planejamento individualizado.</p>
                 
                 <div class="spec-numbers" id="counter-section">
-                    <!-- Textos preenchidos para Fallback (Se o JS falhar, o número correto aparece) -->
                     <div class="num-item">
                         <h4><span class="glow">+</span><span class="count" data-target="10">10</span></h4>
                         <p>anos de experiência</p>
@@ -831,7 +853,7 @@
     </div>
 
     <!-- QUIZ -->
-    <section id="quiz" class="bg-texture-dots">
+    <section id="quiz" class="bg-texture-4">
         <div class="container">
             <div class="section-header reveal">
                 <h2>Quiz rápido: <span class="accent">seus sintomas</span> podem estar ligados à DTM?</h2>
@@ -864,7 +886,7 @@
     <div class="decorator-line reveal"></div>
 
     <!-- ETAPAS DO ATENDIMENTO -->
-    <section id="atendimento">
+    <section id="atendimento" class="bg-texture-3">
         <div class="container">
             <div class="section-header reveal">
                 <h2><span class="accent">Etapas</span> do atendimento</h2>
@@ -930,7 +952,7 @@
     </div>
 
     <!-- PACIENTES (ROLLER INFINITO ESQUERDA-DIREITA) -->
-    <section id="pacientes" class="section-pacientes bg-texture-glow">
+    <section id="pacientes" class="section-pacientes bg-texture-2">
         <div class="container">
             <div class="section-header reveal">
                 <h2>O que os pacientes <span class="accent">relatam</span></h2>
@@ -939,7 +961,6 @@
         </div>
 
         <div class="roller-wrapper reveal reveal-delay-1" style="background: transparent; border: none; padding: 0;">
-            <!-- Direção esquerda pra direita configurada no CSS usando marqueeRight anim-right -->
             <div class="patients-track anim-right">
                 <!-- Cards -->
                 <div class="patient-card glass-panel">
@@ -1026,7 +1047,7 @@
     <div class="decorator-line reveal"></div>
 
     <!-- LOCALIZAÇÃO -->
-    <section id="localizacao">
+    <section id="localizacao" class="bg-texture-1">
         <div class="container reveal">
             <div class="map-card glass-panel">
                 <div class="map-info">
@@ -1046,9 +1067,15 @@
     </section>
 
     <!-- OFERTA FINAL -->
-    <section class="reveal bg-texture-glow">
+    <section class="reveal bg-texture-3">
         <div class="container">
             <div class="final-offer glass-panel">
+                
+                <div class="urgency-badge reveal">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 2px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <span>Restam poucos horários para avaliação nesta semana</span>
+                </div>
+
                 <h2>Dê o primeiro passo para <span class="accent">entender a origem</span> da sua dor</h2>
                 <p>Agende uma avaliação individualizada e receba orientação sobre os caminhos de cuidado para o seu caso.</p>
                 <div class="final-ctas">
@@ -1116,7 +1143,7 @@
                 preloader.classList.add('hide');
                 document.body.classList.remove('no-scroll');
                 setTimeout(() => preloader.style.display = 'none', 800);
-            }, 600);
+            }, 1500); // Aumentado para 1.5s
         });
 
         // 2. NAVBAR SCROLL EFFECT
