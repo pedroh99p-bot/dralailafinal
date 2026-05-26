@@ -16,15 +16,13 @@ export function Specialist() {
     <section id="especialista" class="section specialist section-texture section-texture--halo">
       <div class="container specialist__grid">
         <div class="specialist__photo-column">
-          <span class="specialist__desktop-eyebrow">A especialista</span>
+          <h2 class="specialist__eyebrow">A especialista</h2>
           <figure class="specialist__image specialist__glow reveal">
             <img src="${assets.images.specialist}" width="900" height="1080" alt="${contact.name}" loading="lazy" />
           </figure>
-          <p class="specialist__desktop-name">${contact.name}</p>
+          <p class="specialist__name">${contact.name}</p>
         </div>
         <div class="specialist__content reveal reveal-delay-1">
-          <span class="eyebrow specialist__mobile-only">A especialista</span>
-          <h2 class="specialist__mobile-only">${contact.name}</h2>
           <p class="specialist__credential">${contact.cro}</p>
           <p>
             Cirurgiã-dentista com atuação em DTM, bruxismo, ATM e dor orofacial,

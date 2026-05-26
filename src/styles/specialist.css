@@ -6,13 +6,26 @@
   text-align: center;
 }
 
-.specialist__desktop-eyebrow,
-.specialist__desktop-name {
-  display: none;
+.specialist__eyebrow {
+  width: fit-content;
+  margin: 0;
+  color: var(--color-yellow-soft);
+  font-family: var(--font-title);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
-.specialist__mobile-only {
-  display: block;
+.specialist__name {
+  width: 100%;
+  margin: 0;
+  color: var(--color-cream);
+  font-family: var(--font-title);
+  font-size: clamp(1.55rem, 8vw, 2rem);
+  font-weight: 700;
+  line-height: 1.05;
+  text-align: center;
 }
 
 .specialist__glow {
@@ -29,31 +42,15 @@
 }
 
 @media (min-width: 900px) {
-  .specialist__desktop-eyebrow {
-    display: block;
+  .specialist__eyebrow {
     align-self: flex-start;
     margin-bottom: var(--space-4);
-    font-family: var(--font-accent);
-    color: var(--color-yellow-soft);
-    text-transform: uppercase;
     letter-spacing: 0.12em;
-    font-size: 0.85rem;
-    font-weight: 700;
   }
   
-  .specialist__desktop-name {
-    display: block;
-    font-family: var(--font-title);
-    color: var(--color-cream);
+  .specialist__name {
     font-size: 2rem;
-    font-weight: 700;
     margin-top: var(--space-4);
-    text-align: center;
-    width: 100%;
-  }
-
-  .specialist__mobile-only {
-    display: none !important;
   }
   
   .specialist__photo-column {

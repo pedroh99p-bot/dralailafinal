@@ -1,13 +1,14 @@
 @media (max-width: 559px) {
   .navbar-shell {
+    left: 0;
     right: 0;
-    width: 100vw;
+    width: auto;
     padding-inline: 0.75rem;
   }
 
   .navbar {
     position: relative;
-    width: calc(100vw - 1.5rem);
+    width: 100%;
     min-height: 60px;
     padding: 0.42rem 0.5rem 0.42rem 0.75rem;
   }
@@ -20,34 +21,36 @@
   }
 
   .nav-actions {
-    position: absolute;
-    top: 50%;
-    right: 0.5rem;
-    left: auto;
+    position: fixed;
+    top: 24px;
+    right: 1.25rem;
+    z-index: calc(var(--z-navbar) + 1);
+    max-width: calc(100vw - 5.5rem);
     margin-left: auto;
     flex: 0 0 auto;
-    gap: 0.4rem;
-    transform: translateY(-50%);
+    gap: 0.32rem;
+    transform: translateX(-5.9rem);
   }
 
   .nav-cta {
     display: inline-flex;
-    min-height: 40px;
-    padding-inline: 0.82rem;
-    font-size: 0.82rem;
+    min-height: 38px;
+    padding-inline: 0.72rem;
+    font-size: 0.78rem;
   }
 
   .btn-menu {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
     border-color: rgba(248, 176, 8, 0.35);
     background: rgba(255, 255, 255, 0.1);
     color: var(--color-yellow-soft);
   }
 
   .hero {
-    min-height: 780px;
-    padding-block: 6.75rem 3.5rem;
+    min-height: 730px;
+    padding-block: 6.25rem 3.25rem;
     background-position: 63% 22%;
   }
 
@@ -58,12 +61,16 @@
 
   .hero h1 {
     max-width: 9.2ch;
-    font-size: clamp(2.2rem, 10.5vw, 2.75rem);
+    font-size: clamp(2rem, 9.7vw, 2.48rem);
   }
 
   .hero p {
     max-width: 31ch;
-    font-size: 1rem;
+    font-size: 0.96rem;
+  }
+
+  .section-header h2 {
+    font-size: clamp(1.72rem, 8.1vw, 2.12rem);
   }
 
   .btn {
@@ -120,9 +127,13 @@
 
   .flip-card__icon {
     margin-bottom: var(--space-4);
-    width: 64px;
-    height: 64px;
-    font-size: 2.15rem;
+    width: 60px;
+    height: 60px;
+  }
+
+  .flip-card-svg {
+    width: 34px;
+    height: 34px;
   }
 
   .flip-card h3 {
@@ -163,7 +174,7 @@
 
 @media (min-width: 900px) {
   .hero {
-    min-height: 760px;
+    min-height: 720px;
     background-position: 62% 22%;
   }
 
@@ -178,7 +189,7 @@
   }
 
   .hero h1 {
-    font-size: clamp(3.4rem, 6.8vw, 4.6rem);
+    font-size: clamp(3.1rem, 6.1vw, 4.2rem);
   }
 
   .specialist__grid {
