@@ -20,7 +20,8 @@ export function Navbar() {
   return `
     <div id="preloader" aria-hidden="true">
       <div class="preloader-content">
-        <img src="${assets.logos.full}" width="280" height="108" alt="" class="preloader-logo" />
+        <img src="${assets.logos.full}" width="244" height="94" alt="" class="preloader-logo" />
+        <div class="loader-bar" aria-hidden="true"></div>
       </div>
     </div>
 
