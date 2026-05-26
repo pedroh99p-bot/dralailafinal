@@ -1,16 +1,30 @@
 @media (max-width: 559px) {
   .navbar-shell {
     left: 0;
-    right: 0;
-    width: auto;
+    right: auto;
+    width: 100dvw;
+    max-width: 100dvw;
     padding-inline: 0.75rem;
+    transform: none;
+  }
+
+  .navbar-shell.is-hidden {
+    transform: translateY(-120%);
   }
 
   .navbar {
-    position: relative;
-    width: 100%;
+    width: calc(100dvw - 1.5rem);
+    max-width: calc(100dvw - 1.5rem);
     min-height: 60px;
-    padding: 0.42rem 0.5rem 0.42rem 0.75rem;
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 0.5rem;
+    padding: 0.42rem 0.48rem 0.42rem 0.62rem;
+    overflow: hidden;
+  }
+
+  .nav-logo {
+    width: 42px;
   }
 
   .nav-logo img {
@@ -21,21 +35,19 @@
   }
 
   .nav-actions {
-    position: fixed;
-    top: 24px;
-    right: 1.25rem;
-    z-index: calc(var(--z-navbar) + 1);
-    max-width: calc(100vw - 5.5rem);
-    margin-left: auto;
-    flex: 0 0 auto;
+    position: static;
+    justify-content: flex-start;
+    max-width: 100%;
+    margin-left: 0;
+    min-width: 0;
     gap: 0.32rem;
-    transform: translateX(-5.9rem);
+    transform: none;
   }
 
   .nav-cta {
     display: inline-flex;
     min-height: 38px;
-    padding-inline: 0.72rem;
+    padding-inline: 0.78rem;
     font-size: 0.78rem;
   }
 
