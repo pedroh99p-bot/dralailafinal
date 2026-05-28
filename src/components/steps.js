@@ -1,4 +1,4 @@
-import { careSteps, whatsappHref } from '../data/site-data.js';
+import { assets, careSteps, whatsappHref } from '../data/site-data.js';
 
 export function Steps() {
   const steps = careSteps
@@ -29,12 +29,13 @@ export function Steps() {
         <div class="steps__cta reveal">
           <a
             href="${whatsappHref('generic')}"
-            class="btn btn-primary"
+            class="btn btn-whatsapp"
             target="_blank"
             rel="noopener"
             data-track="whatsapp_click"
             data-track-source="steps"
           >
+            <img src="${assets.icons.whatsapp}" width="20" height="20" alt="" class="btn-icon-img" />
             Agendar avaliação pelo WhatsApp
           </a>
         </div>

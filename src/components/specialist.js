@@ -33,12 +33,13 @@ export function Specialist() {
           </div>
           <a
             href="${whatsappHref('specialist')}"
-            class="btn btn-primary specialist__cta"
+            class="btn btn-whatsapp specialist__cta"
             target="_blank"
             rel="noopener"
             data-track="whatsapp_click"
             data-track-source="specialist"
           >
+            <img src="${assets.icons.whatsapp}" width="20" height="20" alt="" class="btn-icon-img" />
             Falar com a Dra. Laila
           </a>
         </div>

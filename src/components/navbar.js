@@ -18,13 +18,6 @@ export function Navbar() {
     .join('');
 
   return `
-    <div id="preloader" aria-hidden="true">
-      <div class="preloader-content">
-        <img src="${assets.logos.full}" width="244" height="94" alt="" class="preloader-logo" />
-        <div class="loader-bar" aria-hidden="true"></div>
-      </div>
-    </div>
-
     <div class="navbar-shell">
       <header class="navbar" id="navbar">
         <a href="#inicio" class="nav-logo" aria-label="Voltar ao início">
@@ -33,12 +26,13 @@ export function Navbar() {
         <div class="nav-actions">
           <a
             href="${whatsappHref('generic')}"
-            class="btn btn-primary nav-cta"
+            class="btn btn-whatsapp nav-cta"
             target="_blank"
             rel="noopener"
             data-track="whatsapp_click"
             data-track-source="navbar"
           >
+            <img src="${assets.icons.whatsapp}" width="18" height="18" alt="" class="btn-icon-img" />
             Consulta
           </a>
           <button class="btn-menu" id="menu-open" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-menu">
@@ -61,12 +55,13 @@ export function Navbar() {
       </div>
       <a
         href="${whatsappHref('generic')}"
-        class="btn btn-primary site-menu__cta"
+        class="btn btn-whatsapp site-menu__cta"
         target="_blank"
         rel="noopener"
         data-track="whatsapp_click"
         data-track-source="menu"
       >
+        <img src="${assets.icons.whatsapp}" width="18" height="18" alt="" class="btn-icon-img" />
         Agendar avaliação
       </a>
     </nav>
@@ -74,7 +69,7 @@ export function Navbar() {
     <div class="floating-actions" aria-label="Ações rápidas">
       <a
         href="${whatsappHref('generic')}"
-        class="float-btn"
+        class="float-btn float-btn--whatsapp"
         aria-label="Falar no WhatsApp"
         target="_blank"
         rel="noopener"
@@ -85,7 +80,7 @@ export function Navbar() {
       </a>
       <a
         href="${contact.instagramUrl}"
-        class="float-btn"
+        class="float-btn float-btn--instagram"
         aria-label="Acessar Instagram"
         target="_blank"
         rel="noopener"

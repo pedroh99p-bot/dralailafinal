@@ -38,12 +38,13 @@ export function Testimonials() {
         <p>Depoimentos ilustrativos para demonstração.</p>
         <a
           href="${whatsappHref('generic')}"
-          class="btn btn-primary"
+          class="btn btn-whatsapp"
           target="_blank"
           rel="noopener"
           data-track="whatsapp_click"
           data-track-source="testimonials"
         >
+          <img src="${assets.icons.whatsapp}" width="20" height="20" alt="" class="btn-icon-img" />
           Falar com especialista
         </a>
       </div>

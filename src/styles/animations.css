@@ -22,15 +22,15 @@
 
 .preloader-content {
   display: flex;
-  width: min(78vw, 320px);
+  width: min(82vw, 340px);
   flex-direction: column;
   align-items: center;
-  gap: var(--space-5);
+  gap: var(--space-4);
   text-align: center;
 }
 
 .preloader-logo {
-  width: min(244px, 68vw);
+  width: min(220px, 62vw);
   height: auto;
   filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.28));
   animation: preloader-logo-in 0.7s var(--ease-out) both;
@@ -55,6 +55,14 @@
   animation: loader-move 1.25s var(--ease-out) infinite;
 }
 
+.preloader-status {
+  color: rgba(255, 255, 255, 0.68);
+  font-family: var(--font-title);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
 .reveal-ready .reveal {
   opacity: 0;
   transform: translateY(26px);
@@ -74,6 +82,10 @@
 
 .btn-pulse {
   animation: button-pulse 2.6s ease-in-out infinite;
+}
+
+.btn-whatsapp.btn-pulse {
+  animation: whatsapp-button-pulse 2.6s ease-in-out infinite;
 }
 
 @keyframes loader-move {
@@ -132,6 +144,16 @@
   }
   50% {
     box-shadow: 0 0 0 10px rgba(248, 176, 8, 0), var(--shadow-yellow-strong);
+  }
+}
+
+@keyframes whatsapp-button-pulse {
+  0%,
+  100% {
+    box-shadow: 0 10px 32px rgba(37, 211, 102, 0.28);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0), 0 16px 44px rgba(37, 211, 102, 0.42);
   }
 }
 

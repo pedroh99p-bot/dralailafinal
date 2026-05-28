@@ -22,7 +22,7 @@ export function Hero() {
             </a>
             <a
               href="${whatsappHref('hero_attendance')}"
-              class="btn btn-success"
+              class="btn btn-whatsapp"
               target="_blank"
               rel="noopener"
               data-track="whatsapp_click"

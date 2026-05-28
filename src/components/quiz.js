@@ -1,4 +1,4 @@
-import { whatsappHref } from '../data/site-data.js';
+import { assets, contact, whatsappHref } from '../data/site-data.js';
 
 export function Quiz() {
   return `
@@ -10,6 +10,7 @@ export function Quiz() {
         </header>
 
         <div class="quiz-card reveal reveal-delay-1" id="quiz-container">
+          <img src="${assets.logos.simple}" width="54" height="54" alt="${contact.name}" loading="lazy" class="quiz__logo" />
           <div class="quiz-progress" aria-hidden="true">
             <span id="quiz-fill"></span>
           </div>
@@ -23,12 +24,13 @@ export function Quiz() {
             <div class="quiz-result__actions">
               <a
                 id="quiz-whatsapp"
-                class="btn btn-primary"
+                class="btn btn-whatsapp"
                 target="_blank"
                 rel="noopener"
                 data-track="whatsapp_click"
                 data-track-source="quiz-result"
               >
+                <img src="${assets.icons.whatsapp}" width="20" height="20" alt="" class="btn-icon-img" />
                 Falar com especialista no WhatsApp
               </a>
               <button class="btn btn-secondary" id="btn-quiz-reset" type="button">Refazer quiz</button>
@@ -40,12 +42,13 @@ export function Quiz() {
           <p class="quiz-direct-cta__text">Prefere atendimento direto? Fale com a especialista</p>
           <a
             href="${whatsappHref('generic')}"
-            class="btn btn-secondary quiz-direct-cta__button"
+            class="btn btn-whatsapp quiz-direct-cta__button"
             target="_blank"
             rel="noopener"
             data-track="whatsapp_click"
             data-track-source="quiz-direct"
           >
+            <img src="${assets.icons.whatsapp}" width="20" height="20" alt="" class="btn-icon-img" />
             Chamar no WhatsApp
           </a>
         </div>

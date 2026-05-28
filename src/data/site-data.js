@@ -10,8 +10,8 @@ export const contact = {
 
 export const assets = {
   logos: {
-    simple: '/assets/logos/logo-simple.svg',
-    full: '/assets/logos/logo-full.svg',
+    simple: 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1779979472/hy_duovkq.webp',
+    full: 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1779979481/3c7ca413-912c-4cdd-9144-97bab9c3c5e5-_2__tntruz.webp',
   },
   images: {
     hero: '/assets/images/hero.png',
@@ -46,7 +46,7 @@ export const location = {
 };
 
 export const whatsappMessages = {
-  hero_attendance: 'Olá, vim pelo site e gostaria de agendar uma avaliação com a Dra. Lailla',
+  hero_attendance: 'Olá, vim pelo site e gostaria de agendar uma avaliação com a Dra. Laila',
   quiz_result: 'Olá, fiz o quiz no site e quero entender melhor meu resultado',
   flip_cards: 'Olá, quero entender melhor meus sintomas de DTM ou bruxismo',
   specialist: 'Olá, gostaria de falar com a Dra. Laila sobre meus sintomas',

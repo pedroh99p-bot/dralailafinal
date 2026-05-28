@@ -112,9 +112,10 @@
   min-height: 42px;
   align-items: center;
   justify-content: center;
+  gap: 0.36rem;
   border-radius: var(--radius-pill);
   padding: 0.58rem 0.72rem;
-  background: var(--color-yellow);
+  background: #25D366;
   color: var(--color-navy-950);
   font-family: var(--font-title);
   font-size: 0.72rem;
@@ -125,6 +126,7 @@
 }
 
 .flip-card__cta:hover {
-  box-shadow: var(--shadow-yellow);
+  background: #20ba5a;
+  box-shadow: 0 14px 34px rgba(37, 211, 102, 0.32);
   transform: translateY(-2px);
 }

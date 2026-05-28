@@ -1,4 +1,4 @@
-import { whatsappHref } from '../data/site-data.js';
+import { assets, whatsappHref } from '../data/site-data.js';
 
 export function FinalOffer() {
   return `
@@ -17,12 +17,13 @@ export function FinalOffer() {
           <div class="final-offer__ctas">
             <a
               href="${whatsappHref('final_offer')}"
-              class="btn btn-primary btn-pulse"
+              class="btn btn-whatsapp btn-pulse"
               target="_blank"
               rel="noopener"
               data-track="final_offer_cta_click whatsapp_click"
               data-track-source="final-offer"
             >
+              <img src="${assets.icons.whatsapp}" width="20" height="20" alt="" class="btn-icon-img" />
               Falar no WhatsApp
             </a>
             <a href="#quiz" class="btn btn-secondary" data-track="quiz_cta_click" data-track-source="final-offer">

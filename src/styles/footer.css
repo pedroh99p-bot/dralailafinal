@@ -11,7 +11,7 @@
 }
 
 .footer__brand .footer__logo {
-  width: min(180px, 54vw);
+  width: min(160px, 48vw);
   max-width: 100%;
   height: auto;
   margin-bottom: var(--space-4);
