@@ -17,7 +17,7 @@ export const assets = {
     full: logoFull,
   },
   images: {
-    hero: 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781450182/WhatsApp_Image_2026-06-12_at_16.23.57_yjh9w6.webp',
+    hero: 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781450620/Design_sem_nome_11_xewbqe.webp',
     specialist:
       'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781450183/Design_sem_nome_9_euzmxh.webp',
   },
