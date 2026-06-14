@@ -136,23 +136,28 @@
 
   .hero__media {
     position: absolute !important;
-    inset: 0 !important;
-    z-index: 2;
+    top: 165px !important;
+    right: -120px !important;
+    width: 78vw !important;
+    height: 520px !important;
+    z-index: 2 !important;
     margin: 0 !important;
     pointer-events: none;
+    overflow: visible !important;
   }
 
   .hero__portrait {
     position: absolute !important;
-    left: auto !important;
-    right: -165px !important;
-    top: 270px !important;
-    width: 105vw !important;
-    max-width: 500px !important;
+    top: -210px !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
     height: auto !important;
-    opacity: 0.58;
+    opacity: 1 !important;
     object-fit: contain;
     object-position: center top;
+    filter: drop-shadow(0 28px 64px rgba(0, 0, 0, 0.38));
   }
 
   .hero__content,
