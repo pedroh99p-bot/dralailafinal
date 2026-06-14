@@ -1,4 +1,11 @@
-import { quizCtaHref, quizOptions, quizQuestions, quizResults } from '../data/quiz-data.js';
+import {
+  painAlertResult,
+  painSensitiveQuestionIndexes,
+  quizCtaHref,
+  quizOptions,
+  quizQuestions,
+  quizResults,
+} from '../data/quiz-data.js';
 import { qs } from './helpers.js';
 import { trackEvent } from './tracking.js';
 
@@ -51,7 +58,10 @@ export function initQuiz() {
 
   function showResult() {
     const total = answers.reduce((sum, score) => sum + score, 0);
-    const data = quizResults.find((item) => total >= item.min && total <= item.max) || quizResults[0];
+    const hasPainSignal = painSensitiveQuestionIndexes.some((questionIndex) => answers[questionIndex] > 0);
+    const data = hasPainSignal
+      ? painAlertResult
+      : quizResults.find((item) => total >= item.min && total <= item.max) || quizResults[0];
 
     fill.style.width = '100%';
     wrapper.hidden = true;
@@ -60,7 +70,7 @@ export function initQuiz() {
     result.dataset.tone = data.tone;
     resultTitle.textContent = data.title;
     resultDesc.textContent = data.description;
-    trackEvent('quiz_complete', { score: total, result: data.tone });
+    trackEvent('quiz_complete', { score: total, result: data.tone, hasPainSignal });
   }
 
   function selectAnswer(index) {

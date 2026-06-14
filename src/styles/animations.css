@@ -8,15 +8,13 @@
   transition:
     opacity var(--duration-slow) ease,
     visibility var(--duration-slow) ease,
-    transform var(--duration-slow) ease,
-    filter var(--duration-slow) ease;
+    transform var(--duration-slow) ease;
 }
 
 #preloader.is-hidden {
   visibility: hidden;
   opacity: 0;
   transform: scale(1.02);
-  filter: blur(10px);
   pointer-events: none;
 }
 
@@ -65,10 +63,10 @@
 
 .reveal-ready .reveal {
   opacity: 0;
-  transform: translateY(26px);
+  transform: translateY(16px);
   transition:
-    opacity 700ms ease,
-    transform 700ms var(--ease-out);
+    opacity 520ms ease,
+    transform 520ms var(--ease-out);
 }
 
 .reveal-ready .reveal.visible {

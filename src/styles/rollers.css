@@ -48,6 +48,14 @@
   will-change: transform;
 }
 
+@media (max-width: 559px) {
+  .roller__track,
+  .testimonial-roller__track {
+    animation-duration: 54s;
+    will-change: auto;
+  }
+}
+
 .roller__track--left {
   animation-name: marquee-left;
 }

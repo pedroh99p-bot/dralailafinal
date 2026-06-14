@@ -209,7 +209,6 @@
 .btn-secondary {
   border: 1px solid var(--glass-border);
   background: var(--glass-bg);
-  backdrop-filter: blur(16px);
 }
 
 .btn-secondary:hover {

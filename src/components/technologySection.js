@@ -38,7 +38,10 @@ export function TechnologySection() {
         </div>
 
         <div class="technology-scanner reveal reveal-delay-1" aria-hidden="true">
-          <div class="technology-scanner__badge">Scanner intraoral</div>
+          <div class="technology-scanner__topline">
+            <div class="technology-scanner__badge">Scanner intraoral</div>
+            <img src="${assets.logos.simple}" width="42" height="42" alt="" loading="lazy" class="technology-scanner__logo" />
+          </div>
           <div class="technology-scanner__screen">
             <span class="technology-scanner__beam"></span>
             <span class="technology-scanner__arch"></span>

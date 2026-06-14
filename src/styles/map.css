@@ -5,8 +5,7 @@
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-panel);
   background: var(--glass-bg);
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(18px);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.2);
 }
 
 .map-card__info {

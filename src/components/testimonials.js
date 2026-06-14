@@ -8,7 +8,6 @@ function cardMarkup(testimonial, hidden = false) {
         <img src="${testimonial.photo}" width="56" height="56" alt="${testimonial.name}" loading="lazy" class="testimonial-card__avatar" />
         <div>
           <strong>${testimonial.name}</strong>
-          ${testimonial.pending ? '<span>Relato pendente</span>' : ''}
         </div>
       </header>
       <p>${testimonial.text}</p>

@@ -19,6 +19,15 @@ export const quizOptions = [
   { label: 'Muito intenso ou frequente', score: 4 },
 ];
 
+export const painSensitiveQuestionIndexes = [0, 1, 2, 4, 5, 6, 7];
+
+export const painAlertResult = {
+  title: 'Sinais que merecem atenção',
+  tone: 'high',
+  description:
+    'Você relatou sinais que não deveriam ser ignorados, principalmente quando envolvem dor, tensão, estalos, desgaste ou dificuldade para mastigar e abrir a boca. Isso não é um diagnóstico, mas pode indicar que seu corpo está tentando avisar que algo precisa ser investigado com atenção. Quanto antes você entende a causa, maiores são as chances de iniciar um cuidado mais preciso e recuperar qualidade de vida. Agende uma avaliação especializada e dê o primeiro passo para parar de conviver com esse incômodo.',
+};
+
 export const quizResults = [
   {
     min: 0,
