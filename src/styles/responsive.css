@@ -102,14 +102,14 @@
 }
 
 .hero__media {
-  top: 12.15rem;
-  right: -3.65rem;
+  top: 3.25rem;
+  right: -4.15rem;
   bottom: auto;
 }
 
 .hero__portrait {
-  width: min(61vw, 286px);
-  max-height: 405px;
+  width: min(68vw, 318px);
+  max-height: 470px;
   object-position: right top;
 }
 
