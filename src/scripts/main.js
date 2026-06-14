@@ -38,6 +38,7 @@ function App() {
       ${Quiz()}
       <div class="decorator-line reveal" aria-hidden="true"></div>
       ${Steps()}
+      ${Roller(rollers[3], 'roller--tech')}
       ${TechnologySection()}
       ${Roller(rollers[2])}
       ${Testimonials()}
@@ -50,7 +51,7 @@ function App() {
         </div>
       </div>
       ${FinalOffer()}
-      ${Roller(rollers[3], 'roller--quiet')}
+      ${Roller(rollers[4], 'roller--quiet')}
     </main>
     ${Footer()}
   `;
@@ -62,7 +63,16 @@ function render() {
   root.innerHTML = App();
 }
 
+function protectImages() {
+  document.querySelectorAll('img').forEach((image) => {
+    image.setAttribute('draggable', 'false');
+    image.addEventListener('contextmenu', (event) => event.preventDefault());
+    image.addEventListener('dragstart', (event) => event.preventDefault());
+  });
+}
+
 render();
+protectImages();
 
 initSafely('preloader', initPreloader);
 initSafely('navbar', initNavbar);

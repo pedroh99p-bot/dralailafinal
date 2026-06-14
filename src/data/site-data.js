@@ -102,6 +102,19 @@ export const rollers = [
   {
     direction: 'right',
     items: [
+      'Atendimento com hora marcada',
+      'Scanner digital',
+      'Alta tecnologia',
+      'Planejamento individualizado',
+      'Avaliação mais precisa',
+      'Visualização digital da mordida',
+      'Cuidado clínico moderno',
+      'Conforto em cada etapa',
+    ],
+  },
+  {
+    direction: 'right',
+    items: [
       'Diagnóstico',
       'Precisão',
       'Acolhimento',

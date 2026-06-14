@@ -69,29 +69,18 @@
   }
 
   .hero {
-    min-height: 620px;
-    min-height: clamp(590px, 80svh, 650px);
+    min-height: 640px;
     padding-block: 5.85rem 2rem;
   }
 
   .hero__container {
-    min-height: calc(clamp(590px, 80svh, 650px) - 7.85rem);
+    min-height: calc(640px - 7.85rem);
     align-items: start;
-  }
-
-  @supports (height: 100dvh) {
-    .hero {
-      min-height: clamp(590px, 80dvh, 650px);
-    }
-
-    .hero__container {
-      min-height: calc(clamp(590px, 80dvh, 650px) - 7.85rem);
-    }
   }
 
   .hero__content {
     width: min(100%, 350px);
-    max-width: 68%;
+    max-width: 72%;
     padding-top: 0.4rem;
   }
 
@@ -102,7 +91,7 @@
   }
 
   .hero p {
-    max-width: 26ch;
+    max-width: 28ch;
     font-size: 0.96rem;
   }
 
@@ -111,14 +100,14 @@
   }
 
   .hero__media {
-    top: 15.2rem;
-    right: -4.35rem;
+    top: 5.35rem;
+    right: -4.85rem;
     bottom: auto;
   }
 
   .hero__portrait {
-    width: min(55vw, 236px);
-    max-height: 350px;
+    width: min(63vw, 288px);
+    max-height: 425px;
     object-position: right bottom;
   }
 

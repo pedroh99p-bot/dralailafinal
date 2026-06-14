@@ -117,17 +117,21 @@
   gap: var(--space-3);
   overflow: hidden;
   padding-inline: var(--space-5);
+  opacity: 0;
+  transform: translateY(-4px);
   background:
     linear-gradient(180deg, rgba(49, 196, 141, 0.08), rgba(255, 255, 255, 0.025)),
     rgba(0, 11, 31, 0.38);
   transition:
-    max-height var(--duration-slow) var(--ease-out),
-    padding-block var(--duration-base) var(--ease-out);
+    opacity 180ms var(--ease-out),
+    transform 180ms var(--ease-out);
 }
 
 .flip-card.is-open .flip-card__body {
-  max-height: 260px;
+  max-height: 320px;
   padding-block: var(--space-5);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .flip-card__body p {

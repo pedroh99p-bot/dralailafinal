@@ -12,16 +12,25 @@ export function TechnologySection() {
           </p>
           <div class="technology-section__benefits">
             <article class="technology-benefit">
-              <strong>Avaliação mais precisa</strong>
-              <p>Mais clareza para observar sinais funcionais que passam despercebidos em uma análise superficial.</p>
+              <span class="technology-benefit__number">1</span>
+              <div>
+                <strong>Avaliação mais precisa</strong>
+                <p>Mais clareza para observar sinais funcionais que passam despercebidos em uma análise superficial.</p>
+              </div>
             </article>
             <article class="technology-benefit">
-              <strong>Visualização digital da mordida</strong>
-              <p>Uma leitura mais visual para entender contato, desgaste e possíveis sobrecargas.</p>
+              <span class="technology-benefit__number">2</span>
+              <div>
+                <strong>Visualização digital da mordida</strong>
+                <p>Uma leitura mais visual para entender contato, desgaste e possíveis sobrecargas.</p>
+              </div>
             </article>
             <article class="technology-benefit">
-              <strong>Planejamento mais personalizado</strong>
-              <p>As decisões de cuidado ficam mais alinhadas aos sintomas, hábitos e necessidades do seu caso.</p>
+              <span class="technology-benefit__number">3</span>
+              <div>
+                <strong>Planejamento mais personalizado</strong>
+                <p>As decisões de cuidado ficam mais alinhadas aos sintomas, hábitos e necessidades do seu caso.</p>
+              </div>
             </article>
           </div>
           <a

@@ -43,6 +43,12 @@ iframe {
   border: 0;
 }
 
+img {
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
 :focus-visible {
   outline: 2px solid var(--color-yellow);
   outline-offset: 4px;
