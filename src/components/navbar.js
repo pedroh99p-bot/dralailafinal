@@ -21,7 +21,7 @@ export function Navbar() {
     <div class="navbar-shell">
       <header class="navbar" id="navbar">
         <a href="#inicio" class="nav-logo" aria-label="Voltar ao início">
-          <img src="${assets.logos.simple}" width="150" height="48" alt="${contact.name}" />
+          <img src="${assets.logos.simple}" width="64" height="64" alt="${contact.name}" />
         </a>
         <div class="nav-actions">
           <a
@@ -45,7 +45,7 @@ export function Navbar() {
     <div class="menu-overlay" id="menu-overlay" hidden></div>
     <nav class="site-menu" id="site-menu" aria-label="Menu principal" aria-hidden="true" hidden>
       <div class="site-menu__header">
-        <img src="${assets.logos.simple}" width="54" height="54" alt="${contact.name}" class="site-menu__logo" />
+        <img src="${assets.logos.simple}" width="64" height="64" alt="${contact.name}" class="site-menu__logo" />
         <button class="btn-icon" id="menu-close" type="button" aria-label="Fechar menu">
           ${closeIcon}
         </button>

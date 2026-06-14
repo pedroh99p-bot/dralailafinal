@@ -8,12 +8,13 @@ export const contact = {
   instagramHandle: '@dralailarettore',
 };
 
-const logo = 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781399580/Design_sem_nome_1_btet5v.svg';
+const logoSimple = 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781405885/Design_sem_nome_7_wdo0cm.png';
+const logoFull = 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781399580/Design_sem_nome_1_btet5v.svg';
 
 export const assets = {
   logos: {
-    simple: logo,
-    full: logo,
+    simple: logoSimple,
+    full: logoFull,
   },
   images: {
     hero: 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781399992/a56f6f8d-77a1-49ec-8bf9-b4503b38cbe8_gdzjec.webp',

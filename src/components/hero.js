@@ -8,6 +8,10 @@ export function Hero() {
       </video>
       <div class="hero__overlay" aria-hidden="true"></div>
       <div class="container hero__container">
+        <figure class="hero__media reveal reveal-delay-1">
+          <img src="${assets.images.hero}" width="760" height="920" alt="${contact.name}" class="hero__portrait" fetchpriority="high" />
+        </figure>
+
         <div class="hero__content reveal">
           <div class="hero__badges" aria-label="Focos de atendimento">
             <span class="badge">DTM</span>
@@ -37,10 +41,6 @@ export function Hero() {
             </a>
           </div>
         </div>
-
-        <figure class="hero__media reveal reveal-delay-1">
-          <img src="${assets.images.hero}" width="760" height="920" alt="${contact.name}" class="hero__portrait" fetchpriority="high" />
-        </figure>
       </div>
     </section>
   `;

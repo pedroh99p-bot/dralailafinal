@@ -10,10 +10,20 @@ export function TechnologySection() {
           <p class="technology-section__lead">
             O atendimento conta com recursos digitais, como scanner, para tornar a avaliação mais precisa, visual e personalizada.
           </p>
-          <p>
-            Com uma análise mais detalhada, é possível compreender sinais de desgaste, alterações na mordida e impactos funcionais
-            que podem estar relacionados à dor, ao bruxismo e aos desconfortos na região da face.
-          </p>
+          <div class="technology-section__benefits">
+            <article class="technology-benefit">
+              <strong>Avaliação mais precisa</strong>
+              <p>Mais clareza para observar sinais funcionais que passam despercebidos em uma análise superficial.</p>
+            </article>
+            <article class="technology-benefit">
+              <strong>Visualização digital da mordida</strong>
+              <p>Uma leitura mais visual para entender contato, desgaste e possíveis sobrecargas.</p>
+            </article>
+            <article class="technology-benefit">
+              <strong>Planejamento mais personalizado</strong>
+              <p>As decisões de cuidado ficam mais alinhadas aos sintomas, hábitos e necessidades do seu caso.</p>
+            </article>
+          </div>
           <a
             href="${whatsappHref('technology')}"
             class="btn btn-whatsapp technology-section__cta"
@@ -28,6 +38,7 @@ export function TechnologySection() {
         </div>
 
         <div class="technology-scanner reveal reveal-delay-1" aria-hidden="true">
+          <div class="technology-scanner__badge">Scanner intraoral</div>
           <div class="technology-scanner__screen">
             <span class="technology-scanner__beam"></span>
             <span class="technology-scanner__arch"></span>

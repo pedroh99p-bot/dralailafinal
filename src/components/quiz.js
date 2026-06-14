@@ -10,7 +10,7 @@ export function Quiz() {
         </header>
 
         <div class="quiz-card reveal reveal-delay-1" id="quiz-container">
-          <img src="${assets.logos.simple}" width="54" height="54" alt="${contact.name}" loading="lazy" class="quiz__logo" />
+          <img src="${assets.logos.simple}" width="64" height="64" alt="${contact.name}" loading="lazy" class="quiz__logo" />
           <div class="quiz-progress" aria-hidden="true">
             <span id="quiz-fill"></span>
           </div>
