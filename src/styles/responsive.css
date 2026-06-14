@@ -151,7 +151,6 @@
 
 @media (min-width: 560px) {
   .hero__ctas,
-  .final-offer__ctas,
   .quiz-result__actions {
     width: fit-content;
     flex-direction: row;

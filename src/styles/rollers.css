@@ -66,18 +66,13 @@
 
 .roller__track--left {
   animation-name: marquee-left;
+  animation-play-state: running;
 }
 
 .roller__track--right,
 .testimonial-roller__track {
   animation-name: marquee-right;
-}
-
-@media (hover: hover) {
-  .roller:hover .roller__track,
-  .testimonial-roller:hover .testimonial-roller__track {
-    animation-play-state: paused;
-  }
+  animation-play-state: running;
 }
 
 .roller__set,
