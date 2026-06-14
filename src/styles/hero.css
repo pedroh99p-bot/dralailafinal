@@ -135,12 +135,12 @@
 
   .hero__media {
     position: absolute;
-    right: -95px;
-    bottom: 0;
-    width: 92vw;
-    max-width: 390px;
     z-index: 2;
-    opacity: 0.82;
+    right: -115px;
+    bottom: 95px;
+    width: 105vw;
+    max-width: 430px;
+    opacity: 0.72;
     margin: 0;
     pointer-events: none;
   }
