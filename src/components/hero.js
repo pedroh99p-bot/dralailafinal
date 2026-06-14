@@ -9,7 +9,15 @@ export function Hero() {
       <div class="hero__overlay" aria-hidden="true"></div>
       <div class="container hero__container">
         <figure class="hero__media reveal reveal-delay-1">
-          <img src="${assets.images.hero}" width="760" height="920" alt="${contact.name}" class="hero__portrait" fetchpriority="high" />
+          <img
+            src="${assets.images.hero}"
+            width="739"
+            height="1630"
+            alt="${contact.name}"
+            class="hero__portrait"
+            fetchpriority="high"
+            draggable="false"
+          />
         </figure>
 
         <div class="hero__content reveal">

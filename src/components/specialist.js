@@ -21,6 +21,7 @@ export function Specialist() {
             <img src="${assets.images.specialist}" width="900" height="1080" alt="${contact.name}" loading="lazy" />
           </figure>
           <p class="specialist__name">${contact.name}</p>
+          <p class="specialist__subtitle">${contact.specialistSubtitle}</p>
         </div>
         <div class="specialist__content reveal reveal-delay-1">
           <p class="specialist__credential">${contact.cro} · 23 anos de formada</p>

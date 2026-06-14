@@ -53,6 +53,7 @@
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 
 @media (max-width: 559px) {
@@ -72,9 +73,11 @@
   animation-name: marquee-right;
 }
 
-.roller:hover .roller__track,
-.testimonial-roller:hover .testimonial-roller__track {
-  animation-play-state: paused;
+@media (hover: hover) {
+  .roller:hover .roller__track,
+  .testimonial-roller:hover .testimonial-roller__track {
+    animation-play-state: paused;
+  }
 }
 
 .roller__set,

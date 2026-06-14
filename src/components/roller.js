@@ -1,5 +1,5 @@
 function rollerItems(items) {
-  return items.map((item) => `<span class="roller__item">${item}<span class="roller__dot">•</span></span>`).join('');
+  return items.map((item) => `<span class="roller__item">${item}<span class="roller__dot">&bull;</span></span>`).join('');
 }
 
 export function Roller({ items, direction = 'left' }, className = '') {

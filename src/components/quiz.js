@@ -19,6 +19,7 @@ export function Quiz() {
             <button class="btn-link" id="btn-quiz-back" type="button">← Voltar</button>
           </div>
           <div class="quiz-result" id="quiz-result" hidden>
+            <span class="quiz-result__signal" id="result-signal">Seu resultado</span>
             <h3 id="result-title"></h3>
             <p id="result-desc"></p>
             <div class="quiz-result__actions">

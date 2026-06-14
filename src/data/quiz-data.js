@@ -55,4 +55,10 @@ export const quizResults = [
   },
 ];
 
+export const quizToneLabels = {
+  low: 'Avaliação preventiva',
+  medium: 'Vale investigar',
+  high: 'Atenção aos sinais',
+};
+
 export const quizCtaHref = whatsappHref('quiz_result');

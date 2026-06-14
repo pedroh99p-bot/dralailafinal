@@ -2,7 +2,7 @@ export const testimonials = [
   {
     name: 'Beatriz',
     photo: 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781402912/9_tsi40x.png?_s=public-apps',
-    text: 'Cheguei com dor ao mastigar e medo de piorar. Fui acolhida com muita calma e hoje consigo entender melhor meus sinais e cuidar da minha rotina com mais segurança.',
+    text: 'Cheguei com dor ao mastigar e medo de piorar. Fui acolhida com muita calma e hoje consigo cuidar da minha rotina com mais segurança e menos tensão.',
   },
   {
     name: 'Pamela',
@@ -12,7 +12,7 @@ export const testimonials = [
   {
     name: 'Eliana',
     photo: 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781402913/6_sdmc3h.png?_s=public-apps',
-    text: 'A Dra. Laila explicou tudo com cuidado e sem pressa. Me senti ouvida, respeitada e mais confiante para seguir o tratamento com disciplina.',
+    text: 'A Dra. Laila explicou tudo com cuidado e sem pressa. Me senti ouvida, respeitada e muito mais confiante para seguir o tratamento com disciplina.',
   },
   {
     name: 'Júlia',

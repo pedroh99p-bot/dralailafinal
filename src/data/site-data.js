@@ -1,6 +1,7 @@
 export const contact = {
   name: 'Dra. Laila Rettore',
   cro: 'CRO 32142',
+  specialistSubtitle: 'Especialista em DTM, bruxismo e dor orofacial',
   whatsappNumber: '5521975334147',
   whatsappVisible: '(21) 97533-4147',
   whatsappUrl: 'https://wa.me/5521975334147',

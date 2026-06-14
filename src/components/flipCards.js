@@ -11,7 +11,7 @@ export function FlipCards() {
             <span class="flip-card__title">${card.front}</span>
             <span class="flip-card__hint">
               <span class="flip-card__hint-mobile">Toque para expandir</span>
-              <span class="flip-card__hint-desktop">Clique para expandir</span>
+              <span class="flip-card__hint-desktop">Passe ou clique para ver mais</span>
             </span>
             <span class="flip-card__chevron" aria-hidden="true"></span>
           </button>

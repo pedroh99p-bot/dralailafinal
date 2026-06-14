@@ -5,6 +5,7 @@ import {
   quizOptions,
   quizQuestions,
   quizResults,
+  quizToneLabels,
 } from '../data/quiz-data.js';
 import { qs } from './helpers.js';
 import { trackEvent } from './tracking.js';
@@ -15,6 +16,7 @@ export function initQuiz() {
   const backButton = qs('#btn-quiz-back');
   const resetButton = qs('#btn-quiz-reset');
   const result = qs('#quiz-result');
+  const resultSignal = qs('#result-signal');
   const resultTitle = qs('#result-title');
   const resultDesc = qs('#result-desc');
   const whatsapp = qs('#quiz-whatsapp');
@@ -68,6 +70,7 @@ export function initQuiz() {
     backButton.hidden = true;
     result.hidden = false;
     result.dataset.tone = data.tone;
+    resultSignal.textContent = quizToneLabels[data.tone] || 'Seu resultado';
     resultTitle.textContent = data.title;
     resultDesc.textContent = data.description;
     trackEvent('quiz_complete', { score: total, result: data.tone, hasPainSignal });
