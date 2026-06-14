@@ -131,26 +131,28 @@
   .hero__container {
     position: relative;
     min-height: 100svh;
+    overflow: hidden;
   }
 
   .hero__media {
     position: absolute;
+    inset: 0;
     z-index: 2;
-    right: -115px;
-    bottom: 95px;
-    width: 105vw;
-    max-width: 430px;
-    opacity: 0.72;
     margin: 0;
     pointer-events: none;
   }
 
   .hero__portrait {
-    width: 100%;
-    max-height: none;
+    position: absolute;
+    top: 255px;
+    right: -155px;
+    width: 92vw;
+    max-width: 520px;
     height: auto;
+    opacity: 0.62;
     object-fit: contain;
-    object-position: center bottom;
+    object-position: center top;
+    filter: drop-shadow(0 28px 64px rgba(0, 0, 0, 0.35));
   }
 
   .hero__content,
