@@ -17,9 +17,9 @@ export const assets = {
     full: logoFull,
   },
   images: {
-    hero: 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781450620/Design_sem_nome_11_xewbqe.webp',
+    hero: 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781451769/Dra._Laila_Rettore_CRO_32142_2_ahg3wp.webp',
     specialist:
-      'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781450183/Design_sem_nome_9_euzmxh.webp',
+      'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781451581/Dra._Laila_Rettore_CRO_32142_lsfuf6.webp',
   },
   videos: {
     hero: 'https://res.cloudinary.com/dm9mnc97u/video/upload/v1781400964/0613_2_1_vtm3rn.webm',
