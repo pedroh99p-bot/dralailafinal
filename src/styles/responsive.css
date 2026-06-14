@@ -69,12 +69,12 @@
   }
 
 .hero {
-  min-height: 610px;
-  padding-block: 5.45rem 1.15rem;
+  min-height: 585px;
+  padding-block: 5.85rem 0;
 }
 
 .hero__container {
-  min-height: calc(610px - 6.6rem);
+  min-height: calc(585px - 5.85rem);
   align-items: start;
 }
 
