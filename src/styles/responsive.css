@@ -102,8 +102,8 @@
 }
 
 .hero__media {
-  top: 3.25rem;
-  right: -4.15rem;
+  top: 4.85rem;
+  right: -4.25rem;
   bottom: auto;
 }
 
@@ -111,6 +111,7 @@
   width: min(68vw, 318px);
   max-height: 470px;
   object-position: right top;
+  transform: translateY(-3.8rem);
 }
 
   .section-header h2 {
