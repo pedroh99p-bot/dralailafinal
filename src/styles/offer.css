@@ -49,8 +49,25 @@
 .final-offer__ctas {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--space-3);
   margin-bottom: var(--space-6);
+}
+
+.final-offer__ctas .btn {
+  width: min(100%, 290px);
+}
+
+@media (min-width: 560px) {
+  .final-offer__ctas {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .final-offer__ctas .btn {
+    min-width: 250px;
+  }
 }
 
 .final-note {
