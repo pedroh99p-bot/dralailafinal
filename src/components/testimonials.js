@@ -5,11 +5,13 @@ function cardMarkup(testimonial, hidden = false) {
   return `
     <article class="testimonial-card" ${hidden ? 'aria-hidden="true"' : ''}>
       <header>
-        <strong>${testimonial.name}</strong>
-        <img src="${assets.icons.google}" width="24" height="24" alt="" />
+        <img src="${testimonial.photo}" width="56" height="56" alt="${testimonial.name}" loading="lazy" class="testimonial-card__avatar" />
+        <div>
+          <strong>${testimonial.name}</strong>
+          ${testimonial.pending ? '<span>Relato pendente</span>' : ''}
+        </div>
       </header>
-      <div class="testimonial-card__stars" aria-label="5 estrelas">★★★★★</div>
-      <p>“${testimonial.text}”</p>
+      <p>${testimonial.text}</p>
     </article>
   `;
 }
@@ -22,8 +24,8 @@ export function Testimonials() {
     <section id="pacientes" class="section testimonials section-texture section-texture--grid">
       <div class="container">
         <header class="section-header reveal">
-          <h2>O que os pacientes <span class="accent">relatam</span></h2>
-          <p>Experiências sobre acolhimento, clareza e cuidado individualizado.</p>
+          <h2>Relatos de quem buscou <span class="accent">cuidado especializado</span></h2>
+          <p>Pacientes que encontraram acolhimento, escuta e um caminho mais claro para lidar com dores, bruxismo e desconfortos na região da face.</p>
         </header>
       </div>
 
@@ -35,7 +37,6 @@ export function Testimonials() {
       </div>
 
       <div class="container testimonials__cta reveal">
-        <p>Depoimentos ilustrativos para demonstração.</p>
         <a
           href="${whatsappHref('generic')}"
           class="btn btn-whatsapp"

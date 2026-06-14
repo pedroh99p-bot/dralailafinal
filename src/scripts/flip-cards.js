@@ -1,26 +1,13 @@
-import { qsa } from './helpers.js';
+import { qs, qsa } from './helpers.js';
 
 export function initFlipCards() {
   qsa('.flip-card').forEach((card) => {
-    const toggle = () => {
-      const isFlipped = card.classList.toggle('is-flipped');
-      card.setAttribute('aria-pressed', String(isFlipped));
-    };
+    const trigger = qs('.flip-card__trigger', card);
+    if (!trigger) return;
 
-    card.addEventListener('click', (event) => {
-      if (event.target.closest('a')) return;
-      toggle();
-    });
-
-    card.addEventListener('keydown', (event) => {
-      if (event.target.closest('a')) return;
-      if (event.key !== 'Enter' && event.key !== ' ') return;
-      event.preventDefault();
-      toggle();
-    });
-
-    qsa('a', card).forEach((link) => {
-      link.addEventListener('click', (event) => event.stopPropagation());
+    trigger.addEventListener('click', () => {
+      const isOpen = card.classList.toggle('is-open');
+      trigger.setAttribute('aria-expanded', String(isOpen));
     });
   });
 }

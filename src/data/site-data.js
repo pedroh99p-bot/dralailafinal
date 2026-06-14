@@ -1,21 +1,27 @@
 export const contact = {
   name: 'Dra. Laila Rettore',
   cro: 'CRO 32142',
-  whatsappNumber: '5521990368794',
-  whatsappVisible: '(21) 99036-8794',
-  whatsappUrl: 'https://wa.me/5521990368794',
+  whatsappNumber: '5521975334147',
+  whatsappVisible: '(21) 97533-4147',
+  whatsappUrl: 'https://wa.me/5521975334147',
   instagramUrl: 'https://www.instagram.com/dralailarettore/',
   instagramHandle: '@dralailarettore',
 };
 
+const logo = 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781399580/Design_sem_nome_1_btet5v.svg';
+
 export const assets = {
   logos: {
-    simple: 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1779979472/hy_duovkq.webp',
-    full: 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1779979481/3c7ca413-912c-4cdd-9144-97bab9c3c5e5-_2__tntruz.webp',
+    simple: logo,
+    full: logo,
   },
   images: {
-    hero: '/assets/images/hero.png',
-    specialist: '/assets/images/dra-laila.png',
+    hero: 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781399992/a56f6f8d-77a1-49ec-8bf9-b4503b38cbe8_gdzjec.webp',
+    specialist:
+      'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781399992/e6dae2fb-4c04-44fa-8dc6-4709f3d333de_m3c0jl.webp',
+  },
+  videos: {
+    hero: 'https://res.cloudinary.com/dm9mnc97u/video/upload/v1781400964/0613_2_1_vtm3rn.webm',
   },
   icons: {
     whatsapp: '/assets/icons/whatsapp.svg',
@@ -37,8 +43,8 @@ export const navLinks = [
 export const location = {
   name: 'Quality Cursos De Odontologia',
   address: 'Av. Ayrton Senna, 2500 - Bloco 3 Sala 428, Rio de Janeiro - RJ',
-  phone: '(21) 99036-8794',
-  rating: '4,7 no Google',
+  phone: '(21) 97533-4147',
+  rating: 'Atendimento com horário marcado',
   iframeUrl:
     'https://www.google.com/maps?q=Quality%20Cursos%20De%20Odontologia%20Av.%20Ayrton%20Senna%202500%20Bloco%203%20Sala%20428%20Rio%20de%20Janeiro&output=embed',
   mapsUrl:
@@ -47,9 +53,10 @@ export const location = {
 
 export const whatsappMessages = {
   hero_attendance: 'Olá, vim pelo site e gostaria de agendar uma avaliação com a Dra. Laila',
-  quiz_result: 'Olá, fiz o quiz no site e quero entender melhor meu resultado',
+  quiz_result: 'Olá, fiz o quiz no site e quero agendar minha avaliação',
   flip_cards: 'Olá, quero entender melhor meus sintomas de DTM ou bruxismo',
   specialist: 'Olá, gostaria de falar com a Dra. Laila sobre meus sintomas',
+  technology: 'Olá, quero agendar uma avaliação com recursos digitais com a Dra. Laila',
   final_offer: 'Olá, quero dar o primeiro passo para entender a origem da minha dor',
   generic: 'Olá, vim pelo site da Dra. Laila e gostaria de atendimento',
 };
@@ -61,11 +68,11 @@ export const rollers = [
       'DTM',
       'Bruxismo',
       'Dor orofacial',
-      'ATM',
       'Tensão mandibular',
       'Placas interoclusais',
       'Toxina terapêutica',
       'Avaliação funcional',
+      'Cuidado individualizado',
     ],
   },
   {
@@ -73,7 +80,7 @@ export const rollers = [
     items: [
       'Mandíbula travando',
       'Dor ao mastigar',
-      'Estalos na ATM',
+      'Estalos na articulação',
       'Apertamento dental',
       'Dor facial',
       'Tensão no pescoço',
@@ -101,13 +108,13 @@ export const rollers = [
       'DTM',
       'Bruxismo',
       'Dor orofacial',
-      'ATM',
+      'Tecnologia digital',
     ],
   },
 ];
 
 export const stats = [
-  { prefix: '+', value: 10, suffix: '', label: 'anos de experiência' },
+  { prefix: '+', value: 23, suffix: '', label: 'anos de formada' },
   { prefix: '+', value: 1500, suffix: '', label: 'pacientes atendidos' },
   { prefix: '+', value: 4, suffix: '', label: 'áreas de foco clínico' },
   { prefix: '', value: 100, suffix: '%', label: 'planejamento individualizado' },
@@ -122,7 +129,7 @@ export const careSteps = [
   {
     number: '02',
     title: 'Avaliação funcional',
-    description: 'Análise física da mandíbula, músculos da face, ATM e sinais associados.',
+    description: 'Análise física da mandíbula, músculos da face, articulação e sinais associados.',
   },
   {
     number: '03',

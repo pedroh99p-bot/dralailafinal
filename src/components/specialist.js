@@ -23,10 +23,10 @@ export function Specialist() {
           <p class="specialist__name">${contact.name}</p>
         </div>
         <div class="specialist__content reveal reveal-delay-1">
-          <p class="specialist__credential">${contact.cro}</p>
+          <p class="specialist__credential">${contact.cro} · 23 anos de formada</p>
           <p>
-            Cirurgiã-dentista com atuação em DTM, bruxismo, ATM e dor orofacial,
-            unindo escuta cuidadosa, avaliação técnica e planejamento individualizado.
+            Cirurgiã-dentista com atuação em DTM, bruxismo e dor orofacial,
+            unindo experiência clínica, escuta cuidadosa, tecnologia digital e planejamento individualizado.
           </p>
           <div class="specialist__stats" id="counter-section">
             ${stats.map(statItem).join('')}

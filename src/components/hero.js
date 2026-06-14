@@ -3,6 +3,10 @@ import { assets, contact, whatsappHref } from '../data/site-data.js';
 export function Hero() {
   return `
     <section id="inicio" class="hero section-texture section-texture--hero">
+      <video class="hero__video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="${assets.videos.hero}" type="video/webm" />
+      </video>
+      <div class="hero__overlay" aria-hidden="true"></div>
       <div class="container hero__container">
         <div class="hero__content reveal">
           <div class="hero__badges" aria-label="Focos de atendimento">
@@ -10,7 +14,7 @@ export function Hero() {
             <span class="badge">Bruxismo</span>
             <span class="badge">Dor Orofacial</span>
           </div>
-          <h1>Dor na mandíbula, bruxismo ou estalos na ATM?</h1>
+          <h1>Dor na mandíbula, bruxismo ou estalos na articulação?</h1>
           <p>
             Entenda seus sintomas com uma avaliação individualizada e um cuidado pensado
             para o seu caso com a ${contact.name}.
@@ -33,6 +37,10 @@ export function Hero() {
             </a>
           </div>
         </div>
+
+        <figure class="hero__media reveal reveal-delay-1">
+          <img src="${assets.images.hero}" width="760" height="920" alt="${contact.name}" class="hero__portrait" fetchpriority="high" />
+        </figure>
       </div>
     </section>
   `;

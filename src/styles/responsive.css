@@ -61,9 +61,14 @@
   }
 
   .hero {
-    min-height: 730px;
+    min-height: 790px;
     padding-block: 6.25rem 3.25rem;
-    background-position: 63% 22%;
+  }
+
+  .hero__overlay {
+    background:
+      linear-gradient(180deg, rgba(0, 11, 31, 0.98) 0%, rgba(0, 11, 31, 0.82) 52%, rgba(0, 11, 31, 0.62) 100%),
+      linear-gradient(180deg, transparent 76%, var(--color-navy-950));
   }
 
   .hero__content {
@@ -72,8 +77,8 @@
   }
 
   .hero h1 {
-    max-width: 9.2ch;
-    font-size: clamp(2rem, 9.7vw, 2.48rem);
+    max-width: 10ch;
+    font-size: 2.18rem;
   }
 
   .hero p {
@@ -81,13 +86,37 @@
     font-size: 0.96rem;
   }
 
+  .hero__media {
+    display: block;
+    margin-top: -1rem;
+    justify-self: end;
+  }
+
+  .hero__portrait {
+    width: min(62vw, 260px);
+    max-height: 330px;
+  }
+
   .section-header h2 {
-    font-size: clamp(1.72rem, 8.1vw, 2.12rem);
+    font-size: 1.95rem;
   }
 
   .btn {
     max-width: 100%;
     white-space: normal;
+  }
+
+  .technology-scanner {
+    min-height: 330px;
+    padding: var(--space-4);
+  }
+
+  .technology-scanner__screen {
+    min-height: 230px;
+  }
+
+  .technology-scanner__caption {
+    flex-direction: column;
   }
 
   .section-bridge__inner {
@@ -113,6 +142,14 @@
   .hero__ctas .btn {
     width: auto;
   }
+
+  .flip-card__hint-mobile {
+    display: none;
+  }
+
+  .flip-card__hint-desktop {
+    display: inline;
+  }
 }
 
 @media (min-width: 720px) {
@@ -124,46 +161,31 @@
     display: inline-flex;
   }
 
+  .hero__media {
+    display: block;
+  }
+
   .flip-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-4);
   }
 
-  .flip-card {
-    min-height: 270px;
+  .flip-card__trigger {
+    min-height: 178px;
+    padding: var(--space-6);
   }
 
-  .flip-card__face {
-    padding: var(--space-8) var(--space-5);
-  }
-
-  .flip-card__icon {
-    margin-bottom: var(--space-4);
-    width: 60px;
-    height: 60px;
-  }
-
-  .flip-card-svg {
-    width: 34px;
-    height: 34px;
-  }
-
-  .flip-card h3 {
-    font-size: clamp(1.25rem, 5vw, 1.6rem);
-  }
-
-  .flip-card p {
-    font-size: 0.96rem;
-    line-height: 1.6;
+  .flip-card__title {
+    font-size: 1.22rem;
   }
 
   .flip-card__cta {
-    padding: 0.65rem 1rem;
-    font-size: 0.86rem;
+    width: fit-content;
+    min-width: 210px;
   }
 
   .quiz-options {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   }
 
   .quiz-option {
@@ -187,21 +209,22 @@
 @media (min-width: 900px) {
   .hero {
     min-height: 720px;
-    background-position: 62% 22%;
   }
 
-  .hero::before {
-    background:
-      linear-gradient(90deg, rgba(0, 11, 31, 0.98) 0%, rgba(0, 11, 31, 0.76) 42%, rgba(0, 11, 31, 0.16) 80%),
-      linear-gradient(180deg, transparent 72%, var(--color-navy-950));
+  .hero__container {
+    grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.75fr);
   }
 
   .hero__content {
-    max-width: 52%;
+    max-width: 620px;
   }
 
   .hero h1 {
-    font-size: clamp(3.1rem, 6.1vw, 4.2rem);
+    font-size: 3.62rem;
+  }
+
+  .hero__media {
+    align-self: end;
   }
 
   .specialist__grid {
@@ -212,6 +235,10 @@
 
   .specialist__image {
     min-height: 620px;
+  }
+
+  .technology-section__grid {
+    grid-template-columns: minmax(0, 0.95fr) minmax(340px, 0.82fr);
   }
 
   .map-card {
@@ -229,7 +256,22 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .flip-card {
-    min-height: 296px;
+  .flip-card__trigger {
+    min-height: 196px;
+    grid-template-columns: 1fr auto;
+    align-content: center;
+  }
+
+  .flip-card__icon {
+    grid-column: 1 / -1;
+  }
+
+  .flip-card__title,
+  .flip-card__hint {
+    grid-column: 1 / 2;
+  }
+
+  .flip-card__hint {
+    margin-top: -0.6rem;
   }
 }

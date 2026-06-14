@@ -10,6 +10,7 @@ import { Quiz } from '../components/quiz.js';
 import { Roller } from '../components/roller.js';
 import { Specialist } from '../components/specialist.js';
 import { Steps } from '../components/steps.js';
+import { TechnologySection } from '../components/technologySection.js';
 import { Testimonials } from '../components/testimonials.js';
 import { rollers } from '../data/site-data.js';
 import { initCounters } from './counters.js';
@@ -37,6 +38,7 @@ function App() {
       ${Quiz()}
       <div class="decorator-line reveal" aria-hidden="true"></div>
       ${Steps()}
+      ${TechnologySection()}
       ${Roller(rollers[2])}
       ${Testimonials()}
       <div class="decorator-line reveal" aria-hidden="true"></div>

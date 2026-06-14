@@ -1,43 +1,48 @@
-import { whatsappHref, whatsappMessages } from './site-data.js';
+import { whatsappHref } from './site-data.js';
 
 export const quizQuestions = [
-  'Você sente dor ou cansaço na mandíbula ao longo do dia?',
-  'Sua mandíbula estala, trava ou desvia ao abrir a boca?',
-  'Você acorda com dentes doloridos, rosto tenso ou sensação de apertamento?',
-  'Você sente dor de cabeça, dor facial ou tensão no pescoço com frequência?',
-  'Já percebeu desgaste nos dentes, sensibilidade ou dificuldade para mastigar?',
+  'Sente dor de cabeça?',
+  'Sente cansaço no rosto ao mastigar?',
+  'Sente dores ao abrir e fechar a boca?',
+  'Tem o hábito de apertar ou ranger os dentes?',
+  'Tem dentes quebrando ou se desgastando?',
+  'Tem algum sintoma dentro do ouvido, como sensação de ouvido tapado?',
+  'Sente dificuldade para abrir a boca?',
+  'Tem algum estalo na articulação quando abre e fecha a boca? Ele vem acompanhado de dor?',
 ];
 
 export const quizOptions = [
-  { label: '🙂 Nunca', score: 0 },
-  { label: '🤔 Às vezes', score: 1 },
-  { label: '⚠️ Frequentemente', score: 2 },
+  { label: 'Não sinto', score: 0 },
+  { label: 'Leve', score: 1 },
+  { label: 'Moderado', score: 2 },
+  { label: 'Intenso', score: 3 },
+  { label: 'Muito intenso ou frequente', score: 4 },
 ];
 
 export const quizResults = [
   {
     min: 0,
-    max: 3,
-    title: 'Sinais de baixa frequência',
+    max: 8,
+    title: 'Sinais leves neste momento',
     tone: 'low',
     description:
-      'Seus sinais aparecem com baixa frequência. Observe a evolução e procure avaliação se houver piora.',
+      'Pelas suas respostas, seus sinais parecem leves neste momento, mas sintomas como dor, estalos, desgaste dental ou tensão facial não devem ser ignorados quando aparecem com frequência. Uma avaliação pode ajudar a entender a origem do desconforto e prevenir a evolução do quadro.',
   },
   {
-    min: 4,
-    max: 7,
-    title: 'Sinais que merecem atenção',
+    min: 9,
+    max: 20,
+    title: 'Sinais que valem investigação',
     tone: 'medium',
     description:
-      'Seus sinais merecem atenção. Uma avaliação pode ajudar a entender a origem dos sintomas.',
+      'Suas respostas indicam sinais que podem estar relacionados à sobrecarga muscular, bruxismo ou alterações funcionais da região da mandíbula. Isso não substitui uma avaliação, mas mostra que vale investigar com atenção. O primeiro passo pode ser entender a causa e buscar um plano de cuidado mais preciso.',
   },
   {
-    min: 8,
-    max: 10,
-    title: 'Sinais frequentes',
+    min: 21,
+    max: 32,
+    title: 'Sinais importantes para avaliar',
     tone: 'high',
     description:
-      'Seus sinais aparecem com frequência. Vale conversar com uma especialista para avaliar seu caso.',
+      'Pelas suas respostas, existe um conjunto importante de sintomas que pode estar impactando sua qualidade de vida, como dor, tensão, limitação, desgaste ou desconforto ao mastigar. Isso não é um diagnóstico, mas é um alerta para procurar uma avaliação especializada. Com o acompanhamento correto, é possível entender a causa e iniciar um caminho para viver com mais conforto.',
   },
 ];
 

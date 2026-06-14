@@ -1,6 +1,6 @@
 # Dra. Laila Rettore Landing Page
 
-Landing page estática em Vite, HTML/CSS/JS puro, para atendimento com foco em DTM, bruxismo, ATM e dor orofacial.
+Landing page estática em Vite, HTML/CSS/JS puro, para atendimento com foco em DTM, bruxismo e dor orofacial.
 
 ## Como rodar
 
@@ -31,7 +31,7 @@ index.html
 
 ## Onde editar conteúdo
 
-- WhatsApp, Instagram, CRO, localização, rollers, números e links: `src/data/site-data.js`
+- WhatsApp, Instagram, CRO, localização, rollers, números, links e assets principais: `src/data/site-data.js`
 - Quiz, perguntas, opções e resultados: `src/data/quiz-data.js`
 - Cards flip: `src/data/cards-data.js`
 - Depoimentos: `src/data/testimonials-data.js`
@@ -64,18 +64,22 @@ Eventos preparados:
 - `quiz_complete`
 - `final_offer_cta_click`
 - `flip_card_cta_click`
+- `technology_cta_click`
 - `google_maps_click`
 
 ## Assets
 
-Os assets fornecidos foram copiados para `public/assets`:
+Os assets locais permanecem em `public/assets` para ícones e favicons. Os assets principais da página agora são URLs Cloudinary em `src/data/site-data.js`:
 
 - `public/assets/logos/logo-simple.svg`
 - `public/assets/logos/logo-full.svg`
-- `public/assets/images/hero.png`
-- `public/assets/images/dra-laila.png`
+- logo única
+- vídeo do hero
+- foto principal do hero
+- foto da especialista
+- fotos dos relatos
 
-Para trocar imagens ou logos, mantenha os mesmos caminhos ou atualize `src/data/site-data.js`.
+Para trocar imagens ou logos, atualize `src/data/site-data.js` e, quando necessário, os metadados de `index.html`.
 
 ## Build
 

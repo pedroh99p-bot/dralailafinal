@@ -5,28 +5,30 @@ export function FlipCards() {
   const cards = flipCards
     .map(
       (card, index) => `
-        <article class="flip-card" role="button" tabindex="0" aria-pressed="false" aria-label="${card.front}">
-          <div class="flip-card__inner">
-            <div class="flip-card__face flip-card__front">
-              <span class="flip-card__icon" aria-hidden="true">${card.icon}</span>
-              <h3>${card.front}</h3>
-              <span class="flip-card__hint">Ver cuidado indicado</span>
-            </div>
-            <div class="flip-card__face flip-card__back">
-              <span class="flip-card__icon flip-card__icon--back" aria-hidden="true">${card.backIcon}</span>
-              <p>${card.back}</p>
-              <a
-                href="${card.href}"
-                class="flip-card__cta"
-                target="_blank"
-                rel="noopener"
-                data-track="flip_card_cta_click whatsapp_click"
-                data-track-source="flip-card-${index + 1}"
-              >
-                <img src="${assets.icons.whatsapp}" width="16" height="16" alt="" class="btn-icon-img" />
-                ${card.cta}
-              </a>
-            </div>
+        <article class="flip-card">
+          <button class="flip-card__trigger" type="button" aria-expanded="false" aria-controls="symptom-card-${index + 1}">
+            <span class="flip-card__icon" aria-hidden="true">${card.icon}</span>
+            <span class="flip-card__title">${card.front}</span>
+            <span class="flip-card__hint">
+              <span class="flip-card__hint-mobile">Toque para expandir</span>
+              <span class="flip-card__hint-desktop">Clique para expandir</span>
+            </span>
+            <span class="flip-card__chevron" aria-hidden="true"></span>
+          </button>
+          <div class="flip-card__body" id="symptom-card-${index + 1}">
+            <span class="flip-card__icon flip-card__icon--back" aria-hidden="true">${card.backIcon}</span>
+            <p>${card.back}</p>
+            <a
+              href="${card.href}"
+              class="flip-card__cta"
+              target="_blank"
+              rel="noopener"
+              data-track="flip_card_cta_click whatsapp_click"
+              data-track-source="flip-card-${index + 1}"
+            >
+              <img src="${assets.icons.whatsapp}" width="16" height="16" alt="" class="btn-icon-img" />
+              ${card.cta}
+            </a>
           </div>
         </article>
       `,

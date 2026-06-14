@@ -5,8 +5,8 @@ export function Quiz() {
     <section id="quiz" class="section quiz section-texture section-texture--lines">
       <div class="container">
         <header class="section-header reveal">
-          <h2>Quiz rápido: <span class="accent">seus sintomas</span> podem estar ligados à DTM?</h2>
-          <p>Responda em menos de um minuto e veja se vale buscar uma avaliação especializada.</p>
+          <h2>Quiz rápido: <span class="accent">qual a intensidade</span> dos seus sintomas?</h2>
+          <p>Responda em menos de um minuto. O resultado não é diagnóstico, mas pode indicar se vale investigar com uma avaliação especializada.</p>
         </header>
 
         <div class="quiz-card reveal reveal-delay-1" id="quiz-container">
@@ -31,7 +31,7 @@ export function Quiz() {
                 data-track-source="quiz-result"
               >
                 <img src="${assets.icons.whatsapp}" width="20" height="20" alt="" class="btn-icon-img" />
-                Falar com especialista no WhatsApp
+                Quero agendar minha avaliação
               </a>
               <button class="btn btn-secondary" id="btn-quiz-reset" type="button">Refazer quiz</button>
             </div>

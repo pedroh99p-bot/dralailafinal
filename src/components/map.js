@@ -8,7 +8,7 @@ export function MapSection() {
           <div class="map-card__info">
             <span class="eyebrow">Localização</span>
             <h2>${location.name}</h2>
-            <p class="map-card__rating"><span aria-hidden="true">★★★★★</span> ${location.rating}</p>
+            <p class="map-card__rating">${location.rating}</p>
             <p>${location.address}</p>
             <p>Telefone: ${location.phone}</p>
             <strong>Atendimento com horário marcado.</strong>
