@@ -125,3 +125,38 @@
   object-position: center bottom;
   filter: drop-shadow(0 28px 64px rgba(0, 0, 0, 0.38));
 }
+
+
+@media (max-width: 768px) {
+  .hero__container {
+    position: relative;
+    min-height: 100svh;
+  }
+
+  .hero__media {
+    position: absolute;
+    right: -95px;
+    bottom: 0;
+    width: 92vw;
+    max-width: 390px;
+    z-index: 2;
+    opacity: 0.82;
+    margin: 0;
+    pointer-events: none;
+  }
+
+  .hero__portrait {
+    width: 100%;
+    max-height: none;
+    height: auto;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+
+  .hero__content,
+  .hero__copy,
+  .hero__actions {
+    position: relative;
+    z-index: 4;
+  }
+}
