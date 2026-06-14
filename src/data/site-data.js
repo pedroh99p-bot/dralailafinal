@@ -17,7 +17,7 @@ export const assets = {
     full: logoFull,
   },
   images: {
-    hero: 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781451769/Dra._Laila_Rettore_CRO_32142_2_ahg3wp.webp',
+    hero: 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781470257/Dra._Laila_Rettore_CRO_32142_3_wwualj.webp',
     specialist:
       'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781451581/Dra._Laila_Rettore_CRO_32142_lsfuf6.webp',
   },
