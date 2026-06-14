@@ -17,9 +17,9 @@ export const assets = {
     full: logoFull,
   },
   images: {
-    hero: 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781399992/a56f6f8d-77a1-49ec-8bf9-b4503b38cbe8_gdzjec.webp',
+    hero: 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781450182/WhatsApp_Image_2026-06-12_at_16.23.57_yjh9w6.webp',
     specialist:
-      'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781399992/e6dae2fb-4c04-44fa-8dc6-4709f3d333de_m3c0jl.webp',
+      'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781450183/Design_sem_nome_9_euzmxh.webp',
   },
   videos: {
     hero: 'https://res.cloudinary.com/dm9mnc97u/video/upload/v1781400964/0613_2_1_vtm3rn.webm',
