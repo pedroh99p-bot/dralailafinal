@@ -68,15 +68,17 @@
     height: 54px;
   }
 
-.hero {
-  min-height: 585px;
-  padding-block: 5.85rem 0;
-}
+@media (max-width: 559px) {
+  .hero {
+    min-height: 525px;
+    padding-block: 5.85rem 0;
+  }
 
-.hero__container {
-  min-height: calc(585px - 5.85rem);
-  align-items: start;
-}
+  .hero__container {
+    min-height: calc(525px - 5.85rem);
+    align-items: start; 
+  }
+
 
 .hero__content {
   width: min(100%, 340px);
