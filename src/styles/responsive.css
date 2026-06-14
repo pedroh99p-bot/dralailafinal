@@ -80,7 +80,7 @@
 
   .hero__content {
     width: min(100%, 350px);
-    max-width: 72%;
+    max-width: 70%;
     padding-top: 0.4rem;
   }
 
@@ -100,14 +100,14 @@
   }
 
   .hero__media {
-    top: 5.35rem;
-    right: -4.85rem;
+    top: 4.85rem;
+    right: -4.25rem;
     bottom: auto;
   }
 
   .hero__portrait {
-    width: min(63vw, 288px);
-    max-height: 425px;
+    width: min(66vw, 308px);
+    max-height: 452px;
     object-position: right bottom;
   }
 

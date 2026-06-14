@@ -29,6 +29,7 @@
 .technology-section__benefits {
   display: grid;
   gap: var(--space-4);
+  margin-bottom: var(--space-8);
 }
 
 .technology-benefit {
@@ -74,7 +75,7 @@
 }
 
 .technology-section__cta {
-  margin-top: var(--space-9);
+  margin-top: 0;
 }
 
 .technology-scanner {
