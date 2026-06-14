@@ -107,13 +107,19 @@
 
 .hero__media::before {
   position: absolute;
-  inset: 6% -9% -8%;
-  border-radius: 44% 44% 24% 24%;
+  top: -95px;
+  right: -8%;
+  width: 110%;
+  height: 72%;
+  border-radius: 46% 46% 28% 28%;
   background:
-    radial-gradient(circle at 50% 24%, rgba(248, 176, 8, 0.34), transparent 48%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.02));
-  filter: blur(4px);
+    radial-gradient(circle at 52% 34%, rgba(248, 176, 8, 0.28), transparent 58%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.015));
+  filter: blur(10px);
+  opacity: 0.72;
   content: '';
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero__portrait {
@@ -128,36 +134,52 @@
 
 
 @media (max-width: 768px) {
+  .hero {
+    min-height: auto !important;
+    overflow: hidden !important;
+  }
+
   .hero__container {
     position: relative;
-    min-height: 100svh;
-    overflow: hidden;
+    min-height: 92svh !important;
+    overflow: hidden !important;
   }
 
   .hero__media {
     position: absolute !important;
-    top: 165px !important;
+    top: 245px !important;
     right: -120px !important;
-    width: 78vw !important;
-    height: 520px !important;
+    width: 64vw !important;
+    height: 430px !important;
     z-index: 2 !important;
     margin: 0 !important;
+    padding: 0 !important;
     pointer-events: none;
     overflow: visible !important;
+    background: transparent !important;
+    transform: none !important;
+  }
+
+  .hero__media::before,
+  .hero__media::after {
+    display: none !important;
+    content: none !important;
   }
 
   .hero__portrait {
     position: absolute !important;
-    top: -210px !important;
+    top: -115px !important;
     right: 0 !important;
     width: 100% !important;
     max-width: none !important;
     max-height: none !important;
     height: auto !important;
     opacity: 1 !important;
-    object-fit: contain;
-    object-position: center top;
-    filter: drop-shadow(0 28px 64px rgba(0, 0, 0, 0.38));
+    transform: none !important;
+    rotate: 0deg !important;
+    object-fit: contain !important;
+    object-position: center top !important;
+    filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.28)) !important;
   }
 
   .hero__content,
