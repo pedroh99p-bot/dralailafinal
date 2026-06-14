@@ -140,36 +140,50 @@
   }
 
   .hero__container {
-    position: relative;
-    min-height: 92svh !important;
+    position: relative !important;
+    min-height: 760px !important;
+    height: 760px !important;
     overflow: hidden !important;
   }
 
   .hero__media {
     position: absolute !important;
-    top: 245px !important;
-    right: -120px !important;
-    width: 64vw !important;
+    top: 205px !important;
+    right: -38px !important;
+    width: 58vw !important;
     height: 430px !important;
     z-index: 2 !important;
     margin: 0 !important;
     padding: 0 !important;
-    pointer-events: none;
+    pointer-events: none !important;
     overflow: visible !important;
     background: transparent !important;
     transform: none !important;
   }
 
-  .hero__media::before,
-  .hero__media::after {
-    display: none !important;
-    content: none !important;
+  .hero__media::before {
+    position: absolute !important;
+    top: -34px !important;
+    right: -18px !important;
+    width: 112% !important;
+    height: 78% !important;
+    border-radius: 50% !important;
+    background: radial-gradient(
+      circle at 50% 38%,
+      rgba(248, 176, 8, 0.18),
+      transparent 62%
+    ) !important;
+    filter: blur(18px) !important;
+    opacity: 0.55 !important;
+    content: "" !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
   }
 
   .hero__portrait {
-    position: absolute !important;
-    top: -115px !important;
-    right: 0 !important;
+    position: relative !important;
+    z-index: 1 !important;
+    display: block !important;
     width: 100% !important;
     max-width: none !important;
     max-height: none !important;
@@ -179,13 +193,13 @@
     rotate: 0deg !important;
     object-fit: contain !important;
     object-position: center top !important;
-    filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.28)) !important;
+    filter: drop-shadow(0 22px 44px rgba(0, 0, 0, 0.28)) !important;
   }
 
   .hero__content,
   .hero__copy,
   .hero__actions {
-    position: relative;
-    z-index: 4;
+    position: relative !important;
+    z-index: 4 !important;
   }
 }
