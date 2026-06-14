@@ -3,8 +3,6 @@ body {
   width: 100%;
   background: var(--color-navy-950);
   overflow-x: hidden;
-  overscroll-behavior: none;
-  overscroll-behavior-y: none;
 }
 
 body {
