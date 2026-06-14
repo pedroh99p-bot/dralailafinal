@@ -22,10 +22,10 @@ export const quizOptions = [
 export const painSensitiveQuestionIndexes = [0, 1, 2, 4, 5, 6, 7];
 
 export const painAlertResult = {
-  title: 'Sinais que merecem atenção',
+  title: 'Seus sintomas merecem avaliação',
   tone: 'high',
   description:
-    'Você relatou sinais que não deveriam ser ignorados, principalmente quando envolvem dor, tensão, estalos, desgaste ou dificuldade para mastigar e abrir a boca. Isso não é um diagnóstico, mas pode indicar que seu corpo está tentando avisar que algo precisa ser investigado com atenção. Quanto antes você entende a causa, maiores são as chances de iniciar um cuidado mais preciso e recuperar qualidade de vida. Agende uma avaliação especializada e dê o primeiro passo para parar de conviver com esse incômodo.',
+    'Dor, tensão, estalos ou dificuldade para mastigar indicam que vale investigar a causa. Uma avaliação especializada pode orientar o cuidado mais adequado para o seu caso.',
 };
 
 export const quizResults = [
@@ -35,7 +35,7 @@ export const quizResults = [
     title: 'Sinais leves neste momento',
     tone: 'low',
     description:
-      'Pelas suas respostas, seus sinais parecem leves neste momento, mas sintomas como dor, estalos, desgaste dental ou tensão facial não devem ser ignorados quando aparecem com frequência. Uma avaliação pode ajudar a entender a origem do desconforto e prevenir a evolução do quadro.',
+      'Seus sinais parecem leves neste momento. Caso se tornem frequentes ou causem desconforto, uma avaliação pode ajudar a entender a origem.',
   },
   {
     min: 9,
@@ -43,7 +43,7 @@ export const quizResults = [
     title: 'Sinais que valem investigação',
     tone: 'medium',
     description:
-      'Suas respostas indicam sinais que podem estar relacionados à sobrecarga muscular, bruxismo ou alterações funcionais da região da mandíbula. Isso não substitui uma avaliação, mas mostra que vale investigar com atenção. O primeiro passo pode ser entender a causa e buscar um plano de cuidado mais preciso.',
+      'As respostas sugerem possível sobrecarga muscular, bruxismo ou alteração funcional da mandíbula. Vale investigar para definir um cuidado mais preciso.',
   },
   {
     min: 21,
@@ -51,14 +51,14 @@ export const quizResults = [
     title: 'Sinais importantes para avaliar',
     tone: 'high',
     description:
-      'Pelas suas respostas, existe um conjunto importante de sintomas que pode estar impactando sua qualidade de vida, como dor, tensão, limitação, desgaste ou desconforto ao mastigar. Isso não é um diagnóstico, mas é um alerta para procurar uma avaliação especializada. Com o acompanhamento correto, é possível entender a causa e iniciar um caminho para viver com mais conforto.',
+      'O conjunto de sintomas pode estar afetando sua qualidade de vida. Uma avaliação especializada ajuda a identificar a causa e orientar os próximos passos.',
   },
 ];
 
 export const quizToneLabels = {
   low: 'Avaliação preventiva',
   medium: 'Vale investigar',
-  high: 'Atenção aos sinais',
+  high: 'Sinais importantes',
 };
 
 export const quizCtaHref = whatsappHref('quiz_result');

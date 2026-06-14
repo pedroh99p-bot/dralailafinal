@@ -2,7 +2,10 @@ import { qs } from './helpers.js';
 
 export function initPreloader() {
   const preloader = qs('#preloader');
-  if (!preloader) return;
+  if (!preloader) {
+    document.documentElement.classList.add('page-ready');
+    return;
+  }
 
   let hidden = false;
 
@@ -10,6 +13,7 @@ export function initPreloader() {
     if (hidden) return;
     hidden = true;
     preloader.classList.add('is-hidden');
+    window.setTimeout(() => document.documentElement.classList.add('page-ready'), 220);
     window.setTimeout(() => preloader.remove(), 700);
   };
 
