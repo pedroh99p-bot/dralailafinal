@@ -91,7 +91,7 @@
 
   .hero__content {
     width: min(100%, 350px);
-    max-width: 73%;
+    max-width: 68%;
     padding-top: 0.4rem;
   }
 
@@ -102,18 +102,23 @@
   }
 
   .hero p {
-    max-width: 31ch;
+    max-width: 26ch;
     font-size: 0.96rem;
   }
 
+  .hero__ctas {
+    width: min(100%, 240px);
+  }
+
   .hero__media {
-    right: -2.4rem;
-    bottom: -0.2rem;
+    top: 15.2rem;
+    right: -4.35rem;
+    bottom: auto;
   }
 
   .hero__portrait {
-    width: min(62vw, 278px);
-    max-height: 405px;
+    width: min(55vw, 236px);
+    max-height: 350px;
     object-position: right bottom;
   }
 
@@ -262,6 +267,7 @@
 
   .hero__media {
     right: 0;
+    top: auto;
     bottom: -3.5rem;
   }
 
