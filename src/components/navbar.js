@@ -53,42 +53,6 @@ export function Navbar() {
       <div class="site-menu__links">
         ${links}
       </div>
-      <a
-        href="${whatsappHref('generic')}"
-        class="btn btn-whatsapp site-menu__cta"
-        target="_blank"
-        rel="noopener"
-        data-track="whatsapp_click"
-        data-track-source="menu"
-      >
-        <img src="${assets.icons.whatsapp}" width="18" height="18" alt="" class="btn-icon-img" />
-        Agendar avaliação
-      </a>
     </nav>
-
-    <div class="floating-actions" aria-label="Ações rápidas">
-      <a
-        href="${whatsappHref('generic')}"
-        class="float-btn float-btn--whatsapp"
-        aria-label="Falar no WhatsApp"
-        target="_blank"
-        rel="noopener"
-        data-track="whatsapp_click"
-        data-track-source="floating"
-      >
-        <img src="${assets.icons.whatsapp}" width="26" height="26" alt="" />
-      </a>
-      <a
-        href="${contact.instagramUrl}"
-        class="float-btn float-btn--instagram"
-        aria-label="Acessar Instagram"
-        target="_blank"
-        rel="noopener"
-        data-track="instagram_click"
-        data-track-source="floating"
-      >
-        <img src="${assets.icons.instagram}" width="26" height="26" alt="" />
-      </a>
-    </div>
   `;
 }

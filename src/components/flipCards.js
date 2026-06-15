@@ -1,5 +1,4 @@
 import { flipCards } from '../data/cards-data.js';
-import { assets } from '../data/site-data.js';
 
 export function FlipCards() {
   const cards = flipCards
@@ -18,17 +17,6 @@ export function FlipCards() {
           <div class="flip-card__body" id="symptom-card-${index + 1}">
             <span class="flip-card__icon flip-card__icon--back" aria-hidden="true">${card.backIcon}</span>
             <p>${card.back}</p>
-            <a
-              href="${card.href}"
-              class="flip-card__cta"
-              target="_blank"
-              rel="noopener"
-              data-track="flip_card_cta_click whatsapp_click"
-              data-track-source="flip-card-${index + 1}"
-            >
-              <img src="${assets.icons.whatsapp}" width="16" height="16" alt="" class="btn-icon-img" />
-              ${card.cta}
-            </a>
           </div>
         </article>
       `,

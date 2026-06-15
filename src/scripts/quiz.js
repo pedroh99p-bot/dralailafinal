@@ -1,7 +1,6 @@
 import {
   painAlertResult,
   painSensitiveQuestionIndexes,
-  quizCtaHref,
   quizOptions,
   quizQuestions,
   quizResults,
@@ -19,15 +18,12 @@ export function initQuiz() {
   const resultSignal = qs('#result-signal');
   const resultTitle = qs('#result-title');
   const resultDesc = qs('#result-desc');
-  const whatsapp = qs('#quiz-whatsapp');
 
-  if (!wrapper || !fill || !backButton || !result || !resultTitle || !resultDesc || !whatsapp) return;
+  if (!wrapper || !fill || !backButton || !result || !resultTitle || !resultDesc) return;
 
   let currentQuestion = 0;
   let answers = [];
   let quizStarted = false;
-
-  whatsapp.href = quizCtaHref;
 
   function currentProgress() {
     return `${(currentQuestion / quizQuestions.length) * 100}%`;

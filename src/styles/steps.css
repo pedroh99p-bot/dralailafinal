@@ -82,7 +82,3 @@
   color: var(--color-muted-strong);
 }
 
-.steps__cta {
-  margin-top: var(--space-10);
-  text-align: center;
-}

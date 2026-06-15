@@ -124,19 +124,6 @@
     gap: var(--space-3);
   }
 
-  .technology-scanner {
-    min-height: 360px;
-    padding: var(--space-4);
-  }
-
-  .technology-scanner__screen {
-    min-height: 230px;
-  }
-
-  .technology-scanner__caption {
-    flex-direction: column;
-  }
-
   .section-bridge__inner {
     min-height: 88px;
     padding: 1rem 1.1rem;
@@ -209,11 +196,6 @@
 
   .flip-card__title {
     font-size: 1.22rem;
-  }
-
-  .flip-card__cta {
-    width: fit-content;
-    min-width: 210px;
   }
 
   .quiz-options {
@@ -295,10 +277,6 @@
 
   .specialist__image {
     min-height: 620px;
-  }
-
-  .technology-section__grid {
-    grid-template-columns: minmax(0, 0.95fr) minmax(340px, 0.82fr);
   }
 
   .technology-section__benefits {

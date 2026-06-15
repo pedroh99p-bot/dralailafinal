@@ -1,4 +1,4 @@
-import { assets, whatsappHref } from '../data/site-data.js';
+import { assets } from '../data/site-data.js';
 
 export function TechnologySection() {
   return `
@@ -8,7 +8,7 @@ export function TechnologySection() {
           <span class="eyebrow">Avaliação digital</span>
           <h2>Tecnologia para enxergar além dos sintomas</h2>
           <p class="technology-section__lead">
-            O atendimento conta com recursos digitais, como scanner, para tornar a avaliação mais precisa, visual e personalizada.
+            O atendimento conta com recursos digitais para tornar a avaliação mais precisa, visual e personalizada.
           </p>
           <div class="technology-section__benefits">
             <article class="technology-benefit">
@@ -33,36 +33,8 @@ export function TechnologySection() {
               </div>
             </article>
           </div>
-          <a
-            href="${whatsappHref('technology')}"
-            class="btn btn-whatsapp technology-section__cta"
-            target="_blank"
-            rel="noopener"
-            data-track="technology_cta_click whatsapp_click"
-            data-track-source="technology"
-          >
-            <img src="${assets.icons.whatsapp}" width="20" height="20" alt="" class="btn-icon-img" />
-            Agendar uma avaliação
-          </a>
-        </div>
-
-        <div class="technology-scanner reveal reveal-delay-1" aria-hidden="true">
-          <div class="technology-scanner__topline">
-            <div class="technology-scanner__badge">Scanner intraoral</div>
-            <img src="${assets.logos.simple}" width="42" height="42" alt="" loading="lazy" class="technology-scanner__logo" />
-          </div>
-          <div class="technology-scanner__screen">
-            <span class="technology-scanner__beam"></span>
-            <span class="technology-scanner__arch"></span>
-            <span class="technology-scanner__mesh technology-scanner__mesh--one"></span>
-            <span class="technology-scanner__mesh technology-scanner__mesh--two"></span>
-            <span class="technology-scanner__point technology-scanner__point--one"></span>
-            <span class="technology-scanner__point technology-scanner__point--two"></span>
-            <span class="technology-scanner__point technology-scanner__point--three"></span>
-          </div>
-          <div class="technology-scanner__caption">
-            <strong>Scanner digital</strong>
-            <span>Avaliação visual, precisa e personalizada</span>
+          <div class="technology-section__signature reveal reveal-delay-1">
+            <img src="${assets.logos.full}" width="220" height="84" alt="Dra. Laila Rettore" loading="lazy" class="technology-section__logo" />
           </div>
         </div>
       </div>

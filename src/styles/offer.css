@@ -46,47 +46,6 @@
   font-size: 1.08rem;
 }
 
-.final-offer__ctas {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-3);
-  width: 100%;
-  margin-bottom: var(--space-6);
-}
-
-.final-offer__ctas .btn {
-  width: min(100%, 290px);
-}
-
-@media (min-width: 560px) {
-  .final-offer__ctas {
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
-    width: fit-content;
-    margin-inline: auto;
-  }
-
-  .final-offer__ctas .btn {
-    min-width: 250px;
-  }
-}
-
-@media (min-width: 900px) {
-  .final-offer {
-    text-align: center;
-  }
-
-  .final-offer__ctas {
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-3);
-    width: fit-content;
-    margin-inline: auto;
-  }
-}
-
 .final-note {
   margin-bottom: 0;
   color: rgba(255, 255, 255, 0.54);

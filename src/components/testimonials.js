@@ -1,5 +1,4 @@
 import { testimonials } from '../data/testimonials-data.js';
-import { assets, whatsappHref } from '../data/site-data.js';
 
 function cardMarkup(testimonial, hidden = false) {
   return `
@@ -33,20 +32,6 @@ export function Testimonials() {
           <div class="testimonial-roller__set">${originalCards}</div>
           <div class="testimonial-roller__set" aria-hidden="true">${duplicateCards}</div>
         </div>
-      </div>
-
-      <div class="container testimonials__cta reveal">
-        <a
-          href="${whatsappHref('generic')}"
-          class="btn btn-whatsapp"
-          target="_blank"
-          rel="noopener"
-          data-track="whatsapp_click"
-          data-track-source="testimonials"
-        >
-          <img src="${assets.icons.whatsapp}" width="20" height="20" alt="" class="btn-icon-img" />
-          Falar com especialista
-        </a>
       </div>
     </section>
   `;

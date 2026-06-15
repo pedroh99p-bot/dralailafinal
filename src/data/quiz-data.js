@@ -1,5 +1,3 @@
-import { whatsappHref } from './site-data.js';
-
 export const quizQuestions = [
   'Sente dor de cabeça?',
   'Sente cansaço no rosto ao mastigar?',
@@ -60,5 +58,3 @@ export const quizToneLabels = {
   medium: 'Vale investigar',
   high: 'Sinais importantes',
 };
-
-export const quizCtaHref = whatsappHref('quiz_result');

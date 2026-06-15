@@ -11,15 +11,7 @@ export function Footer() {
         <address class="footer__contact">
           <strong>Contato e informações</strong>
           <span>${contact.cro}</span>
-          <a
-            href="${contact.whatsappUrl}"
-            target="_blank"
-            rel="noopener"
-            data-track="whatsapp_click"
-            data-track-source="footer"
-          >
-            WhatsApp: ${contact.whatsappVisible}
-          </a>
+          <span>WhatsApp: ${contact.whatsappVisible}</span>
           <a
             href="${contact.instagramUrl}"
             target="_blank"
