@@ -7,12 +7,10 @@
 .flip-card {
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(163, 32, 32, 0.13);
   border-radius: var(--radius-card);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.035)),
-    var(--glass-bg);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 12px 34px rgba(72, 48, 44, 0.08);
 }
 
 .flip-card__trigger {
@@ -40,13 +38,13 @@
   right: 0;
   bottom: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--color-red), rgba(248, 176, 8, 0.85), var(--color-green));
+  background: linear-gradient(90deg, var(--color-accent), rgba(163, 32, 32, 0.32), transparent);
   content: '';
   opacity: 0.82;
 }
 
 .flip-card__trigger:focus-visible {
-  outline: 2px solid var(--color-yellow);
+  outline: 2px solid var(--color-accent);
   outline-offset: -4px;
 }
 
@@ -57,19 +55,18 @@
   justify-content: center;
   width: 54px;
   height: 54px;
-  border: 1px solid rgba(232, 90, 90, 0.24);
+  border: 1px solid rgba(163, 32, 32, 0.2);
   border-radius: 50%;
-  background: rgba(232, 90, 90, 0.12);
-  color: var(--color-red);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  background: rgba(163, 32, 32, 0.07);
+  color: var(--color-accent);
 }
 
 .flip-card__icon--back {
   flex: 0 0 auto;
   width: 46px;
   height: 46px;
-  border-color: rgba(49, 196, 141, 0.3);
-  background: rgba(49, 196, 141, 0.15);
+  border-color: rgba(79, 127, 91, 0.28);
+  background: rgba(79, 127, 91, 0.1);
   color: var(--color-green);
 }
 
@@ -90,7 +87,7 @@
 
 .flip-card__title {
   display: block;
-  color: var(--color-cream);
+  color: var(--color-text);
   font-family: var(--font-title);
   font-size: 1.06rem;
   font-weight: 700;
@@ -101,7 +98,7 @@
   display: block;
   grid-column: 2 / 3;
   margin-top: -1.2rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-muted);
   font-size: 0.76rem;
 }
 
@@ -112,8 +109,8 @@
 .flip-card__chevron {
   width: 12px;
   height: 12px;
-  border-right: 2px solid var(--color-yellow-soft);
-  border-bottom: 2px solid var(--color-yellow-soft);
+  border-right: 2px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
   transform: rotate(45deg);
   transition: transform var(--duration-base) var(--ease-out);
 }
@@ -131,9 +128,7 @@
   padding-inline: var(--space-5);
   opacity: 0;
   transform: translateY(-4px);
-  background:
-    linear-gradient(180deg, rgba(49, 196, 141, 0.08), rgba(255, 255, 255, 0.025)),
-    rgba(0, 11, 31, 0.38);
+  background: rgba(247, 244, 241, 0.9);
   transition:
     opacity 180ms var(--ease-out),
     transform 180ms var(--ease-out),

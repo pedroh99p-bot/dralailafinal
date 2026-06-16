@@ -24,24 +24,25 @@ export function Specialist() {
           <p class="specialist__subtitle">${contact.specialistSubtitle}</p>
         </div>
         <div class="specialist__content reveal reveal-delay-1">
-          <p class="specialist__credential">${contact.cro} · 23 anos de formada</p>
+          <p class="specialist__credential">${contact.cro} · Fortaleza - CE</p>
+          <h2>Odontologia estética e reabilitação do sorriso em Fortaleza</h2>
           <p>
-            Cirurgiã-dentista com atuação em DTM, bruxismo e dor orofacial,
-            unindo experiência clínica, escuta cuidadosa, tecnologia digital e planejamento individualizado.
+            A Dra. Liberalina atua com foco em estética dental e reabilitação oral, unindo cuidado humano,
+            olhar técnico e atenção aos detalhes para entregar tratamentos com conforto, naturalidade e confiança.
           </p>
           <div class="specialist__stats" id="counter-section">
             ${stats.map(statItem).join('')}
           </div>
           <a
             href="${whatsappHref('specialist')}"
-            class="btn btn-whatsapp specialist__cta"
+            class="btn btn-primary specialist__cta"
             target="_blank"
             rel="noopener"
             data-track="whatsapp_click"
             data-track-source="specialist"
           >
             <img src="${assets.icons.whatsapp}" width="20" height="20" alt="" class="btn-icon-img" />
-            Falar com a Dra. Laila
+            Falar com a Dra. Liberalina
           </a>
         </div>
       </div>

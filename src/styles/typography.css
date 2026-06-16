@@ -10,7 +10,7 @@ h4,
 }
 
 h1 {
-  max-width: 10ch;
+  max-width: 12ch;
   font-size: clamp(2.18rem, 10.8vw, 4.25rem);
 }
 
@@ -27,7 +27,7 @@ p {
 }
 
 .accent {
-  color: var(--color-yellow-soft);
+  color: var(--color-accent);
   font-family: var(--font-accent);
   font-style: italic;
   font-weight: 400;
@@ -37,7 +37,7 @@ p {
   display: inline-flex;
   width: fit-content;
   margin-bottom: var(--space-3);
-  color: var(--color-yellow-soft);
+  color: var(--color-accent);
   font-family: var(--font-title);
   font-size: 0.78rem;
   font-weight: 700;
@@ -46,17 +46,18 @@ p {
 }
 
 .section-header {
-  max-width: 740px;
+  max-width: 780px;
   margin: 0 auto var(--space-12);
   text-align: center;
 }
 
 .section-header h2 {
   margin-bottom: var(--space-4);
+  color: var(--color-text);
 }
 
 .section-header p {
-  max-width: 620px;
+  max-width: 640px;
   margin: 0 auto;
   color: var(--color-muted-strong);
   font-size: 1.02rem;

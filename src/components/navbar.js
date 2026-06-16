@@ -21,19 +21,19 @@ export function Navbar() {
     <div class="navbar-shell">
       <header class="navbar" id="navbar">
         <a href="#inicio" class="nav-logo" aria-label="Voltar ao início">
-          <img src="${assets.logos.simple}" width="64" height="64" alt="${contact.name}" />
+          <img src="${assets.logos.simple}" width="72" height="72" alt="${contact.name}" />
         </a>
         <div class="nav-actions">
           <a
             href="${whatsappHref('generic')}"
-            class="btn btn-whatsapp nav-cta"
+            class="btn btn-primary nav-cta"
             target="_blank"
             rel="noopener"
             data-track="whatsapp_click"
             data-track-source="navbar"
           >
             <img src="${assets.icons.whatsapp}" width="18" height="18" alt="" class="btn-icon-img" />
-            Consulta
+            Agendar
           </a>
           <button class="btn-menu" id="menu-open" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-menu">
             ${menuIcon}
@@ -45,7 +45,7 @@ export function Navbar() {
     <div class="menu-overlay" id="menu-overlay" hidden></div>
     <nav class="site-menu" id="site-menu" aria-label="Menu principal" aria-hidden="true" hidden>
       <div class="site-menu__header">
-        <img src="${assets.logos.simple}" width="64" height="64" alt="${contact.name}" class="site-menu__logo" />
+        <img src="${assets.logos.simple}" width="72" height="72" alt="${contact.name}" class="site-menu__logo" />
         <button class="btn-icon" id="menu-close" type="button" aria-label="Fechar menu">
           ${closeIcon}
         </button>

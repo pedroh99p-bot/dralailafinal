@@ -1,17 +1,15 @@
 html,
 body {
   width: 100%;
-  background: var(--color-navy-950);
+  background: var(--color-page);
   overflow-x: hidden;
 }
 
 body {
   min-width: 320px;
-  background-color: var(--color-navy-950);
   background:
-    radial-gradient(circle at 30% -10%, rgba(18, 58, 116, 0.45), transparent 42rem),
-    linear-gradient(180deg, var(--color-navy-950), #02112e 45%, var(--color-navy-950));
-  color: var(--color-cream);
+    linear-gradient(180deg, #ffffff 0%, var(--color-page) 42%, var(--color-off-white) 100%);
+  color: var(--color-text);
   font-family: var(--font-body);
   line-height: 1.6;
   text-rendering: optimizeLegibility;
@@ -24,12 +22,12 @@ body::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.28;
+  opacity: 0.5;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(163, 32, 32, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(163, 32, 32, 0.025) 1px, transparent 1px);
   background-size: 34px 34px;
-  mask-image: linear-gradient(180deg, transparent, #000 22%, #000 78%, transparent);
+  mask-image: linear-gradient(180deg, transparent, #000 24%, #000 72%, transparent);
 }
 
 body.menu-open {
@@ -53,13 +51,13 @@ img {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-yellow);
+  outline: 2px solid var(--color-accent);
   outline-offset: 4px;
 }
 
 ::selection {
-  background: rgba(248, 176, 8, 0.28);
-  color: var(--color-cream);
+  background: rgba(163, 32, 32, 0.16);
+  color: var(--color-text);
 }
 
 .fallback-content {
@@ -67,7 +65,7 @@ img {
   display: grid;
   place-items: center;
   padding: 2rem;
-  background: var(--color-navy-950);
-  color: var(--color-cream);
+  background: var(--color-page);
+  color: var(--color-text);
   text-align: center;
 }

@@ -5,8 +5,8 @@ export function Quiz() {
     <section id="quiz" class="section quiz section-texture section-texture--lines">
       <div class="container">
         <header class="section-header reveal">
-          <h2>Quiz rápido: <span class="accent">qual a intensidade</span> dos seus sintomas?</h2>
-          <p>Responda em menos de um minuto. O resultado não é diagnóstico, mas pode indicar se vale investigar com uma avaliação especializada.</p>
+          <h2>Quiz rápido: <span class="accent">o que mais incomoda</span> no seu sorriso?</h2>
+          <p>Responda em menos de um minuto. O resultado não é diagnóstico, mas ajuda a entender se vale agendar uma avaliação estética e reabilitadora.</p>
         </header>
 
         <div class="quiz-card reveal reveal-delay-1" id="quiz-container">

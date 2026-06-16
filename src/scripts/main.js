@@ -1,11 +1,13 @@
 import '../styles/main.css';
 
+import { Faq } from '../components/faq.js';
 import { FinalOffer } from '../components/finalOffer.js';
 import { FlipCards } from '../components/flipCards.js';
 import { Footer } from '../components/footer.js';
 import { Hero } from '../components/hero.js';
 import { MapSection } from '../components/map.js';
 import { Navbar } from '../components/navbar.js';
+import { Problems } from '../components/problems.js';
 import { Quiz } from '../components/quiz.js';
 import { Roller } from '../components/roller.js';
 import { Specialist } from '../components/specialist.js';
@@ -31,27 +33,30 @@ function App() {
     <main>
       ${Hero()}
       ${Roller(rollers[0])}
+      ${Problems()}
+      ${Roller(rollers[1])}
       ${FlipCards()}
       <div class="decorator-line reveal" aria-hidden="true"></div>
       ${Specialist()}
-      ${Roller(rollers[1])}
+      ${Roller(rollers[2])}
       ${Quiz()}
       <div class="decorator-line reveal" aria-hidden="true"></div>
       ${Steps()}
       ${Roller(rollers[3], 'roller--tech')}
       ${TechnologySection()}
-      ${Roller(rollers[2])}
+      ${Roller(rollers[4])}
       ${Testimonials()}
       <div class="decorator-line reveal" aria-hidden="true"></div>
+      ${Faq()}
       ${MapSection()}
       <div class="section-bridge reveal">
         <div class="section-bridge__inner">
-          <span class="section-bridge__spark" aria-hidden="true">✦</span>
+          <span class="section-bridge__spark" aria-hidden="true">•</span>
           <p>Atendimento com orientação, precisão e cuidado humano.</p>
         </div>
       </div>
       ${FinalOffer()}
-      ${Roller(rollers[4], 'roller--quiet')}
+      ${Roller(rollers[2], 'roller--quiet')}
     </main>
     ${Footer()}
   `;

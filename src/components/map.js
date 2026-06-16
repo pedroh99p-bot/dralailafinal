@@ -10,8 +10,8 @@ export function MapSection() {
             <h2>${location.name}</h2>
             <p class="map-card__rating">${location.rating}</p>
             <p>${location.address}</p>
-            <p>Telefone: ${location.phone}</p>
-            <strong>Atendimento com horário marcado.</strong>
+            <p>WhatsApp: ${location.phone}</p>
+            <strong>Agende sua avaliação para confirmar disponibilidade e endereço de atendimento.</strong>
             <a
               href="${location.mapsUrl}"
               class="btn btn-secondary"
@@ -26,7 +26,7 @@ export function MapSection() {
           <div class="map-card__embed">
             <iframe
               src="${location.iframeUrl}"
-              title="Mapa de localização da Dra. Laila Rettore"
+              title="Mapa de localização da Dra. Liberalina Cavaleiro"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               allowfullscreen

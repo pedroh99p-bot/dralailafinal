@@ -22,8 +22,8 @@ export function Testimonials() {
     <section id="pacientes" class="section testimonials section-texture section-texture--grid">
       <div class="container">
         <header class="section-header reveal">
-          <h2>Relatos de quem buscou <span class="accent">cuidado especializado</span></h2>
-          <p>Pacientes que encontraram acolhimento, escuta e um caminho mais claro para lidar com dores, bruxismo e desconfortos na região da face.</p>
+          <h2>Quem voltou a sorrir <span class="accent">com mais confiança</span></h2>
+          <p>Cards preparados para receber depoimentos reais e autorizados, mantendo a página pronta sem criar casos clínicos fictícios.</p>
         </header>
       </div>
 

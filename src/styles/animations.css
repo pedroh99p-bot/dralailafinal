@@ -4,7 +4,7 @@
   z-index: var(--z-preloader);
   display: grid;
   place-items: center;
-  background: var(--color-navy-950);
+  background: var(--color-page);
   transition:
     opacity var(--duration-slow) ease,
     visibility var(--duration-slow) ease,
@@ -30,7 +30,7 @@
 .preloader-logo {
   width: min(220px, 62vw);
   height: auto;
-  filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.28));
+  filter: drop-shadow(0 12px 32px rgba(72, 48, 44, 0.14));
   animation: preloader-logo-in 0.7s var(--ease-out) both;
 }
 
@@ -40,7 +40,7 @@
   height: 2px;
   overflow: hidden;
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(163, 32, 32, 0.12);
 }
 
 .loader-bar::after {
@@ -48,13 +48,13 @@
   position: absolute;
   inset: 0 auto 0 0;
   width: 36%;
-  background: var(--color-yellow);
-  box-shadow: 0 0 14px rgba(248, 176, 8, 0.7);
+  background: var(--color-accent);
+  box-shadow: 0 0 14px rgba(163, 32, 32, 0.32);
   animation: loader-move 1.25s var(--ease-out) infinite;
 }
 
 .preloader-status {
-  color: rgba(255, 255, 255, 0.68);
+  color: var(--color-muted);
   font-family: var(--font-title);
   font-size: 0.78rem;
   font-weight: 700;
@@ -141,7 +141,7 @@
     box-shadow: var(--shadow-yellow);
   }
   50% {
-    box-shadow: 0 0 0 10px rgba(248, 176, 8, 0), var(--shadow-yellow-strong);
+    box-shadow: 0 0 0 10px rgba(163, 32, 32, 0), var(--shadow-yellow-strong);
   }
 }
 
