@@ -13,6 +13,8 @@ const logoOfficial =
   'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781631675/efc4b6e4-6a5d-4fa8-bda8-bc298cf0ca16_1_oucily.webp';
 const heroPhoto =
   'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781632769/4d8958c2-e018-450e-89a2-1b2e23444ccd_1_mubo5m.webp';
+const specialistPhoto =
+  'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781633147/Dra._Laila_Rettore_CRO_32142_6_p9r8il.webp';
 
 export const assets = {
   logos: {
@@ -21,7 +23,7 @@ export const assets = {
   },
   images: {
     hero: heroPhoto,
-    specialist: heroPhoto,
+    specialist: specialistPhoto,
   },
   icons: {
     whatsapp: '/assets/icons/whatsapp.svg',
