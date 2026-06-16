@@ -80,6 +80,14 @@
   flex: 0 0 auto;
 }
 
+.flip-card__icon-media {
+  display: block;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
 .flip-card__title {
   display: block;
   color: var(--color-cream);
