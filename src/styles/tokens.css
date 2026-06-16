@@ -1,27 +1,21 @@
 :root {
-  --color-navy-950: #fcfbf9;
-  --color-navy-900: #f7f4f1;
-  --color-navy-800: #ede6e1;
-  --color-navy-700: #d8cbc4;
-  --color-cream: #2b2b2b;
-  --color-muted: #706763;
-  --color-muted-strong: #47403d;
-  --color-yellow: #a32020;
-  --color-yellow-soft: #a32020;
-  --color-red: #a32020;
-  --color-green: #4f7f5b;
-  --color-cyan: #a32020;
+  --color-navy-950: #000b1f;
+  --color-navy-900: #001840;
+  --color-navy-800: #06275a;
+  --color-navy-700: #123a74;
+  --color-cream: #f7f4ea;
+  --color-muted: #b9c3cf;
+  --color-muted-strong: #d9e2ea;
+  --color-yellow: #f8b008;
+  --color-yellow-soft: #f4c542;
+  --color-red: #e84b4b;
+  --color-green: #31c48d;
+  --color-cyan: #8bd8ff;
 
-  --color-white: #ffffff;
-  --color-off-white: #f7f4f1;
-  --color-page: #fcfbf9;
-  --color-accent: #a32020;
-  --color-text: #2b2b2b;
-
-  --glass-bg: rgba(255, 255, 255, 0.78);
-  --glass-bg-strong: rgba(255, 255, 255, 0.94);
-  --glass-border: rgba(43, 43, 43, 0.1);
-  --glass-border-strong: rgba(163, 32, 32, 0.2);
+  --glass-bg: rgba(255, 255, 255, 0.055);
+  --glass-bg-strong: rgba(255, 255, 255, 0.095);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-border-strong: rgba(255, 255, 255, 0.2);
 
   --font-title: 'Bricolage Grotesque', system-ui, sans-serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
@@ -43,9 +37,9 @@
   --radius-panel: 18px;
   --radius-pill: 999px;
 
-  --shadow-soft: 0 22px 70px rgba(72, 48, 44, 0.11);
-  --shadow-yellow: 0 10px 32px rgba(163, 32, 32, 0.18);
-  --shadow-yellow-strong: 0 16px 44px rgba(163, 32, 32, 0.28);
+  --shadow-soft: 0 22px 70px rgba(0, 0, 0, 0.35);
+  --shadow-yellow: 0 10px 32px rgba(248, 176, 8, 0.28);
+  --shadow-yellow-strong: 0 16px 44px rgba(248, 176, 8, 0.4);
 
   --duration-fast: 180ms;
   --duration-base: 320ms;

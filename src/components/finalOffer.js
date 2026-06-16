@@ -1,5 +1,3 @@
-import { assets, whatsappHref } from '../data/site-data.js';
-
 export function FinalOffer() {
   return `
     <section class="section final-section section-texture section-texture--warm">
@@ -7,24 +5,13 @@ export function FinalOffer() {
         <div class="final-offer reveal">
           <div class="urgency-badge">
             <span aria-hidden="true">•</span>
-            Avaliação individual para definir o melhor caminho
+            Horários de avaliação são limitados para manter um atendimento cuidadoso
           </div>
-          <h2>Descubra o melhor caminho para <span class="accent">transformar o seu sorriso</span></h2>
+          <h2>Dê o primeiro passo para <span class="accent">entender a origem</span> da sua dor</h2>
           <p>
-            Agende sua avaliação e entenda qual tratamento faz mais sentido para o seu caso,
-            com foco em naturalidade, conforto e confiança.
+            Agende uma avaliação individualizada e receba orientação sobre os caminhos
+            de cuidado para o seu caso.
           </p>
-          <a
-            href="${whatsappHref('final_offer')}"
-            class="btn btn-primary final-offer__cta"
-            target="_blank"
-            rel="noopener"
-            data-track="whatsapp_click final_offer_cta_click"
-            data-track-source="final_offer"
-          >
-            <img src="${assets.icons.whatsapp}" width="20" height="20" alt="" class="btn-icon-img" />
-            Agendar avaliação pelo WhatsApp
-          </a>
           <p class="final-note">O tratamento indicado depende de avaliação profissional individualizada.</p>
         </div>
       </div>

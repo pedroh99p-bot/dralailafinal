@@ -17,14 +17,14 @@
     max-width: calc(100dvw - 1.5rem);
     min-height: 60px;
     display: grid;
-    grid-template-columns: 58px minmax(0, 1fr);
+    grid-template-columns: 52px minmax(0, 1fr);
     gap: 0.5rem;
-    padding: 0.42rem 0.48rem;
+    padding: 0.42rem 0.48rem 0.42rem 0.48rem;
     overflow: hidden;
   }
 
   .nav-logo {
-    width: 58px;
+    width: 52px;
     padding: 0.12rem;
     border: 0;
     background: transparent;
@@ -58,38 +58,57 @@
     width: 40px;
     height: 40px;
     flex: 0 0 40px;
+    border-color: rgba(248, 176, 8, 0.35);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-yellow-soft);
   }
 
   .site-menu__logo {
-    width: 64px;
-    height: 64px;
+    width: 54px;
+    height: 54px;
   }
 
   .hero {
-    min-height: auto;
-    padding-block: 6.7rem 2.75rem;
+    min-height: 630px;
+    padding-block: 5.9rem 1.4rem;
+  }
+
+  .hero__container {
+    min-height: 544px;
+    align-items: start;
   }
 
   .hero__content {
-    max-width: none;
+    width: min(100%, 350px);
+    max-width: 64%;
+    padding-top: 0.25rem;
   }
 
   .hero h1 {
-    max-width: 11.5ch;
-    font-size: 2.62rem;
+    max-width: 10ch;
+    font-size: 2rem;
+    line-height: 0.98;
   }
 
   .hero p {
-    max-width: 34ch;
-    font-size: 0.98rem;
+    max-width: 25ch;
+    font-size: 0.9rem;
   }
 
   .hero__ctas {
-    width: 100%;
+    width: min(100%, 240px);
   }
 
   .hero__media {
-    width: min(82vw, 340px);
+    right: -0.75rem;
+    bottom: -1.6rem;
+    top: auto;
+  }
+
+  .hero__portrait {
+    width: 100%;
+    max-height: none;
+    object-position: center bottom;
   }
 
   .section-header h2 {
@@ -101,9 +120,7 @@
     white-space: normal;
   }
 
-  .technology-section__benefits,
-  .problem-grid,
-  .faq-list {
+  .technology-section__benefits {
     gap: var(--space-3);
   }
 
@@ -138,10 +155,12 @@
     display: inline;
   }
 
-  .technology-section__benefits,
-  .problem-grid,
-  .faq-list {
+  .technology-section__benefits {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .technology-benefit:first-child {
+    grid-column: 1 / -1;
   }
 }
 
@@ -152,6 +171,17 @@
 
   .nav-cta {
     display: inline-flex;
+  }
+
+  .hero__media {
+    width: min(47vw, 324px);
+    right: -0.35rem;
+    bottom: -2.25rem;
+  }
+
+  .hero__portrait {
+    width: 100%;
+    max-height: none;
   }
 
   .flip-grid {
@@ -192,17 +222,35 @@
 
 @media (min-width: 900px) {
   .hero {
-    min-height: 760px;
-    padding-block: 7.5rem 4rem;
+    min-height: 720px;
+    align-items: center;
+    padding-block: 7.25rem 4rem;
   }
 
   .hero__container {
-    grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.78fr);
+    min-height: 600px;
+    align-items: center;
+  }
+
+  .hero__content {
+    width: auto;
+    max-width: 600px;
+  }
+
+  .hero h1 {
+    font-size: 3.62rem;
   }
 
   .hero__media {
-    width: min(38vw, 455px);
-    justify-self: end;
+    right: 0.75rem;
+    bottom: -20rem;
+    top: auto;
+    width: min(40vw, 418px);
+  }
+
+  .hero__portrait {
+    width: 100%;
+    max-height: none;
   }
 
   .quiz-card {
@@ -232,11 +280,11 @@
   }
 
   .technology-section__benefits {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
-  .problem-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .technology-benefit:first-child {
+    grid-column: auto;
   }
 
   .map-card {

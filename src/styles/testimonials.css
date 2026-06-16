@@ -14,11 +14,13 @@
   min-height: 228px;
   grid-template-rows: auto 1fr;
   gap: var(--space-3);
-  border: 1px solid rgba(163, 32, 32, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-card);
   padding: var(--space-5) var(--space-4);
-  background: rgba(255, 255, 255, 0.86);
-  box-shadow: 0 10px 28px rgba(72, 48, 44, 0.09);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025)),
+    rgba(255, 255, 255, 0.035);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
 }
 
 .testimonial-card header {
@@ -31,15 +33,15 @@
   width: 48px;
   height: 48px;
   flex: 0 0 48px;
-  border: 1px solid rgba(163, 32, 32, 0.24);
+  border: 1px solid rgba(248, 176, 8, 0.38);
   border-radius: 50%;
   object-fit: cover;
-  background: rgba(247, 244, 241, 0.9);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .testimonial-card strong {
   display: block;
-  color: var(--color-text);
+  color: var(--color-cream);
   font-family: var(--font-title);
   font-size: 1.05rem;
 }
@@ -47,7 +49,7 @@
 .testimonial-card span {
   display: block;
   margin-top: 0.16rem;
-  color: var(--color-muted);
+  color: rgba(255, 255, 255, 0.48);
   font-size: 0.76rem;
 }
 
@@ -59,3 +61,4 @@
   line-height: 1.5;
   align-self: start;
 }
+

@@ -1,29 +1,29 @@
 export const contact = {
-  name: 'Dra. Liberalina Cavaleiro',
-  cro: 'Cirurgiã-dentista',
-  specialistSubtitle: 'Odontologia estética e reabilitação do sorriso',
-  whatsappNumber: '5585986021507',
-  whatsappVisible: '(85) 98602-1507',
-  whatsappUrl: 'https://wa.me/5585986021507',
-  instagramUrl: 'https://www.instagram.com/liberalinacavaleirom/',
-  instagramHandle: '@liberalinacavaleirom',
+  name: 'Dra. Laila Rettore',
+  cro: 'CRO 32142',
+  specialistSubtitle: 'Especialista em DTM, bruxismo e dor orofacial',
+  whatsappNumber: '5521975334147',
+  whatsappVisible: '(21) 97533-4147',
+  whatsappUrl: 'https://wa.me/5521975334147',
+  instagramUrl: 'https://www.instagram.com/dralailarettore/',
+  instagramHandle: '@dralailarettore',
 };
 
-const logoOfficial =
-  'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781631675/efc4b6e4-6a5d-4fa8-bda8-bc298cf0ca16_1_oucily.webp';
-const heroPhoto =
-  'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781632769/4d8958c2-e018-450e-89a2-1b2e23444ccd_1_mubo5m.webp';
-const specialistPhoto =
-  'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781633147/Dra._Laila_Rettore_CRO_32142_6_p9r8il.webp';
+const logoSimple = 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781405885/Design_sem_nome_7_wdo0cm.png';
+const logoFull = 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781399580/Design_sem_nome_1_btet5v.svg';
 
 export const assets = {
   logos: {
-    simple: logoOfficial,
-    full: logoOfficial,
+    simple: logoSimple,
+    full: logoFull,
   },
   images: {
-    hero: heroPhoto,
-    specialist: specialistPhoto,
+    hero: 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781564428/Dra._Laila_Rettore_CRO_32142_4_jdsymc.webp',
+    specialist:
+      'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781451581/Dra._Laila_Rettore_CRO_32142_lsfuf6.webp',
+  },
+  videos: {
+    hero: 'https://res.cloudinary.com/dm9mnc97u/video/upload/v1781400964/0613_2_1_vtm3rn.webm',
   },
   icons: {
     whatsapp: '/assets/icons/whatsapp.svg',
@@ -34,155 +34,127 @@ export const assets = {
 
 export const navLinks = [
   { label: 'Início', href: '#inicio' },
-  { label: 'Sorriso', href: '#sorriso' },
   { label: 'Tratamentos', href: '#tratamentos' },
   { label: 'Especialista', href: '#especialista' },
   { label: 'Quiz', href: '#quiz' },
-  { label: 'Processo', href: '#atendimento' },
+  { label: 'Atendimento', href: '#atendimento' },
   { label: 'Pacientes', href: '#pacientes' },
-  { label: 'Dúvidas', href: '#duvidas' },
   { label: 'Localização', href: '#localizacao' },
 ];
 
 export const location = {
-  name: 'Atendimento em Fortaleza - CE',
-  address: 'Fortaleza - CE',
-  phone: '(85) 98602-1507',
+  name: 'Quality Cursos De Odontologia',
+  address: 'Av. Ayrton Senna, 2500 - Bloco 3 Sala 428, Rio de Janeiro - RJ',
+  phone: '(21) 97533-4147',
   rating: 'Atendimento com horário marcado',
-  iframeUrl: 'https://www.google.com/maps?q=Dra.%20Liberalina%20Cavaleiro%20Fortaleza%20CE&output=embed',
+  iframeUrl:
+    'https://www.google.com/maps?q=Quality%20Cursos%20De%20Odontologia%20Av.%20Ayrton%20Senna%202500%20Bloco%203%20Sala%20428%20Rio%20de%20Janeiro&output=embed',
   mapsUrl:
-    'https://www.google.com/maps/search/?api=1&query=Dra.%20Liberalina%20Cavaleiro%20Fortaleza%20CE',
+    'https://www.google.com/maps/search/?api=1&query=Quality%20Cursos%20De%20Odontologia%20Av.%20Ayrton%20Senna%202500%20Bloco%203%20Sala%20428%20Rio%20de%20Janeiro',
 };
 
 export const whatsappMessages = {
-  hero_attendance: 'Olá, vim pelo site e gostaria de agendar uma avaliação com a Dra. Liberalina',
-  quiz_result: 'Olá, fiz o quiz do sorriso no site e quero agendar minha avaliação',
-  flip_cards: 'Olá, quero entender qual tratamento estético ou reabilitador combina com meu caso',
-  specialist: 'Olá, gostaria de falar com a Dra. Liberalina sobre meu sorriso',
-  technology: 'Olá, quero agendar uma avaliação para planejar a transformação do meu sorriso',
-  final_offer: 'Olá, quero descobrir o melhor caminho para transformar meu sorriso',
-  generic: 'Olá, vim pelo site da Dra. Liberalina e gostaria de atendimento',
+  hero_attendance: 'Olá, vim pelo site e gostaria de agendar uma avaliação com a Dra. Laila',
+  quiz_result: 'Olá, fiz o quiz no site e quero agendar minha avaliação',
+  flip_cards: 'Olá, quero entender melhor meus sintomas de DTM ou bruxismo',
+  specialist: 'Olá, gostaria de falar com a Dra. Laila sobre meus sintomas',
+  technology: 'Olá, quero agendar uma avaliação com recursos digitais com a Dra. Laila',
+  final_offer: 'Olá, quero dar o primeiro passo para entender a origem da minha dor',
+  generic: 'Olá, vim pelo site da Dra. Laila e gostaria de atendimento',
 };
 
 export const rollers = [
   {
     direction: 'left',
     items: [
-      'Resina estética',
-      'Prótese dentária',
-      'Lentes em porcelana',
-      'Facetas',
-      'Planejamento do sorriso',
-      'Harmonia facial',
+      'DTM',
+      'Bruxismo',
+      'Dor orofacial',
+      'Tensão mandibular',
+      'Placas interoclusais',
+      'Toxina terapêutica',
+      'Avaliação funcional',
       'Cuidado individualizado',
     ],
   },
   {
     direction: 'right',
     items: [
-      'Dentes desgastados',
-      'Dentes escurecidos',
-      'Falhas no sorriso',
-      'Próteses antigas',
-      'Restaurações aparentes',
-      'Vergonha de sorrir',
-      'Resultado natural',
+      'Mandíbula travando',
+      'Dor ao mastigar',
+      'Estalos na articulação',
+      'Apertamento dental',
+      'Dor facial',
+      'Tensão no pescoço',
+      'Desgaste dental',
     ],
   },
   {
     direction: 'left',
     items: [
-      'Naturalidade',
-      'Conforto',
-      'Precisão',
-      'Confiança',
-      'Acolhimento',
-      'Detalhes bem planejados',
+      'Mais clareza',
+      'Menos sobrecarga',
+      'Cuidado personalizado',
+      'Plano seguro',
+      'Acompanhamento próximo',
+      'Mais conforto',
     ],
   },
   {
     direction: 'right',
     items: [
       'Atendimento com hora marcada',
-      'Avaliação individual',
+      'Scanner digital',
+      'Alta tecnologia',
       'Planejamento individualizado',
-      'Estética e função',
-      'Reabilitação oral',
-      'Sorriso com identidade',
+      'Avaliação mais precisa',
+      'Visualização digital da mordida',
+      'Cuidado clínico moderno',
       'Conforto em cada etapa',
     ],
   },
   {
     direction: 'right',
     items: [
-      'Estética',
-      'Função',
+      'Diagnóstico',
       'Precisão',
       'Acolhimento',
       'Cuidado humano',
-      'Resina estética',
-      'Prótese dentária',
-      'Lentes e facetas',
-      'Fortaleza - CE',
+      'DTM',
+      'Bruxismo',
+      'Dor orofacial',
+      'Tecnologia digital',
     ],
   },
 ];
 
 export const stats = [
-  { prefix: '+', value: 4, suffix: '', label: 'frentes de cuidado estético' },
-  { prefix: '', value: 1, suffix: ':1', label: 'planejamento para cada sorriso' },
-  { prefix: '', value: 100, suffix: '%', label: 'foco em naturalidade' },
-  { prefix: '', value: 4, suffix: '', label: 'etapas claras de atendimento' },
-];
-
-export const smileProblems = [
-  'Dentes desgastados ou escurecidos',
-  'Falhas ou ausência de dentes',
-  'Próteses antigas ou desconfortáveis',
-  'Restaurações aparentes',
-  'Vergonha de sorrir em fotos',
-  'Receio de um resultado artificial',
+  { prefix: '+', value: 23, suffix: '', label: 'anos de formada' },
+  { prefix: '+', value: 1500, suffix: '', label: 'pacientes atendidos' },
+  { prefix: '+', value: 4, suffix: '', label: 'áreas de foco clínico' },
+  { prefix: '', value: 100, suffix: '%', label: 'planejamento individualizado' },
 ];
 
 export const careSteps = [
   {
     number: '01',
-    title: 'Avaliação',
-    description: 'Entendimento da queixa, da expectativa e das possibilidades clínicas do caso.',
+    title: 'Escuta clínica',
+    description: 'Entendimento detalhado dos sintomas, rotina, hábitos e histórico de saúde.',
   },
   {
     number: '02',
-    title: 'Planejamento',
-    description: 'Definição do tratamento mais indicado com foco em estética, função e naturalidade.',
+    title: 'Avaliação funcional',
+    description: 'Análise física da mandíbula, músculos da face, articulação e sinais associados.',
   },
   {
     number: '03',
-    title: 'Execução',
-    description: 'Realização cuidadosa do tratamento com atenção aos detalhes e ao conforto.',
+    title: 'Plano individualizado',
+    description: 'Definição dos melhores caminhos de cuidado e intervenções conforme a necessidade.',
   },
   {
     number: '04',
-    title: 'Resultado',
-    description: 'Mais confiança para sorrir, se comunicar e se enxergar melhor.',
-  },
-];
-
-export const faqItems = [
-  {
-    question: 'Resina estética é indicada para qualquer caso?',
-    answer: 'Não. A indicação depende da avaliação de cada sorriso, da estrutura dental e da necessidade do paciente.',
-  },
-  {
-    question: 'Prótese dentária pode ficar natural?',
-    answer: 'Sim. Com planejamento adequado, é possível buscar estética, conforto e naturalidade no resultado.',
-  },
-  {
-    question: 'Preciso saber qual tratamento quero antes da consulta?',
-    answer: 'Não. A avaliação serve justamente para entender o melhor caminho para o seu caso.',
-  },
-  {
-    question: 'O atendimento é em Fortaleza?',
-    answer: 'Sim. A comunicação e o atendimento principal são voltados para Fortaleza/CE.',
+    title: 'Acompanhamento',
+    description: 'Ajustes, orientações contínuas e evolução do tratamento quando indicado.',
   },
 ];
 

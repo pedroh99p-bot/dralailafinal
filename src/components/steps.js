@@ -18,8 +18,8 @@ export function Steps() {
     <section id="atendimento" class="section steps section-texture section-texture--warm">
       <div class="container">
         <header class="section-header reveal">
-          <h2>Um bom resultado começa <span class="accent">com planejamento</span></h2>
-          <p>Um processo claro, cuidadoso e individualizado da primeira avaliação ao resultado final.</p>
+          <h2><span class="accent">Etapas</span> do atendimento</h2>
+          <p>Um processo claro, cuidadoso e individualizado do início ao fim.</p>
         </header>
         <div class="timeline reveal reveal-delay-1" id="timeline">
           <span class="timeline__line" aria-hidden="true"></span>

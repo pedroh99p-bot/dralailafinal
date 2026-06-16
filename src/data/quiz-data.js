@@ -1,60 +1,60 @@
 export const quizQuestions = [
-  'Você evita sorrir em fotos ou vídeos por causa dos dentes?',
-  'Percebe dentes desgastados, escurecidos ou com formato que incomoda?',
-  'Tem falhas, ausência de dentes ou espaços que afetam sua confiança?',
-  'Usa prótese antiga, desconfortável ou com aparência pouco natural?',
-  'Suas restaurações aparecem quando você sorri?',
-  'Sente dificuldade para mastigar ou falar com segurança?',
-  'Tem vontade de melhorar o sorriso, mas medo de um resultado artificial?',
-  'Ainda não sabe se resina, prótese, lentes ou facetas seriam indicadas para você?',
+  'Sente dor de cabeça?',
+  'Sente cansaço no rosto ao mastigar?',
+  'Sente dores ao abrir e fechar a boca?',
+  'Tem o hábito de apertar ou ranger os dentes?',
+  'Tem dentes quebrando ou se desgastando?',
+  'Tem algum sintoma dentro do ouvido, como sensação de ouvido tapado?',
+  'Sente dificuldade para abrir a boca?',
+  'Tem algum estalo na articulação quando abre e fecha a boca? Ele vem acompanhado de dor?',
 ];
 
 export const quizOptions = [
-  { label: 'Não acontece', score: 0 },
-  { label: 'Incomoda um pouco', score: 1 },
-  { label: 'Incomoda com frequência', score: 2 },
-  { label: 'Afeta minha autoestima', score: 3 },
-  { label: 'Quero avaliar com prioridade', score: 4 },
+  { label: 'Não sinto', score: 0 },
+  { label: 'Leve', score: 1 },
+  { label: 'Moderado', score: 2 },
+  { label: 'Intenso', score: 3 },
+  { label: 'Muito intenso ou frequente', score: 4 },
 ];
 
-export const concernSensitiveQuestionIndexes = [2, 3, 5, 6, 7];
+export const painSensitiveQuestionIndexes = [0, 1, 2, 4, 5, 6, 7];
 
-export const concernAlertResult = {
-  title: 'Seu sorriso merece um planejamento individual',
+export const painAlertResult = {
+  title: 'Seus sintomas merecem avaliação',
   tone: 'high',
   description:
-    'As respostas indicam pontos que podem envolver estética, função, conforto ou escolha do tratamento. Uma avaliação ajuda a entender o caminho mais seguro e natural para o seu caso.',
+    'Dor, tensão, estalos ou dificuldade para mastigar indicam que vale investigar a causa. Uma avaliação especializada pode orientar o cuidado mais adequado para o seu caso.',
 };
 
 export const quizResults = [
   {
     min: 0,
     max: 8,
-    title: 'Poucos incômodos neste momento',
+    title: 'Sinais leves neste momento',
     tone: 'low',
     description:
-      'Seu sorriso parece gerar poucos incômodos agora. Ainda assim, uma avaliação preventiva pode ajudar a preservar estética, função e naturalidade.',
+      'Seus sinais parecem leves neste momento. Caso se tornem frequentes ou causem desconforto, uma avaliação pode ajudar a entender a origem.',
   },
   {
     min: 9,
     max: 20,
-    title: 'Há pontos que valem avaliação',
+    title: 'Sinais que valem investigação',
     tone: 'medium',
     description:
-      'As respostas sugerem que alguns detalhes do sorriso podem estar afetando conforto, aparência ou confiança. Um planejamento individual pode esclarecer as possibilidades.',
+      'As respostas sugerem possível sobrecarga muscular, bruxismo ou alteração funcional da mandíbula. Vale investigar para definir um cuidado mais preciso.',
   },
   {
     min: 21,
     max: 32,
-    title: 'Transformar o sorriso pode ser uma prioridade',
+    title: 'Sinais importantes para avaliar',
     tone: 'high',
     description:
-      'O conjunto de respostas mostra que estética, função ou segurança ao sorrir podem estar impactando sua rotina. A avaliação é o primeiro passo para definir um plano realista.',
+      'O conjunto de sintomas pode estar afetando sua qualidade de vida. Uma avaliação especializada ajuda a identificar a causa e orientar os próximos passos.',
   },
 ];
 
 export const quizToneLabels = {
   low: 'Avaliação preventiva',
-  medium: 'Vale planejar',
-  high: 'Prioridade de cuidado',
+  medium: 'Vale investigar',
+  high: 'Sinais importantes',
 };

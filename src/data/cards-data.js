@@ -1,8 +1,5 @@
-const treatmentIcon = `
-  <svg class="flip-card-svg" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 3.75c2.2 2.2 4.62 2.45 7 2.45-0.18 5.55-2.12 9.85-7 13.95-4.88-4.1-6.82-8.4-7-13.95 2.38 0 4.8-0.25 7-2.45Z" />
-    <path d="M8.8 12.05l2.05 2.05 4.35-4.6" />
-  </svg>
+const frontImageIcon = (src, alt) => `
+  <img class="flip-card__icon-media" src="${src}" alt="${alt}" loading="lazy" />
 `;
 
 const successIcon = `
@@ -13,27 +10,39 @@ const successIcon = `
 
 export const flipCards = [
   {
-    icon: treatmentIcon,
+    icon: frontImageIcon(
+      'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781568226/14_tdrhar.webp',
+      'Ícone de dor ao mastigar',
+    ),
     backIcon: successIcon,
-    front: 'Resina estética',
-    back: 'Correções para melhorar forma, proporção, pequenos desgastes, espaços e harmonia do sorriso.',
+    front: 'Dor ao mastigar',
+    back: 'Avaliação da função mandibular, músculos da face e sinais associados.',
   },
   {
-    icon: treatmentIcon,
+    icon: frontImageIcon(
+      'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781568226/15_qeyt7x.webp',
+      'Ícone de estalos na articulação',
+    ),
     backIcon: successIcon,
-    front: 'Prótese dentária',
-    back: 'Soluções para devolver conforto, função e aparência natural em casos de perda dentária ou próteses antigas.',
+    front: 'Estalos na articulação',
+    back: 'Investigação dos movimentos mandibulares e possíveis sobrecargas articulares.',
   },
   {
-    icon: treatmentIcon,
+    icon: frontImageIcon(
+      'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781568226/17_osuqnb.webp',
+      'Ícone de bruxismo',
+    ),
     backIcon: successIcon,
-    front: 'Lentes e facetas',
-    back: 'Planejamento estético para melhorar cor, formato e presença do sorriso com naturalidade.',
+    front: 'Bruxismo ou apertamento',
+    back: 'Plano individualizado para reduzir sobrecargas e proteger dentes e musculatura.',
   },
   {
-    icon: treatmentIcon,
+    icon: frontImageIcon(
+      'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781568227/Dra._Laila_Rettore_CRO_32142_5_i4xxxx.webp',
+      'Ícone de dor facial ou dor de cabeça',
+    ),
     backIcon: successIcon,
-    front: 'Planejamento do sorriso',
-    back: 'Avaliação individual para entender expectativas, necessidades e o melhor caminho para cada caso.',
+    front: 'Dor facial ou dor de cabeça',
+    back: 'Análise da relação entre tensão muscular, hábitos e função mandibular.',
   },
 ];

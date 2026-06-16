@@ -1,6 +1,6 @@
 import {
-  concernAlertResult,
-  concernSensitiveQuestionIndexes,
+  painAlertResult,
+  painSensitiveQuestionIndexes,
   quizOptions,
   quizQuestions,
   quizResults,
@@ -56,9 +56,9 @@ export function initQuiz() {
 
   function showResult() {
     const total = answers.reduce((sum, score) => sum + score, 0);
-    const hasPriorityConcern = concernSensitiveQuestionIndexes.some((questionIndex) => answers[questionIndex] > 2);
-    const data = hasPriorityConcern
-      ? concernAlertResult
+    const hasPainSignal = painSensitiveQuestionIndexes.some((questionIndex) => answers[questionIndex] > 0);
+    const data = hasPainSignal
+      ? painAlertResult
       : quizResults.find((item) => total >= item.min && total <= item.max) || quizResults[0];
 
     fill.style.width = '100%';
@@ -69,7 +69,7 @@ export function initQuiz() {
     resultSignal.textContent = quizToneLabels[data.tone] || 'Seu resultado';
     resultTitle.textContent = data.title;
     resultDesc.textContent = data.description;
-    trackEvent('quiz_complete', { score: total, result: data.tone, hasPriorityConcern });
+    trackEvent('quiz_complete', { score: total, result: data.tone, hasPainSignal });
   }
 
   function selectAnswer(index) {

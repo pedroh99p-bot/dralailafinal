@@ -1,6 +1,6 @@
 .footer {
-  border-top: 1px solid rgba(163, 32, 32, 0.12);
-  background: rgba(255, 255, 255, 0.86);
+  border-top: 1px solid var(--glass-border);
+  background: rgba(0, 11, 31, 0.78);
   padding-block: var(--space-16) var(--space-8);
 }
 
@@ -11,7 +11,7 @@
 }
 
 .footer__brand .footer__logo {
-  width: min(180px, 48vw);
+  width: min(160px, 48vw);
   max-width: 100%;
   height: auto;
   margin-bottom: var(--space-4);
@@ -19,7 +19,7 @@
 }
 
 .footer__brand p {
-  max-width: 360px;
+  max-width: 320px;
 }
 
 .footer__contact {
@@ -31,7 +31,7 @@
 }
 
 .footer__contact strong {
-  color: var(--color-text);
+  color: var(--color-cream);
   font-family: var(--font-title);
   font-size: 1.1rem;
 }
@@ -41,7 +41,7 @@
 }
 
 .footer__contact a:hover {
-  color: var(--color-accent);
+  color: var(--color-yellow-soft);
 }
 
 .footer__bottom {
@@ -50,18 +50,18 @@
   align-items: center;
   gap: var(--space-3);
   margin-top: var(--space-10);
-  border-top: 1px solid rgba(163, 32, 32, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: var(--space-6);
 }
 
 .footer__bottom p {
-  color: var(--color-muted);
+  color: rgba(255, 255, 255, 0.5);
   font-size: 0.84rem;
   text-align: center;
 }
 
 .footer__signature {
-  color: var(--color-muted);
+  color: rgba(255, 255, 255, 0.62);
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -69,10 +69,10 @@
 }
 
 .footer__signature strong {
-  color: var(--color-accent);
+  color: var(--color-yellow-soft);
   font-family: var(--font-title);
 }
 
 .footer__signature:hover {
-  color: var(--color-text);
+  color: var(--color-cream);
 }

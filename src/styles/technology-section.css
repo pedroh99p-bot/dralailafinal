@@ -8,19 +8,18 @@
 }
 
 .technology-section__content {
-  max-width: 900px;
+  max-width: 860px;
   margin-inline: auto;
 }
 
 .technology-section__content h2 {
   margin-bottom: var(--space-5);
-  color: var(--color-text);
 }
 
 .technology-section__lead {
-  max-width: 62ch;
+  max-width: 58ch;
   margin-bottom: var(--space-6);
-  color: var(--color-muted-strong);
+  color: #eef6ff;
   font-family: var(--font-title);
   font-size: 1.15rem;
   line-height: 1.55;
@@ -38,10 +37,12 @@
   gap: var(--space-3);
   align-items: start;
   padding: 0.95rem 1rem;
-  border: 1px solid rgba(163, 32, 32, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-card);
-  background: rgba(255, 255, 255, 0.84);
-  box-shadow: 0 10px 28px rgba(72, 48, 44, 0.08);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.02)),
+    rgba(0, 11, 31, 0.22);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .technology-benefit__number {
@@ -49,10 +50,10 @@
   width: 28px;
   height: 28px;
   place-items: center;
-  border: 1px solid rgba(163, 32, 32, 0.26);
+  border: 1px solid rgba(248, 176, 8, 0.35);
   border-radius: 50%;
-  background: rgba(163, 32, 32, 0.08);
-  color: var(--color-accent);
+  background: rgba(248, 176, 8, 0.1);
+  color: var(--color-yellow-soft);
   font-family: var(--font-title);
   font-size: 0.85rem;
   font-weight: 800;
@@ -62,7 +63,7 @@
 .technology-benefit strong {
   display: block;
   margin-bottom: 0.35rem;
-  color: var(--color-text);
+  color: var(--color-cream);
   font-family: var(--font-title);
   font-size: 1.03rem;
 }
@@ -82,5 +83,5 @@
   width: min(220px, 54vw);
   height: auto;
   opacity: 0.94;
-  filter: drop-shadow(0 14px 34px rgba(72, 48, 44, 0.12));
+  filter: drop-shadow(0 14px 34px rgba(0, 0, 0, 0.2));
 }

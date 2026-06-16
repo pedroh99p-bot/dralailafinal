@@ -16,13 +16,13 @@
 
 .timeline__line {
   bottom: 0.25rem;
-  background: rgba(163, 32, 32, 0.16);
+  background: rgba(255, 255, 255, 0.13);
 }
 
 .timeline__progress {
   height: 0%;
-  background: var(--color-accent);
-  box-shadow: 0 0 18px rgba(163, 32, 32, 0.24);
+  background: var(--color-yellow);
+  box-shadow: 0 0 18px rgba(248, 176, 8, 0.5);
   transition: height var(--duration-base) linear;
 }
 
@@ -30,7 +30,7 @@
   position: relative;
   min-height: 150px;
   padding: 0 0 var(--space-10) var(--space-4);
-  opacity: 0.58;
+  opacity: 0.48;
   transition:
     opacity var(--duration-base) var(--ease-out),
     transform var(--duration-base) var(--ease-out);
@@ -52,7 +52,7 @@
   z-index: 1;
   width: 18px;
   height: 18px;
-  border: 3px solid var(--color-page);
+  border: 3px solid var(--color-navy-950);
   border-radius: 50%;
   background: var(--color-navy-700);
   transition:
@@ -61,14 +61,14 @@
 }
 
 .timeline__step.is-active .timeline__dot {
-  background: var(--color-accent);
-  box-shadow: 0 0 0 6px rgba(163, 32, 32, 0.1), 0 0 20px rgba(163, 32, 32, 0.28);
+  background: var(--color-yellow);
+  box-shadow: 0 0 0 6px rgba(248, 176, 8, 0.1), 0 0 20px rgba(248, 176, 8, 0.45);
 }
 
 .timeline__number {
   display: inline-block;
   margin-bottom: var(--space-2);
-  color: var(--color-accent);
+  color: var(--color-yellow-soft);
   font-family: var(--font-accent);
   font-size: 1.25rem;
   font-style: italic;
@@ -76,9 +76,9 @@
 
 .timeline__step h3 {
   margin-bottom: var(--space-2);
-  color: var(--color-text);
 }
 
 .timeline__step p {
   color: var(--color-muted-strong);
 }
+

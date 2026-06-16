@@ -1,6 +1,6 @@
-# Dra. Liberalina Cavaleiro Landing Page
+# Dra. Laila Rettore Landing Page
 
-Landing page estática em Vite, HTML/CSS/JS puro, para odontologia estética, prótese dentária e reabilitação do sorriso em Fortaleza/CE.
+Landing page estática em Vite, HTML/CSS/JS puro, para atendimento com foco em DTM, bruxismo e dor orofacial.
 
 ## Como rodar
 
@@ -31,9 +31,9 @@ index.html
 
 ## Onde editar conteúdo
 
-- WhatsApp, Instagram, localização, rollers, números, links, FAQ e assets principais: `src/data/site-data.js`
+- WhatsApp, Instagram, CRO, localização, rollers, números, links e assets principais: `src/data/site-data.js`
 - Quiz, perguntas, opções e resultados: `src/data/quiz-data.js`
-- Cards de tratamentos: `src/data/cards-data.js`
+- Cards flip: `src/data/cards-data.js`
 - Depoimentos: `src/data/testimonials-data.js`
 - Componentes HTML estáticos: `src/components/`
 - Estilos por seção: `src/styles/`
@@ -48,26 +48,38 @@ VITE_GTM_ID=GTM-XXXXXXX
 VITE_META_PIXEL_ID=000000000000000
 ```
 
-Os eventos preparados incluem:
+O script principal do Google Tag Manager fica no topo do `head` em `index.html`.
+O `noscript` do GTM fica imediatamente após a abertura do `body`.
+
+O Meta Pixel é carregado no `head`, após a configuração do GTM.
+O `noscript` do Pixel fica logo abaixo do `noscript` do GTM.
+
+Se os IDs não forem configurados ou continuarem como placeholders, os scripts JS não inicializam o tracking. Os eventos continuam seguros e só disparam para `dataLayer` e `fbq` quando eles existem.
+
+Eventos preparados:
 
 - `whatsapp_click`
 - `instagram_click`
 - `quiz_start`
 - `quiz_complete`
 - `final_offer_cta_click`
-- `treatments_cta_click`
+- `flip_card_cta_click`
+- `technology_cta_click`
 - `google_maps_click`
 
 ## Assets
 
-Os assets locais permanecem em `public/assets` para ícones e favicons. Os assets principais da página são URLs Cloudinary em `src/data/site-data.js`:
+Os assets locais permanecem em `public/assets` para ícones e favicons. Os assets principais da página agora são URLs Cloudinary em `src/data/site-data.js`:
 
-- logo oficial da Dra. Liberalina
+- `public/assets/logos/logo-simple.svg`
+- `public/assets/logos/logo-full.svg`
+- logo única
+- vídeo do hero
 - foto principal do hero
 - foto da especialista
-- fotos placeholder dos relatos
+- fotos dos relatos
 
-Para trocar imagens ou logos, atualize `src/data/site-data.js` e os metadados de `index.html`.
+Para trocar imagens ou logos, atualize `src/data/site-data.js` e, quando necessário, os metadados de `index.html`.
 
 ## Build
 

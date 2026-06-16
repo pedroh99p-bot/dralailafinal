@@ -6,7 +6,7 @@ export function Footer() {
       <div class="container footer__grid">
         <div class="footer__brand">
           <img src="${assets.logos.full}" width="160" height="62" alt="${contact.name}" loading="lazy" class="footer__logo" />
-          <p>Odontologia estética e reabilitadora com cuidado humano, naturalidade e planejamento.</p>
+          <p>Odontologia com diagnóstico, precisão e cuidado humano.</p>
         </div>
         <address class="footer__contact">
           <strong>Contato e informações</strong>
