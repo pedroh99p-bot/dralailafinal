@@ -69,12 +69,12 @@
   }
 
   .hero {
-    min-height: 604px;
-    padding-block: 5.85rem 1rem;
+    min-height: 592px;
+    padding-block: 5.8rem 0.8rem;
   }
 
   .hero__container {
-    min-height: 510px;
+    min-height: 496px;
     align-items: start;
   }
 
@@ -100,8 +100,8 @@
   }
 
   .hero__media {
-    right: -1.1rem;
-    bottom: -0.7rem;
+    right: -1.5rem;
+    bottom: -1.35rem;
     top: auto;
   }
 
@@ -170,8 +170,8 @@
 
   .hero__media {
     width: min(47vw, 324px);
-    right: 0.35rem;
-    bottom: -1.5rem;
+    right: 0.75rem;
+    bottom: -1.9rem;
   }
 
   .hero__portrait {
