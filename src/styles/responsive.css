@@ -85,22 +85,22 @@
   }
 
   .hero h1 {
-    max-width: 10ch;
-    font-size: 2rem;
-    line-height: 0.98;
+    max-width: 11.2ch;
+    font-size: 2.06rem;
+    line-height: 0.96;
   }
 
-  .hero p {
-    max-width: 25ch;
-    font-size: 0.9rem;
+  .hero__summary {
+    max-width: 27ch;
+    font-size: 0.92rem;
   }
 
-  .hero__ctas {
+  .hero__highlight {
     width: min(100%, 240px);
   }
 
   .hero__media {
-    right: -0.75rem;
+    right: -0.45rem;
     bottom: -1.6rem;
     top: auto;
   }
@@ -137,14 +137,9 @@
 }
 
 @media (min-width: 560px) {
-  .hero__ctas,
   .quiz-result__actions {
     width: fit-content;
     flex-direction: row;
-  }
-
-  .hero__ctas .btn {
-    width: auto;
   }
 
   .flip-card__hint-mobile {
@@ -175,7 +170,7 @@
 
   .hero__media {
     width: min(47vw, 324px);
-    right: -0.35rem;
+    right: 0;
     bottom: -2.25rem;
   }
 
@@ -238,11 +233,23 @@
   }
 
   .hero h1 {
-    font-size: 3.62rem;
+    max-width: 12ch;
+    font-size: 4rem;
+  }
+
+  .hero__summary {
+    max-width: 34ch;
+    font-size: 1rem;
+  }
+
+  .hero__highlight {
+    width: min(100%, 310px);
+    padding: 1.08rem 1.3rem;
+    font-size: 0.96rem;
   }
 
   .hero__media {
-    right: 0.75rem;
+    right: 1.15rem;
     bottom: -20rem;
     top: auto;
     width: min(40vw, 418px);
