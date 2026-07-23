@@ -18,7 +18,7 @@ export const assets = {
     full: logoFull,
   },
   images: {
-    hero: '/assets/images/hero-foto.jpg',
+    hero: '/assets/images/hero-foto.webp',
     specialist: '/assets/images/especialista.jpg',
   },
   videos: {
