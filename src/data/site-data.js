@@ -9,8 +9,8 @@ export const contact = {
   instagramHandle: '@dralailarettore',
 };
 
-const logoSimple = 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781405885/Design_sem_nome_7_wdo0cm.png';
-const logoFull = 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781399580/Design_sem_nome_1_btet5v.svg';
+const logoSimple = '/assets/logos/logo-simple.svg';
+const logoFull = '/assets/logos/logo-full.svg';
 
 export const assets = {
   logos: {
@@ -18,9 +18,8 @@ export const assets = {
     full: logoFull,
   },
   images: {
-    hero: 'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781564428/Dra._Laila_Rettore_CRO_32142_4_jdsymc.webp',
-    specialist:
-      'https://res.cloudinary.com/dm9mnc97u/image/upload/v1781451581/Dra._Laila_Rettore_CRO_32142_lsfuf6.webp',
+    hero: '/assets/images/hero-foto.jpg',
+    specialist: '/assets/images/especialista.jpg',
   },
   videos: {
     hero: 'https://res.cloudinary.com/dm9mnc97u/video/upload/v1781400964/0613_2_1_vtm3rn.webm',
