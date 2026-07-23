@@ -86,6 +86,7 @@
   height: 30px;
   object-fit: contain;
   flex: 0 0 auto;
+  mix-blend-mode: multiply;
 }
 
 .flip-card__title {
