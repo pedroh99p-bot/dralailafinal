@@ -22,7 +22,7 @@ export const assets = {
     specialist: '/assets/images/especialista.jpg',
   },
   videos: {
-    hero: 'https://res.cloudinary.com/dm9mnc97u/video/upload/v1781400964/0613_2_1_vtm3rn.webm',
+    hero: '/assets/videos/hero.webm',
   },
   icons: {
     whatsapp: '/assets/icons/whatsapp.svg',
